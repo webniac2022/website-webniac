@@ -7,7 +7,7 @@ const Navbar = ({ tabs }) => {
       {tabs.map((t, i) => (
         <div key={i}>
           <Link href={`${t.path}`}>
-            <h6 className="text-xl z-10 text-lightHeading dark:text-darkHeading hover:cursor-pointer">
+            <h6 className="font-bold text-xl z-10 text-lightContrastText dark:text-darkHeading hover:cursor-pointer">
               {t.name}
             </h6>
           </Link>

@@ -10,7 +10,7 @@ const FirstSection = () => {
         className="col-span-2 flex items-center justify-center"
       >
         <Image
-          src="https://www.svgrepo.com/show/124200/rocket.svg"
+          src="https://res.cloudinary.com/webniac/image/upload/v1662580106/WEBNIAC/Asset_1_q0tsx3.svg"
           alt="rocket science"
           width={120}
           height={120}

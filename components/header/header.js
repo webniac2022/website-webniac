@@ -15,7 +15,7 @@ const Header = () => {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return;
+  if (!isMounted) return null;
 
   return (
     <div className="grid grid-cols-12 gap-2 justify-center items-center bg-lightBg dark:bg-darkBg">

@@ -6,7 +6,7 @@ const SideDrawer = ({ tabs }) => {
     <div className="md:hidden flex justify-end items-center pr-2">
       <HiMenuAlt4
         size={35}
-        className="fill-lightComponents dark:fill-darkComponents hover: cursor-pointer"
+        className="fill-lightComponents dark:fill-darkComponents hover:cursor-pointer"
       />
     </div>
   );
