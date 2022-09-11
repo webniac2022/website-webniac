@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider
       attribute="class"
-      themes={["light", "dark"]}
+      themes={["dark", "light"]}
       enableSystem={false}
     >
       <AppWrapper>

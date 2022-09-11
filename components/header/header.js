@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Image } from "../../lib/external-components";
 import { useAppContext } from "../../context/context";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsFillSunFill, BsGlobe } from "react-icons/bs";
 import Navbar from "../navbar/navbar";
 import SideDrawer from "../sidedrawer/sidedrawer";
 import { useTheme } from "next-themes";
+import SkeletonHeader from "./skeleton-header";
 
 const Header = () => {
   const { tabs } = useAppContext();
-  const { theme, setTheme } = useTheme("dark");
+  const { theme, setTheme } = useTheme("");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null;
+  if (!isMounted) return <SkeletonHeader />;
 
   return (
     <div className="grid grid-cols-12 gap-2 justify-center items-center bg-lightBg dark:bg-darkBg">
@@ -43,9 +44,16 @@ const Header = () => {
           />
         )}
       </div>
-      <div className="col-span-6 sm:col-span-8">
+
+      <div className="col-span-5 sm:col-span-7">
         <Navbar tabs={tabs} />
         <SideDrawer tabs={tabs} />
+      </div>
+      <div className="flex justify-center items-center col-span-1 sm:col-span-1">
+        <BsGlobe
+          size={20}
+          className="fill-lightComponents dark:fill-darkComponents hover:cursor-pointer"
+        />
       </div>
     </div>
   );

@@ -5,8 +5,11 @@ const FirstSection = () => {
   return (
     <div className="grid grid-cols-12 mt-5 overflow-hidden">
       <motion.div
-        initial={{ x: "-120vw" }}
-        animate={{ x: "120vw", transition: { duration: 1.5, repeat: 1 } }}
+        initial={{ x: 0 }}
+        animate={{
+          x: "200vw",
+          transition: { duration: 2, repeat: 1 },
+        }}
         className="col-span-2 flex items-center justify-center"
       >
         <Image
@@ -16,7 +19,7 @@ const FirstSection = () => {
           height={120}
         />
       </motion.div>
-      <div className="col-span-10 flex flex-col justify-end p-1 gap-2">
+      <div className="min-h-[50vh] col-span-10 flex flex-col justify-end p-1 gap-2">
         <h1 className="text-darkContrastText dark:text-darkHeading text-5xl sm:text-7xl text-right font-bold">
           Dezvoltare web <br /> custom
         </h1>

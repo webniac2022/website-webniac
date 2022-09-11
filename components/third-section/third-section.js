@@ -27,35 +27,49 @@ const ThirdSection = () => {
   const [screenSize, setScreenSize] = useState(0);
 
   useEffect(() => {
-    console.log(screenRef.current.clientWidth);
     setScreenSize(screenRef.current.clientWidth);
   }, [screenRef]);
 
-  console.log(bounds);
   return (
-    <div className="mt-16">
+    <div className="mt-16 flex flex-col gap-10">
       {/* Heading */}
       <div className="flex justify-center">
         <h1 className="text-center font-bold text-5xl text-lightContrastText dark:text-darkHeading">
           Tehnologii
         </h1>
       </div>
+      {/* Short intro */}
+      <div className="flex justify-start">
+        <p className="text-xl text-left p-2">
+          Lucram doar cu tehnologii si tool-uri de top din industrie care sunt
+          in trend in momentul de fata.
+        </p>
+      </div>
+      <div className="flex justify-start">
+        <p className="text-xl text-left p-2">
+          Suntem mari fani ai abordarii headless si anume decuplarea
+          frontendului de backend. Acest aspect ne deschide noi oportunitati si
+          ne permite sa implementam in proiectele noastre solutii viabile din
+          punct de vedere al performantei, scalabilitatii si a securitatii
+          aplicatiilor.
+        </p>
+      </div>
       {/* Tehnologogies list */}
       <motion.div
         ref={screenRef}
-        className="relative mt-16 bg-darkHeading rounded overflow-x-hidden overflow-y-hidden flex flex-row"
+        className="relative mt-5 bg-white rounded overflow-x-hidden overflow-y-hidden flex flex-row"
       >
         {/* First container */}
         <motion.div
           initial={{ x: 120 }}
-          whileInView={{ x: screenSize - bounds.width }}
+          animate={{ x: screenSize - bounds.width }}
           transition={{
             duration: 4,
             repeat: Infinity,
             ease: [0.75, 0.16, 0.34, 0.93],
           }}
           ref={ref}
-          className="rounded flex flex-row flex-shrink-0 overflow-x-hidden bg-darkHeading"
+          className="rounded flex flex-row flex-shrink-0 overflow-x-hidden bg-white"
         >
           {data.map((d, i) => (
             <motion.div className="flex-shrink-0" key={d}>

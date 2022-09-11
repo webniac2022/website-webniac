@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  // const [mode, setMode] = useState("dark");
   const [tabs, setTabs] = useState([
     { name: "Acasa", path: "/", id: "acasa" },
     { name: "Despre", path: "/despre", id: "despre" },
