@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from "react";
 import { Image, motion, useMeasure } from "../../lib/external-components";
 
 const data = [
-  "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/next_ov85sq.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/vercel_n8vtns.svg",
+  "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/next_ov85sq.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/shopify_nnosyw.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/tailwind_vg0mhm.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662630266/WEBNIAC/mui_r0wrul.svg",

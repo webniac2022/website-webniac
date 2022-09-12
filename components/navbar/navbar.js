@@ -6,7 +6,7 @@ const Navbar = ({ tabs }) => {
     <nav className="hidden md:flex gap-4">
       {tabs.map((t, i) => (
         <div key={i}>
-          <Link href={`${t.path}`}>
+          <Link href={`${i !== 0 ? "#" : ""}${t.path}`}>
             <h6 className="font-bold text-xl z-10 text-lightContrastText dark:text-darkHeading hover:cursor-pointer">
               {t.name}
             </h6>

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../header/header";
 import Head from "next/head";
+import Fab from "../fab/fab";
 
 const Layout = ({ children }) => {
   return (
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
       <div className="min-h-screen flex flex-col bg-lightBg dark:bg-darkBg">
         <main className="flex-grow">{children}</main>
       </div>
+      <Fab aria-label="Go to top" />
     </>
   );
 };

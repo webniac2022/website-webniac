@@ -3,7 +3,7 @@ import { Image, motion } from "../../lib/external-components";
 
 const FirstSection = () => {
   return (
-    <div className="grid grid-cols-12 mt-5 overflow-hidden">
+    <div className="w-full grid grid-cols-12 mt-5 overflow-hidden" id="/">
       <motion.div
         initial={{ x: 0 }}
         animate={{

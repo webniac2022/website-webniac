@@ -2,9 +2,11 @@ import React from "react";
 import { motion } from "../../lib/external-components";
 
 const data = [
-  "Aplicatii web",
-  "Website-uri de prezentare",
-  "Magazine online",
+  "UI/UX Design",
+  "Branding",
+  "Dezvoltare aplicatii web",
+  "Dezvoltare Website-uri de prezentare",
+  "Dezvoltare platforme ecommerce",
   "Optimizare SEO",
   "Promovare",
 ];
@@ -27,7 +29,7 @@ const cardVariants = {
 };
 const FourthSection = () => {
   return (
-    <div className="flex mt-16 flex-col gap-16 mb-16">
+    <div className="flex mt-16 flex-col gap-16 mb-16" id="servicii">
       {/* Title */}
       <div className="flex flex-row justify-center">
         <h2 className="text-5xl font-bold text-lightContrastText dark:text-darkHeading">

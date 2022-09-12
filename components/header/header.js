@@ -6,6 +6,7 @@ import Navbar from "../navbar/navbar";
 import SideDrawer from "../sidedrawer/sidedrawer";
 import { useTheme } from "next-themes";
 import SkeletonHeader from "./skeleton-header";
+import { motion } from "../../lib/external-components";
 
 const Header = () => {
   const { tabs } = useAppContext();
@@ -19,7 +20,7 @@ const Header = () => {
   if (!isMounted) return <SkeletonHeader />;
 
   return (
-    <div className="grid grid-cols-12 gap-2 justify-center items-center bg-lightBg dark:bg-darkBg">
+    <motion.div className="grid grid-cols-12 gap-2 justify-center items-center bg-lightBg dark:bg-darkBg">
       <div className="col-span-3 sm:col-span-2 block">
         <Image
           src="https://res.cloudinary.com/webniac/image/upload/v1662567294/WEBNIAC/webniac_logo_ordcsr.svg"
@@ -49,13 +50,13 @@ const Header = () => {
         <Navbar tabs={tabs} />
         <SideDrawer tabs={tabs} />
       </div>
-      <div className="flex justify-center items-center col-span-1 sm:col-span-1">
+      <div className="flex justify-center items-center col-span-1 sm:col-span-1 pr-2">
         <BsGlobe
           size={20}
           className="fill-lightComponents dark:fill-darkComponents hover:cursor-pointer"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

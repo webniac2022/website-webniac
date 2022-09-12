@@ -42,13 +42,13 @@ const data = [
 
 const SecondSection = () => {
   return (
-    <div className="mt-10">
+    <div className="w-full flex flex-col items-center mt-10" id="despre">
       <div className="flex justify-center mb-10">
         <h1 className="text-lightContrastText dark:text-darkHeading text-center text-5xl p-2 font-bold">
           Abordarea noastra
         </h1>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 w-full">
         {data.map((im, i) => (
           <div
             className="bg-lightComponents dark:bg-darkComponents rounded shadow-md flex flex-col gap-2 p-3"
