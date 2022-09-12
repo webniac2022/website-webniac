@@ -8,6 +8,7 @@ import ThirdSection from "../components/third-section/third-section";
 import { useScroll } from "../lib/external-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/context";
+import Text from "../components/sixth-section/text";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -28,7 +29,8 @@ export default function Home() {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
-      <SixthSection />
+      {/* <SixthSection /> */}
+      <Text />
       <SeventhSection />
     </div>
   );

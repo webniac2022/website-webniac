@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-hook/resize-observer": "^1.2.6",
     "framer-motion": "^7.3.2",
     "next": "12.3.0",
     "next-themes": "^0.2.1",

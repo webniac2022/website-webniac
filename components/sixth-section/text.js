@@ -5,8 +5,9 @@ import {
   useScroll,
   useSpring,
   Image,
+  useMeasure,
 } from "../../lib/external-components";
-// Parallax portfolio carousel
+import { useSize } from "../../hooks/resize-observer";
 const data = [
   {
     id: "first",
@@ -46,12 +47,7 @@ const data = [
     id: "ninth",
   },
 ];
-
-const useParallax = (value, distance) => {
-  return useTransform(value, [0, 1], [-distance, distance]);
-};
-
-const SixthSection = () => {
+const Test = () => {
   const optimizedData = data.reduce((resultArr, item, index) => {
     const chunkIndex = Math.floor(index / 4);
     if (!resultArr[chunkIndex]) {
@@ -62,35 +58,30 @@ const SixthSection = () => {
   }, []);
   const sliderRef = useRef();
   const slidesRef = useRef();
-  const [sliderWidth, setSliderWidths] = useState(0);
-  const [slidesWidth, setSlidesWidths] = useState(0);
+  const sliderSize = useSize(sliderRef);
+  const slidesSize = useSize(slidesRef);
+
+  const [sliderWidth, setSliderWidth] = useState();
+  const [slidesWidth, setSlidesWidth] = useState();
 
   useEffect(() => {
-    const measureSliderWidth = () => {
-      setSliderWidths(sliderRef.current.clientWidth);
-    };
+    console.log(sliderWidth);
+  }, [sliderWidth]);
+  useEffect(() => {
+    console.log(slidesWidth);
+  }, [slidesWidth]);
 
-    const measureSlidesWidth = () => {
-      const slidesNode = slidesRef.current.childNodes;
-      const slidesArr = Array.from(slidesNode);
-      const slidesSumWidth = slidesArr.reduce(
-        (acc, node) => acc + node.clientWidth,
-        0
-      );
-      setSlidesWidths(slidesSumWidth);
-    };
+  useEffect(() => {
+    if (sliderSize) {
+      setSliderWidth(sliderSize);
+    }
+  }, [sliderSize]);
 
-    measureSliderWidth();
-    measureSlidesWidth();
-
-    window.addEventListener("resize", measureSliderWidth);
-    window.addEventListener("resize", measureSlidesWidth);
-
-    return () => {
-      window.removeEventListener("resize", measureSliderWidth);
-      window.removeEventListener("resize", measureSlidesWidth);
-    };
-  }, [sliderWidth, slidesWidth]);
+  useEffect(() => {
+    if (slidesSize) {
+      setSlidesWidth(slidesSize);
+    }
+  }, [slidesSize]);
 
   return (
     <div className="w-[90vw] mt-16 flex flex-col gap-16 items-center">
@@ -109,7 +100,11 @@ const SixthSection = () => {
           ref={slidesRef}
           drag="x"
           dragConstraints={{
-            left: -(slidesWidth - sliderWidth),
+            left: -(
+              slidesWidth?.width +
+              slidesWidth?.right -
+              sliderWidth?.width
+            ),
             right: 0,
           }}
           dragElastic={0.2}
@@ -176,4 +171,4 @@ const SixthSection = () => {
   );
 };
 
-export default SixthSection;
+export default Test;
