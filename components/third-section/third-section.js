@@ -2,6 +2,7 @@ import {
   Image,
   Autoplay,
   useEmblaCarousel,
+  motion,
 } from "../../lib/external-components";
 const data = [
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/vercel_n8vtns.svg",
@@ -21,19 +22,25 @@ const data = [
   "https://res.cloudinary.com/webniac/image/upload/v1662818154/WEBNIAC/cloudinary_hjbr6f.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662818275/WEBNIAC/photoshop_lpjjat.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662818355/WEBNIAC/canva_v9nnqv.svg",
+  "https://res.cloudinary.com/webniac/image/upload/v1663067208/WEBNIAC/netlify_hqenvj.svg",
 ];
 
 const ThirdSection = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true, speed: 0.2 }, [
-    Autoplay({ delay: 1200, stopOnInteraction: false }),
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ stopOnInteraction: false }),
   ]);
   return (
     <div className="mt-16 flex flex-col gap-16 overflow-x-hidden">
-      <div className="flex justify-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="flex justify-center"
+      >
         <h2 className="font-bold text-5xl text-center text-lightContrastText dark:text-darkHeading">
           Tehnologii
         </h2>
-      </div>
+      </motion.div>
       <div ref={emblaRef} className="w-full overflow-hidden bg-white">
         <div className="flex flex-grow bg-white">
           {data.map((d, i) => (

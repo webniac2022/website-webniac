@@ -73,11 +73,16 @@ const SixthSection = () => {
   }, []);
   return (
     <div className="w-[90vw] mt-16 flex flex-col gap-16 items-center">
-      <div className="flex flex-row justify-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="flex flex-row justify-center"
+      >
         <h2 className="text-5xl font-bold text-center text-lightContrastText dark:text-darkHeading">
           Portofoliu
         </h2>
-      </div>
+      </motion.div>
       {/* carousel */}
       <div
         ref={emblaRef}

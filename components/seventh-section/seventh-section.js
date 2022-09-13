@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "../../lib/external-components";
 
 const SeventhSection = () => {
   return (
@@ -6,14 +7,24 @@ const SeventhSection = () => {
       className="w-full mt-16 mb-16 flex flex-col gap-16 items-center"
       id="contact"
     >
-      <div className="mt-16 flex flex-row justify-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="mt-16 flex flex-row justify-center"
+      >
         <h1 className="text-center font-bold text-5xl text-lightContrastText dark:text-darkHeading">
           Contact
         </h1>
-      </div>
+      </motion.div>
 
       {/* form */}
-      <div className="w-[90vw] sm:w-[60vw] md:w-[60vw] lg:w-[50vw] flex justify-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 200 }}
+        className="w-[90vw] sm:w-[60vw] md:w-[60vw] lg:w-[50vw] flex justify-center"
+      >
         <form className="flex-grow gap-6 flex flex-col items-center">
           <div className="flex flex-col gap-2 w-[70%]">
             <label className="text-xl" htmlFor="nume">
@@ -59,7 +70,7 @@ const SeventhSection = () => {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };

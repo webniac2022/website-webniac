@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "../../lib/external-components";
+import { Image, motion } from "../../lib/external-components";
 
 const data = [
   {
@@ -43,14 +43,27 @@ const data = [
 const SecondSection = () => {
   return (
     <div className="w-full flex flex-col items-center mt-10" id="despre">
-      <div className="flex justify-center mb-10">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="flex justify-center mb-10"
+      >
         <h1 className="text-lightContrastText dark:text-darkHeading text-center text-5xl p-2 font-bold">
           Abordarea noastra
         </h1>
-      </div>
+      </motion.div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 w-full">
         {data.map((im, i) => (
-          <div
+          <motion.div
+            initial={{ x: -40, y: 50, scale: 1, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, scale: 0.95, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.03 * i,
+              type: "spring",
+              stiffness: 100,
+            }}
             className="bg-lightComponents dark:bg-darkComponents rounded shadow-md flex flex-col gap-2 p-3"
             key={i}
           >
@@ -66,7 +79,7 @@ const SecondSection = () => {
                 height={1080}
               />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
