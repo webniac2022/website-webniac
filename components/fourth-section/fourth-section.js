@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, Image } from "../../lib/external-components";
+import React, { useState, useEffect } from "react";
+import { motion, Image, LayoutGroup } from "../../lib/external-components";
 import { RiMore2Fill } from "react-icons/ri";
 
 const data = [
@@ -28,8 +28,17 @@ const FourthSection = () => {
   const [tabOpen, setTabOpen] = useState({ id: "", state: false });
 
   const handleClickAnimation = (id) => {
-    setTabOpen({ id: id, state: !tabOpen.state });
+    if (tabOpen.id === id && tabOpen.state) {
+      setTabOpen({ id: id, state: false });
+    } else {
+      setTabOpen({ id: id, state: true });
+    }
   };
+
+  useEffect(() => {
+    console.log(tabOpen);
+  }, [tabOpen]);
+
   return (
     <div className="w-full flex mt-16 flex-col gap-16 mb-16" id="servicii">
       {/* Title */}
@@ -47,6 +56,7 @@ const FourthSection = () => {
       <motion.div className="flex flex-col gap-5 items-center">
         {data.map((d, i) => (
           <motion.div
+            key={d.id}
             layout
             style={{
               height: tabOpen.id === d.id && tabOpen.state ? "500px" : "100px",
@@ -59,7 +69,6 @@ const FourthSection = () => {
               bounce: 1,
               damping: 10,
             }}
-            key={d.id}
             className="p-2 rounded w-[90vw] sm:w-[50vw]  h-[30vh] shadow-sm bg-lightComponents dark:bg-darkComponents flex flex-row items-center justify-center"
           >
             <div className="w-full flex flex-row justify-between">
