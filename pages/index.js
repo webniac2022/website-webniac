@@ -22,7 +22,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-1 flex flex-col min-h-full items-center">
+    <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
       <FirstSection />
       <SecondSection />
       <ThirdSection />

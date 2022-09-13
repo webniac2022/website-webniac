@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, Image, useMeasure } from "../../lib/external-components";
-
+import {
+  Image,
+  Autoplay,
+  useEmblaCarousel,
+} from "../../lib/external-components";
 const data = [
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/vercel_n8vtns.svg",
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/next_ov85sq.svg",
@@ -22,60 +24,20 @@ const data = [
 ];
 
 const ThirdSection = () => {
-  const sliderRef = useRef();
-  const slidesRef = useRef();
-  const [isMounted, setIsMounted] = useState(false);
-  const [carouselWidths, setCarouselWidths] = useState({
-    slider: 0,
-    slides: 0,
-  });
-
-  useEffect(() => {
-    if (!isMounted) setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (isMounted) {
-      updateCarouselWidths();
-    }
-  }, [isMounted]);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      updateCarouselWidths();
-    });
-    updateCarouselWidths();
-    return () => window.removeEventListener("resize", updateCarouselWidths);
-  }, []);
-
-  const updateCarouselWidths = () => {
-    setCarouselWidths({
-      slider: sliderRef.current.offsetWidth,
-      slides: slidesRef.current.scrollWidth,
-    });
-  };
-
+  const [emblaRef] = useEmblaCarousel({ loop: true, speed: 0.2 }, [
+    Autoplay({ delay: 1200, stopOnInteraction: false }),
+  ]);
   return (
-    <div className="w-full mt-16 flex flex-col gap-5 overflow-x-hidden">
+    <div className="mt-16 flex flex-col gap-16 overflow-x-hidden">
       <div className="flex justify-center">
         <h2 className="font-bold text-5xl text-center text-lightContrastText dark:text-darkHeading">
           Tehnologii
         </h2>
       </div>
-      <div ref={sliderRef} className="mt-16 bg-white">
-        <motion.ul
-          initial={{ x: 0 }}
-          animate={{ x: -carouselWidths.slides + carouselWidths.slider }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: [0.75, 0.16, 0.34, 0.93],
-          }}
-          ref={slidesRef}
-          className="list-none flex flex-row bg-white"
-        >
+      <div ref={emblaRef} className="w-full overflow-hidden bg-white">
+        <div className="flex flex-grow bg-white">
           {data.map((d, i) => (
-            <li key={d} className="flex-shrink-0 relative w-[200px] h-[200px]">
+            <div key={d} className="relative w-[150px] h-[150px]">
               <Image
                 src={d}
                 alt={d}
@@ -83,9 +45,9 @@ const ThirdSection = () => {
                 objectFit="cover"
                 objectPosition="center"
               />
-            </li>
+            </div>
           ))}
-        </motion.ul>
+        </div>
       </div>
     </div>
   );

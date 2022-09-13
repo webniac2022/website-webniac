@@ -1,13 +1,4 @@
-import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useSpring,
-  Image,
-  useMeasure,
-  useEmblaCarousel,
-} from "../../lib/external-components";
+import { motion, Image, useEmblaCarousel } from "../../lib/external-components";
 
 const data = [
   {
