@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, Image } from "../../lib/external-components";
 import { RiMore2Fill } from "react-icons/ri";
 
 const data = [
-  { title: "UI/UX Design", id: "ui" },
-  { title: "Branding", id: "branding" },
-  { title: "Dezvoltare aplicatii web", id: "apps" },
-  { title: "Dezvoltare Website-uri de prezentare", id: "website" },
-  { title: "Dezvoltare platforme ecommerce", id: "ecommerce" },
-  { title: "Optimizare SEO", id: "seo" },
-  { title: "Promovare", id: "promovare" },
+  { title: "UI/UX Design", id: "ui", content: "UX design made simple" },
+  { title: "Branding", id: "branding", content: "UX design made simple" },
+  {
+    title: "Dezvoltare aplicatii web",
+    id: "apps",
+    content: "UX design made simple",
+  },
+  {
+    title: "Dezvoltare Website-uri de prezentare",
+    id: "website",
+    content: "UX design made simple",
+  },
+  {
+    title: "Dezvoltare platforme ecommerce",
+    id: "ecommerce",
+    content: "UX design made simple",
+  },
+  { title: "Optimizare SEO", id: "seo", content: "UX design made simple" },
+  { title: "Promovare", id: "promovare", content: "UX design made simple" },
 ];
 
 const FourthSection = () => {
-  const handleClickAnimation = (id) => {};
+  const [tabOpen, setTabOpen] = useState({ id: "", state: false });
+
+  const handleClickAnimation = (id) => {
+    setTabOpen({ id: id, state: !tabOpen.state });
+  };
   return (
     <div className="w-full flex mt-16 flex-col gap-16 mb-16" id="servicii">
       {/* Title */}
@@ -32,6 +48,9 @@ const FourthSection = () => {
         {data.map((d, i) => (
           <motion.div
             layout
+            style={{
+              height: tabOpen.id === d.id && tabOpen.state ? "500px" : "100px",
+            }}
             initial={{ opacity: 0, x: -100, y: -50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{
