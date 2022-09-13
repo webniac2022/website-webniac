@@ -33,13 +33,13 @@ const Header = () => {
       <div className="col-span-3 sm:col-span-2 flex flex-row justify-center items-center">
         {theme === "dark" ? (
           <BsFillMoonStarsFill
-            className="fill-darkComponents hover:cursor-pointer"
+            className="fill-darkComponents hover:cursor-pointer animate-pulse"
             size={20}
             onClick={() => setTheme("light")}
           />
         ) : (
           <BsFillSunFill
-            className="fill-lightComponents hover:cursor-pointer"
+            className="fill-lightComponents hover:cursor-pointer animate-pulse"
             size={20}
             onClick={() => setTheme("dark")}
           />

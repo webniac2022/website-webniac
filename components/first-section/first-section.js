@@ -5,10 +5,10 @@ const FirstSection = () => {
   return (
     <div className="w-full grid grid-cols-12 mt-5 overflow-hidden" id="/">
       <motion.div
-        initial={{ x: 0 }}
+        initial={{ x: 0, y: 0 }}
         animate={{
-          x: "200vw",
-          transition: { duration: 2, repeat: 1 },
+          x: [50, 100, 20000],
+          transition: { duration: 1.5 },
         }}
         className="col-span-2 flex items-center justify-center"
       >

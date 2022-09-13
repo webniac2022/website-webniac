@@ -56,11 +56,11 @@ const SecondSection = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 w-full">
         {data.map((im, i) => (
           <motion.div
-            initial={{ x: -40, y: 50, scale: 1, opacity: 0 }}
-            whileInView={{ x: 0, y: 0, scale: 0.95, opacity: 1 }}
+            initial={{ x: -40, y: 40, scale: 1, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, scale: 0.98, opacity: 1 }}
             transition={{
               duration: 0.6,
-              delay: 0.03 * i,
+              delay: 0.1 * i,
               type: "spring",
               stiffness: 100,
             }}

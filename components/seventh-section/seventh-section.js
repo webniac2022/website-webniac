@@ -31,7 +31,7 @@ const SeventhSection = () => {
               Nume
             </label>
             <input
-              className="p-3 rounded"
+              className="p-3 rounded text-white bg-lightComponents dark:bg-darkComponents"
               id="nume"
               type="text"
               placeholder="Nume"
@@ -42,7 +42,7 @@ const SeventhSection = () => {
               Email
             </label>
             <input
-              className="p-3 rounded"
+              className="p-3 rounded text-white bg-lightComponents dark:bg-darkComponents"
               id="email"
               type="email"
               placeholder="Email"
@@ -53,7 +53,7 @@ const SeventhSection = () => {
               Mesaj
             </label>
             <textarea
-              className="p-3 rounded"
+              className="p-3 rounded text-white bg-lightComponents dark:bg-darkComponents"
               id="mesaj"
               aria-multiline={true}
               rows={4}

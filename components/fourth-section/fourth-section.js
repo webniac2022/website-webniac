@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, Image } from "../../lib/external-components";
+import { RiMore2Fill } from "react-icons/ri";
 
 const data = [
   { title: "UI/UX Design", id: "ui" },
@@ -11,23 +12,8 @@ const data = [
   { title: "Promovare", id: "promovare" },
 ];
 
-const cardVariants = {
-  offscreen: {
-    x: -90,
-    y: 50,
-  },
-  onscreen: {
-    x: 0,
-    y: 0,
-    rotate: -5,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
 const FourthSection = () => {
+  const handleClickAnimation = (id) => {};
   return (
     <div className="w-full flex mt-16 flex-col gap-16 mb-16" id="servicii">
       {/* Title */}
@@ -42,37 +28,35 @@ const FourthSection = () => {
         </h2>
       </motion.div>
       {/* Content servicii */}
-      <motion.div className="flex flex-col gap-16 items-center">
+      <motion.div className="flex flex-col gap-5 items-center">
         {data.map((d, i) => (
           <motion.div
             layout
-            style={{ rotateY: 160 }}
-            transition={{ layout: { duration: 2 } }}
-            key={d}
-            className="rounded w-[90vw] sm:w-[50vw]  h-[30vh] shadow-sm bg-lightComponents dark:bg-darkComponents flex flex-row items-center justify-end"
+            initial={{ opacity: 0, x: -100, y: -50 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              bounce: 1,
+              damping: 10,
+            }}
+            key={d.id}
+            className="p-2 rounded w-[90vw] sm:w-[50vw]  h-[30vh] shadow-sm bg-lightComponents dark:bg-darkComponents flex flex-row items-center justify-center"
           >
-            <button className="rounded bg-darkComponents dark:bg-lightComponents w-[120px] h-[40px]">
-              More
-            </button>
+            <div className="w-full flex flex-row justify-between">
+              <div>
+                <h2 className="font-bold text-2xl text-white">{d.title}</h2>
+              </div>
+              <div className="">
+                <RiMore2Fill
+                  onClick={() => handleClickAnimation(d.id)}
+                  className="hover:cursor-pointer animate-pulse z-10 w-[50px] h-[50px] fill-darkComponents dark:fill-lightComponents"
+                />
+              </div>
+            </div>
           </motion.div>
         ))}
       </motion.div>
-      {/* <div className="flex flex-col gap-24 items-center">
-        {data.map((d, i) => (
-          <motion.div
-            className="flex flex-row justify-center items-center rounded w-[70vw] h-[200px] shadow-lg shadow-lightComponents dark:shadow-darkComponents bg-lightComponents dark:bg-darkComponents"
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true }}
-            variants={cardVariants}
-            key={d}
-          >
-            <h3 className="text-center font-bold text-2xl text-darkContrastText">
-              {d}
-            </h3>
-          </motion.div>
-        ))}
-      </div> */}
     </div>
   );
 };

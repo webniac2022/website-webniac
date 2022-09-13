@@ -1,5 +1,5 @@
 import { motion, Image, useEmblaCarousel } from "../../lib/external-components";
-
+import { MdSwipe } from "react-icons/md";
 const data = [
   {
     id: "first",
@@ -84,7 +84,15 @@ const SixthSection = () => {
         </h2>
       </motion.div>
       {/* carousel */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: -50, y: 20 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          bounce: 20,
+          duration: 0.3,
+        }}
         ref={emblaRef}
         className="w-full overflow-x-hidden hover:cursor-grab active:cursor-grabbing active:scale-[.95]"
       >
@@ -145,6 +153,9 @@ const SixthSection = () => {
             );
           })}
         </motion.ul>
+      </motion.div>
+      <div className="flex flex-row justify-center">
+        <MdSwipe className="w-[50px] h-[50px] animate-pulse fill-lightComponents dark:fill-darkComponents" />
       </div>
     </div>
   );
