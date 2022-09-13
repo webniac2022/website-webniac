@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Image, motion, useMeasure } from "../../lib/external-components";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, Image, useMeasure } from "../../lib/external-components";
 
 const data = [
   "https://res.cloudinary.com/webniac/image/upload/v1662630268/WEBNIAC/vercel_n8vtns.svg",
@@ -22,62 +22,71 @@ const data = [
 ];
 
 const ThirdSection = () => {
-  const [ref, bounds] = useMeasure();
-  const screenRef = useRef();
-  const [screenSize, setScreenSize] = useState(0);
+  const sliderRef = useRef();
+  const slidesRef = useRef();
+  const [isMounted, setIsMounted] = useState(false);
+  const [carouselWidths, setCarouselWidths] = useState({
+    slider: 0,
+    slides: 0,
+  });
 
   useEffect(() => {
-    setScreenSize(screenRef.current.clientWidth);
-  }, [screenRef]);
+    if (!isMounted) setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      updateCarouselWidths();
+    }
+  }, [isMounted]);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      updateCarouselWidths();
+    });
+    updateCarouselWidths();
+    return () => window.removeEventListener("resize", updateCarouselWidths);
+  }, []);
+
+  const updateCarouselWidths = () => {
+    setCarouselWidths({
+      slider: sliderRef.current.offsetWidth,
+      slides: slidesRef.current.scrollWidth,
+    });
+  };
 
   return (
-    <div className="mt-16 flex flex-col gap-10">
-      {/* Heading */}
+    <div className="w-full mt-16 flex flex-col gap-5 overflow-x-hidden">
       <div className="flex justify-center">
-        <h1 className="text-center font-bold text-5xl text-lightContrastText dark:text-darkHeading">
+        <h2 className="font-bold text-5xl text-center text-lightContrastText dark:text-darkHeading">
           Tehnologii
-        </h1>
+        </h2>
       </div>
-      {/* Short intro */}
-      <div className="flex justify-start">
-        <p className="text-xl text-left p-2">
-          Lucram doar cu tehnologii si tool-uri de top din industrie care sunt
-          in trend in momentul de fata.
-        </p>
-      </div>
-      <div className="flex justify-start">
-        <p className="text-xl text-left p-2">
-          Suntem mari fani ai abordarii headless si anume decuplarea
-          frontendului de backend. Acest aspect ne deschide noi oportunitati si
-          ne permite sa implementam in proiectele noastre solutii viabile din
-          punct de vedere al performantei, scalabilitatii si a securitatii
-          aplicatiilor.
-        </p>
-      </div>
-      {/* Tehnologogies list */}
-      <motion.div
-        ref={screenRef}
-        className="relative mt-5 bg-white rounded overflow-x-hidden overflow-y-hidden flex flex-row"
-      >
-        {/* First container */}
-        <motion.div
-          initial={{ x: 120 }}
-          animate={{ x: screenSize - bounds.width }}
+      <div ref={sliderRef} className="mt-16 bg-white">
+        <motion.ul
+          initial={{ x: 0 }}
+          animate={{ x: -carouselWidths.slides + carouselWidths.slider }}
           transition={{
             duration: 4,
             repeat: Infinity,
             ease: [0.75, 0.16, 0.34, 0.93],
           }}
-          ref={ref}
-          className="rounded flex flex-row flex-shrink-0 overflow-x-hidden bg-white"
+          ref={slidesRef}
+          className="list-none flex flex-row bg-white"
         >
           {data.map((d, i) => (
-            <motion.div className="flex-shrink-0" key={d}>
-              <Image src={d} alt={d} width={120} height={100} />
-            </motion.div>
+            <li key={d} className="flex-shrink-0 relative w-[200px] h-[200px]">
+              <Image
+                src={d}
+                alt={d}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </li>
           ))}
-        </motion.div>
-      </motion.div>
+        </motion.ul>
+      </div>
     </div>
   );
 };

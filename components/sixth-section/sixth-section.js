@@ -70,8 +70,8 @@ const data = [
   },
 ];
 
-const Test = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+const SixthSection = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: false });
   const optimizedData = data.reduce((resultArr, item, index) => {
     const chunkIndex = Math.floor(index / 4);
     if (!resultArr[chunkIndex]) {
@@ -154,4 +154,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default SixthSection;
