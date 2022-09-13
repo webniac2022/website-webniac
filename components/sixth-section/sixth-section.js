@@ -5,8 +5,10 @@ import {
   useScroll,
   useSpring,
   Image,
+  useMeasure,
+  useEmblaCarousel,
 } from "../../lib/external-components";
-// Parallax portfolio carousel
+
 const data = [
   {
     id: "first",
@@ -45,13 +47,31 @@ const data = [
     url: "https://res.cloudinary.com/webniac/image/upload/v1662570568/WEBNIAC/pexels-francesco-ungaro-998641_cn9aj8.jpg",
     id: "ninth",
   },
+  {
+    id: "ten",
+    url: "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-sagui-andrea-618833_uej8z5.jpg",
+  },
+  {
+    id: "eleventh",
+    url: "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-daniel-frank-287229_f8zd7i.jpg",
+  },
+  {
+    id: "twelve",
+    url: "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-joyston-judah-933054_ketegd.jpg",
+  },
+  {
+    id: "thirteen",
+    url: "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-tyler-lastovich-772803_wiqigx.jpg",
+  },
+  ,
+  {
+    id: "fourtheen",
+    url: "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-tyler-lastovich-808465_rtanjv.jpg",
+  },
 ];
 
-const useParallax = (value, distance) => {
-  return useTransform(value, [0, 1], [-distance, distance]);
-};
-
-const SixthSection = () => {
+const Test = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const optimizedData = data.reduce((resultArr, item, index) => {
     const chunkIndex = Math.floor(index / 4);
     if (!resultArr[chunkIndex]) {
@@ -60,38 +80,6 @@ const SixthSection = () => {
     resultArr[chunkIndex].push(item);
     return resultArr;
   }, []);
-  const sliderRef = useRef();
-  const slidesRef = useRef();
-  const [sliderWidth, setSliderWidths] = useState(0);
-  const [slidesWidth, setSlidesWidths] = useState(0);
-
-  useEffect(() => {
-    const measureSliderWidth = () => {
-      setSliderWidths(sliderRef.current.clientWidth);
-    };
-
-    const measureSlidesWidth = () => {
-      const slidesNode = slidesRef.current.childNodes;
-      const slidesArr = Array.from(slidesNode);
-      const slidesSumWidth = slidesArr.reduce(
-        (acc, node) => acc + node.clientWidth,
-        0
-      );
-      setSlidesWidths(slidesSumWidth);
-    };
-
-    measureSliderWidth();
-    measureSlidesWidth();
-
-    window.addEventListener("resize", measureSliderWidth);
-    window.addEventListener("resize", measureSlidesWidth);
-
-    return () => {
-      window.removeEventListener("resize", measureSliderWidth);
-      window.removeEventListener("resize", measureSlidesWidth);
-    };
-  }, [sliderWidth, slidesWidth]);
-
   return (
     <div className="w-[90vw] mt-16 flex flex-col gap-16 items-center">
       <div className="flex flex-row justify-center">
@@ -101,24 +89,14 @@ const SixthSection = () => {
       </div>
       {/* carousel */}
       <div
-        ref={sliderRef}
-        className="w-[90vw] overflow-x-hidden hover:cursor-grab active:cursor-grabbing active:scale-[.95] border-2 border-green-500"
+        ref={emblaRef}
+        className="w-full overflow-x-hidden hover:cursor-grab active:cursor-grabbing active:scale-[.95]"
       >
-        <motion.ul
-          className="flex list-none"
-          ref={slidesRef}
-          drag="x"
-          dragConstraints={{
-            left: -(slidesWidth - sliderWidth),
-            right: 0,
-          }}
-          dragElastic={0.2}
-          dragTransition={{ bounceDamping: 18 }}
-        >
+        <motion.ul className="flex list-none">
           {optimizedData.map((d, i) => {
             return (
               <li key={i} className="">
-                <motion.div className="grid gap-2 w-[90vw] flex-shrink-0 h-[40vh] sm:h-[60vh] md:h-[70vh] grid-cols-[1fr_1fr_1fr_1fr] grid-rows-[2fr_1fr_1fr_1fr] p-1">
+                <motion.div className="grid gap-2 w-[90vw] flex-shrink-0 h-[30vh] sm:h-[40vh] md:h-[50vh] grid-cols-[1fr_1fr_1fr_1fr] grid-rows-[2fr_1fr_1fr_1fr] p-1">
                   <div className="relative col-start-1 col-end-3 row-start-1 row-end-5">
                     {d.length >= 0 && (
                       <Image
@@ -176,4 +154,4 @@ const SixthSection = () => {
   );
 };
 
-export default SixthSection;
+export default Test;
