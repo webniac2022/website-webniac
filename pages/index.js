@@ -5,7 +5,7 @@ import SecondSection from "../components/second-section/second-section";
 import SeventhSection from "../components/seventh-section/seventh-section";
 import SixthSection from "../components/sixth-section/sixth-section";
 import ThirdSection from "../components/third-section/third-section";
-import { useScroll } from "../lib/external-components";
+import { useScroll, motion } from "../lib/external-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/context";
 

@@ -1,37 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { motion, Image, LayoutGroup } from "../../lib/external-components";
-import { RiMore2Fill } from "react-icons/ri";
+import { FiChevronDown } from "react-icons/fi";
 
 const data = [
-  { title: "UI/UX Design", id: "ui", content: "UX design made simple" },
-  { title: "Branding", id: "branding", content: "UX design made simple" },
+  {
+    title: "UI/UX Design",
+    id: "ui",
+    content:
+      "UI/UX I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
+  },
+  {
+    title: "Branding",
+    id: "branding",
+    content:
+      "Branding I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
+  },
   {
     title: "Dezvoltare aplicatii web",
     id: "apps",
-    content: "UX design made simple",
+    content:
+      "Aplicatii web I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
   {
     title: "Dezvoltare Website-uri de prezentare",
     id: "website",
-    content: "UX design made simple",
+    content:
+      "Websiteuri I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
   {
     title: "Dezvoltare platforme ecommerce",
     id: "ecommerce",
-    content: "UX design made simple",
+    content:
+      "Ecommerce I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
-  { title: "Optimizare SEO", id: "seo", content: "UX design made simple" },
-  { title: "Promovare", id: "promovare", content: "UX design made simple" },
+  {
+    title: "Optimizare SEO",
+    id: "seo",
+    content:
+      "SEO I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
+  },
+  {
+    title: "Promovare",
+    id: "promovare",
+    content:
+      "Promovare I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
+  },
 ];
 
 const FourthSection = () => {
-  const [tabOpen, setTabOpen] = useState({ id: "", state: false });
+  const [tabOpen, setTabOpen] = useState({ id: "", state: false, content: "" });
 
-  const handleClickAnimation = (id) => {
+  const handleClickAnimation = (id, content) => {
     if (tabOpen.id === id && tabOpen.state) {
-      setTabOpen({ id: id, state: false });
+      setTabOpen({ id: id, state: false, content: "" });
     } else {
-      setTabOpen({ id: id, state: true });
+      setTabOpen({ id: id, state: true, content: content });
     }
   };
 
@@ -69,17 +92,24 @@ const FourthSection = () => {
               bounce: 1,
               damping: 10,
             }}
-            className="p-2 rounded w-[90vw] sm:w-[50vw]  h-[30vh] shadow-sm bg-lightComponents dark:bg-darkComponents flex flex-row items-center justify-center"
+            onClick={() => handleClickAnimation(d.id, d.content)}
+            className="p-2 rounded w-[90vw] sm:w-[50vw]  h-[30vh] shadow-sm bg-lightComponents dark:bg-darkComponents flex flex-col items-center justify-center hover:cursor-pointer"
           >
-            <div className="w-full flex flex-row justify-between">
+            <div className="flex flex-col gap-3 items-center justify-center">
               <div>
-                <h2 className="font-bold text-2xl text-white">{d.title}</h2>
+                <h2 className="text-bold text-lg text-darkHeading dark:text-darkContrastText">
+                  {d.title}
+                </h2>
               </div>
-              <div className="">
-                <RiMore2Fill
-                  onClick={() => handleClickAnimation(d.id)}
-                  className="hover:cursor-pointer animate-pulse z-10 w-[50px] h-[50px] fill-darkComponents dark:fill-lightComponents"
-                />
+              {tabOpen.id === d.id && tabOpen.state && (
+                <div className="p-5">
+                  <p className="text-sm text-darkContrastText dark:text-darkContrastText">
+                    {tabOpen.content}
+                  </p>
+                </div>
+              )}
+              <div>
+                <FiChevronDown className="w-[30px] h-[30px] fill-darkContrastText dark:fill-darkContrastText" />
               </div>
             </div>
           </motion.div>

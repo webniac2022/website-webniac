@@ -53,7 +53,7 @@ const SecondSection = () => {
           Abordarea noastra
         </h1>
       </motion.div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-2 w-full">
         {data.map((im, i) => (
           <motion.div
             initial={{ x: -40, y: 40, opacity: 0 }}

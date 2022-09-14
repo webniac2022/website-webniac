@@ -26,7 +26,7 @@ const SeventhSection = () => {
         className="w-[90vw] sm:w-[60vw] md:w-[60vw] lg:w-[50vw] flex justify-center"
       >
         <form className="flex-grow gap-6 flex flex-col items-center">
-          <div className="flex flex-col gap-2 w-[70%]">
+          <div className="flex flex-col gap-2 w-[80%]">
             <label className="text-xl" htmlFor="nume">
               Nume
             </label>
@@ -37,7 +37,7 @@ const SeventhSection = () => {
               placeholder="Nume"
             />
           </div>
-          <div className="flex flex-col gap-2 w-[70%]">
+          <div className="flex flex-col gap-2 w-[80%]">
             <label className="text-xl" htmlFor="email">
               Email
             </label>
@@ -48,7 +48,7 @@ const SeventhSection = () => {
               placeholder="Email"
             />
           </div>
-          <div className="flex flex-col gap-2 w-[70%]">
+          <div className="flex flex-col gap-2 w-[80%]">
             <label className="text-xl" htmlFor="mesaj">
               Mesaj
             </label>

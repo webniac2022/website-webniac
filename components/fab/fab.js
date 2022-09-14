@@ -1,13 +1,16 @@
 import React from "react";
 import { IoMdArrowDropup } from "react-icons/io";
-import { useRouter } from "../../lib/external-components";
+import { useRouter, useScroll, motion } from "../../lib/external-components";
 import { useAppContext } from "../../context/context";
 // show Fab only when header in view
 const Fab = () => {
   const { showFab } = useAppContext();
+  const { scrollYProgress } = useScroll();
+
+  console.log("scroll y progreess ", scrollYProgress);
   const router = useRouter();
   return (
-    <div
+    <motion.div
       onClick={() => router.push("/")}
       className={`${
         !showFab
@@ -16,7 +19,7 @@ const Fab = () => {
       }`}
     >
       <IoMdArrowDropup className="fill-[black]" size={25} />
-    </div>
+    </motion.div>
   );
 };
 
