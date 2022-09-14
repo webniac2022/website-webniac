@@ -5,13 +5,14 @@ import SecondSection from "../components/second-section/second-section";
 import SeventhSection from "../components/seventh-section/seventh-section";
 import SixthSection from "../components/sixth-section/sixth-section";
 import ThirdSection from "../components/third-section/third-section";
-import { useScroll, motion } from "../lib/external-components";
+import { useScroll } from "../lib/external-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/context";
+import Drawer from "../components/sidedrawer/drawer";
 
 export default function Home() {
   const { scrollY } = useScroll();
-  const { setShowFab } = useAppContext();
+  const { setShowFab, showDrawer } = useAppContext();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
+      {showDrawer && <Drawer />}
       <FirstSection />
       <SecondSection />
       <ThirdSection />

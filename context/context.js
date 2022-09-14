@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [showFab, setShowFab] = useState(false);
+  const [showDrawer, setShowDrawer] = useState(false);
   const [tabs, setTabs] = useState([
     { name: "Acasa", path: "", id: "acasa" },
     { name: "Despre", path: "despre", id: "despre" },
@@ -11,7 +12,9 @@ export function AppWrapper({ children }) {
     { name: "Contact", path: "contact", id: "contact" },
   ]);
 
-  const values = { tabs, showFab, setShowFab };
+  const toggleDrawer = () => setShowDrawer(!showDrawer);
+
+  const values = { tabs, showFab, setShowFab, showDrawer, toggleDrawer };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 }
 
