@@ -100,7 +100,7 @@ const SixthSection = () => {
           {optimizedData.map((d, i) => {
             return (
               <li key={i} className="">
-                <motion.div className="grid gap-2 w-[90vw] flex-shrink-0 h-[30vh] sm:h-[40vh] md:h-[50vh] grid-cols-[1fr_1fr_1fr_1fr] grid-rows-[2fr_1fr_1fr_1fr] p-1">
+                <motion.div className="grid gap-2 w-[90vw] flex-shrink-0 h-[25vh] sm:h-[30vh] md:h-[40vh] lg:h-[45vh] grid-cols-[1fr_1fr_1fr_1fr] grid-rows-[2fr_1fr_1fr_1fr] p-1">
                   <div className="relative col-start-1 col-end-3 row-start-1 row-end-5">
                     {d.length >= 0 && (
                       <Image

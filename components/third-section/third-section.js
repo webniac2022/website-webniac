@@ -27,7 +27,7 @@ const data = [
 
 const ThirdSection = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ stopOnInteraction: false }),
+    Autoplay({ stopOnInteraction: false, delay: 700 }),
   ]);
   return (
     <div className="mt-16 flex flex-col gap-16 overflow-x-hidden">
@@ -42,9 +42,9 @@ const ThirdSection = () => {
         </h2>
       </motion.div>
       <div ref={emblaRef} className="w-full overflow-hidden bg-white">
-        <div className="flex flex-grow bg-white">
+        <div className="flex flex-grow bg-white p-1">
           {data.map((d, i) => (
-            <div key={d} className="relative w-[150px] h-[150px]">
+            <div key={d} className="relative w-[120px] h-[80px]">
               <Image
                 src={d}
                 alt={d}
