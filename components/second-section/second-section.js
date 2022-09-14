@@ -56,13 +56,14 @@ const SecondSection = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-2 w-full">
         {data.map((im, i) => (
           <motion.div
-            initial={{ x: -40, y: 40, opacity: 0 }}
+            initial={{ x: -40, y: -50, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             transition={{
-              duration: 0.6,
-              delay: 0.1 * i,
               type: "spring",
-              stiffness: 100,
+              stiffness: 150,
+              bounce: 0.2,
+              damping: 10,
+              delay: 0.05 * i,
             }}
             className="bg-lightComponents dark:bg-darkComponents rounded shadow-md flex flex-col gap-2 p-3"
             key={i}
