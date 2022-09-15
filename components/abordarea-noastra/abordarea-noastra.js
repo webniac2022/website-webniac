@@ -40,9 +40,9 @@ const data = [
   },
 ];
 
-const SecondSection = () => {
+const AbordareaNoastra = () => {
   return (
-    <div className="w-full flex flex-col items-center mt-10" id="despre">
+    <div className="w-full flex flex-col items-center mt-28" id="despre">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -56,14 +56,13 @@ const SecondSection = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-2 w-full">
         {data.map((im, i) => (
           <motion.div
-            initial={{ x: -40, y: -50, opacity: 0 }}
-            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            initial={{ opacity: 0, x: -100, y: -50 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{
               type: "spring",
-              stiffness: 150,
-              bounce: 0.2,
+              stiffness: 100,
+              bounce: 1,
               damping: 10,
-              delay: 0.05 * i,
             }}
             className="bg-lightComponents dark:bg-darkComponents rounded shadow-md flex flex-col gap-2 p-3"
             key={i}
@@ -87,4 +86,4 @@ const SecondSection = () => {
   );
 };
 
-export default SecondSection;
+export default AbordareaNoastra;

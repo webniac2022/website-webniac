@@ -5,7 +5,7 @@ import { CgClose } from "react-icons/cg";
 const SideDrawer = ({ tabs }) => {
   const { toggleDrawer, showDrawer } = useAppContext();
   return (
-    <div className="md:hidden flex justify-end items-center pr-2">
+    <div className="md:hidden flex justify-end items-center">
       <HiMenuAlt4
         onClick={toggleDrawer}
         size={35}

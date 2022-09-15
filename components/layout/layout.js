@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <motion.div
-        className="fixed bottom-0 left-0 right-0 h-[5px] bg-red-500 z-30"
+        className="fixed top-0 left-0 right-0 h-[5px] bg-white z-30"
         style={{ scaleX: scaleX }}
       ></motion.div>
       <Head>

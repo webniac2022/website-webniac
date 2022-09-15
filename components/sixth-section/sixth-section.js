@@ -85,13 +85,13 @@ const SixthSection = () => {
       </motion.div>
       {/* carousel */}
       <motion.div
-        initial={{ opacity: 0, x: -50, y: 20 }}
+        initial={{ opacity: 0, x: -100, y: -50 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         transition={{
           type: "spring",
           stiffness: 100,
-          bounce: 20,
-          duration: 0.3,
+          bounce: 1,
+          damping: 10,
         }}
         ref={emblaRef}
         className="w-full overflow-x-hidden hover:cursor-grab active:cursor-grabbing active:scale-[.95]"

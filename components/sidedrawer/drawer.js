@@ -26,7 +26,7 @@ const Drawer = () => {
           size={30}
         />
       </div>
-      <ul className="flex flex-col items-center justify-center mt-[25vh] gap-5">
+      <ul className="flex flex-col items-center justify-center mt-[20vh] gap-5">
         {tabs.map((t, i) => (
           <li key={i}>
             <Link href={`#${t.path}`} className="">
