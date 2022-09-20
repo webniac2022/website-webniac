@@ -54,7 +54,7 @@ const FirstSection = () => {
             alt={d.alt}
             width={1920}
             height={1080}
-            style={{ width: "25%", height: "auto" }}
+            style={{ width: "35%", height: "auto" }}
           />
           <div className="flex flex-row justify-center">
             <h2 className="text-sm sm:text-2xl md:text-2xl text-start p-6">

@@ -4,39 +4,39 @@ import { Image, motion } from "../../lib/external-components";
 const data = [
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1662528937/WEBNIAC/Asset_12_wunker.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663674911/WEBNIAC/Asset_1_gcizec.svg",
     title: "1. Gandim",
-    alt: "",
+    alt: "gandim",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1662528937/WEBNIAC/Asset_13_vud0i3.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663675037/WEBNIAC/Asset_1_ntpetf.svg",
     title: "2. Planificam",
-    alt: "",
+    alt: "planificam",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1662528935/WEBNIAC/Asset_6_iggptt.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663675162/WEBNIAC/Asset_1_exsv3d.svg",
     title: "3. Proiectam",
-    alt: "",
+    alt: "proiectam",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1662528933/WEBNIAC/Asset_2_ysho5y.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663675329/WEBNIAC/Asset_1_im8amt.svg",
     title: "4. Cream",
-    alt: "",
+    alt: "cream",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1662528935/WEBNIAC/Asset_10_dcoqcb.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663675464/WEBNIAC/Asset_1_z68ols.svg",
     title: "5. Testam",
-    alt: "",
+    alt: "testam",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1662528935/WEBNIAC/Asset_9_clohg9.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663675577/WEBNIAC/Asset_1_dblvjf.svg",
     title: "6. Lansam",
-    alt: "",
+    alt: "lansam",
   },
 ];
 
