@@ -40,7 +40,7 @@ const data = [
   },
 ];
 
-const AbordareaNoastra = () => {
+const SecondSection = () => {
   return (
     <div className="w-full flex flex-col items-center mt-28" id="despre">
       <motion.div
@@ -86,4 +86,4 @@ const AbordareaNoastra = () => {
   );
 };
 
-export default AbordareaNoastra;
+export default SecondSection;

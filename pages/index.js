@@ -7,11 +7,9 @@ import { useScroll } from "../lib/external-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/context";
 import Drawer from "../components/sidedrawer/drawer";
-import EightSection from "../components/eight-section/eight-section";
-import NinthSection from "../components/ninth-section/ninth-section";
-import TenSection from "../components/ten-section/ten-section";
 import HeroSection from "../components/hero-section/hero-section";
-import AbordareaNoastra from "../components/abordarea-noastra/abordarea-noastra";
+import FirstSection from "../components/first-section/first-section";
+import SecondSection from "../components/abordarea-noastra/abordarea-noastra";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -28,12 +26,9 @@ export default function Home() {
   return (
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
       {showDrawer && <Drawer />}
-
       <HeroSection />
-      <TenSection />
-      <EightSection />
-      <NinthSection />
-      <AbordareaNoastra />
+      <FirstSection />
+      <SecondSection />
       <ThirdSection />
       <FourthSection />
       <FifthSection />

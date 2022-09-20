@@ -1,5 +1,7 @@
 import React from "react";
 import { motion, Image } from "../../lib/external-components";
+import AnimatedText from "../animated-text/animated-text";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -26,7 +28,7 @@ const HeroSection = () => {
         className="min-h-[50vh] col-span-10 flex flex-col justify-end items-end p-1 gap-2"
       >
         <h1 className="text-darkContrastText dark:text-darkHeading text-5xl sm:text-7xl text-right font-bold">
-          WEBNIAC
+          <AnimatedText text="WEBNIAC" />
         </h1>
         <h2 className="text-darkContrastText dark:text-darkHeading text-sm sm:text-xl text-right font-bold">
           Cream produse digitale inedite, <br /> performante, accesibile si
@@ -42,7 +44,7 @@ const HeroSection = () => {
           Magazine online
         </h2>
         <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          UI/UX, Logo design
+          UI/UX design
         </h2>
         <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
           Optimizare SEO
@@ -50,6 +52,13 @@ const HeroSection = () => {
         <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
           Promovare
         </h2>
+        <div className="flex flex-row">
+          <Link href="/#contact">
+            <button className="border-2 border-lightComponents dark:border-darkComponents p-2 rounded bg-buttonStyle text-white hover:opacity-[0.8]">
+              Solicita oferta
+            </button>
+          </Link>
+        </div>
       </motion.div>
     </div>
   );

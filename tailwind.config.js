@@ -17,6 +17,9 @@ module.exports = {
         lightHeading: "#5f27bd",
         lightContrastText: "#0a0c01",
       },
+      backgroundImage: {
+        buttonStyle: "linear-gradient(to right, #0a0c01, #5F27BD)",
+      },
     },
   },
   plugins: [],
