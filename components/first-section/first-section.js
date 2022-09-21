@@ -5,34 +5,34 @@ import { motion } from "../../lib/external-components";
 const data = [
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663664464/WEBNIAC/Asset_3_kmd0km.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663774569/WEBNIAC/first_zooilw.svg",
     alt: "ideile devin realitate",
     content:
       "Iti transformam ideile si viziunea in realitate! Cream aplicatii web, website-uri, magazine online, personalizate.",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663668345/WEBNIAC/Asset_1_s9qi9r.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663774569/WEBNIAC/loading_tzpp9b.svg",
     alt: "imagine reprezentand performanta marita",
     content:
       "Performanta imbatabila si securitate sporita datorita tehnologiilor utilizate si a abordarii headless (noul trend la nivel global).",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663670764/WEBNIAC/Asset_1_ceryrv.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663774569/WEBNIAC/responsive_rshmra.svg",
     alt: "cross browser compatibility",
     content:
       "Design full responsive, personalizat si reprezentativ serviciilor sau produselor tale.",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663671516/WEBNIAC/Asset_1_enb24j.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663774569/WEBNIAC/seo_di07yu.svg",
     alt: "optimizare SEO",
     content: "Optimizare SEO",
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663746090/WEBNIAC/Asset_1_qnrgsq.svg",
+      "https://res.cloudinary.com/webniac/image/upload/v1663774569/WEBNIAC/mentenanta_zhd5rc.svg",
     alt: "mentenanta",
     content: "Mentenanta",
   },
@@ -40,12 +40,12 @@ const data = [
 
 const FirstSection = () => {
   return (
-    <div className="w-full flex flex-col gap-6 mt-10">
+    <div className="w-full flex flex-col gap-6 mt-10 p-2">
       {data.map((d, i) => (
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ type: "spring", stiffness: 100, bounce: 20 }}
+          transition={{ type: "spring", stiffness: 100 }}
           key={i}
           className="flex flex-row gap-2 items-center p-2 rounded bg-lightComponents dark:bg-darkComponents"
         >

@@ -54,9 +54,12 @@ const HeroSection = () => {
         </h2>
         <div className="flex flex-row">
           <Link href="/#contact">
-            <button className="border-2 border-lightComponents dark:border-darkComponents p-2 rounded bg-buttonStyle text-white hover:opacity-[0.8]">
+            <motion.button
+              whileHover={{ scale: 0.95, opacity: 0.65 }}
+              className="bg-lightComponents dark:bg-darkComponents p-2 rounded text-white"
+            >
               Solicita oferta
-            </button>
+            </motion.button>
           </Link>
         </div>
       </motion.div>
