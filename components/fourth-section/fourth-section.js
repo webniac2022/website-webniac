@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { motion, Image, LayoutGroup } from "../../lib/external-components";
+import { motion } from "../../lib/external-components";
 import { FiChevronDown } from "react-icons/fi";
+import Skeleton from "./skeleton";
 
 const data = [
   {
@@ -9,26 +10,21 @@ const data = [
     content:
       "UI/UX I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
+
   {
-    title: "Branding",
-    id: "branding",
-    content:
-      "Branding I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-  {
-    title: "Dezvoltare aplicatii web",
+    title: "Aplicatii web",
     id: "apps",
     content:
       "Aplicatii web I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
   {
-    title: "Dezvoltare Website-uri de prezentare",
+    title: "Website-uri",
     id: "website",
     content:
       "Websiteuri I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
   {
-    title: "Dezvoltare platforme ecommerce",
+    title: "Magazine online",
     id: "ecommerce",
     content:
       "Ecommerce I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
@@ -40,16 +36,24 @@ const data = [
       "SEO I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
   {
-    title: "Promovare",
-    id: "promovare",
+    title: "Mentenanta",
+    id: "Mentenanta",
     content:
-      "Promovare I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
+      "Mentenanta I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
   },
 ];
 
 const FourthSection = () => {
   const [tabOpen, setTabOpen] = useState({ id: "", state: false, content: "" });
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const getPreviewContent = (content) => {
+    return content.split(" ").splice(0, 20).join(" ");
+  };
   const handleClickAnimation = (id, content) => {
     if (tabOpen.id === id && tabOpen.state) {
       setTabOpen({ id: id, state: false, content: "" });
@@ -58,10 +62,7 @@ const FourthSection = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(tabOpen);
-  }, [tabOpen]);
-
+  if (!isMounted) return <Skeleton data={data} />;
   return (
     <div className="w-full flex mt-16 flex-col gap-16 mb-16" id="servicii">
       {/* Title */}
@@ -76,45 +77,42 @@ const FourthSection = () => {
         </h2>
       </motion.div>
       {/* Content servicii */}
-      <motion.div className="flex flex-col gap-5 items-center">
+      <div className="w-full flex flex-col gap-6">
         {data.map((d, i) => (
           <motion.div
-            key={d.id}
-            layout
-            style={{
-              height: tabOpen.id === d.id && tabOpen.state ? "500px" : "100px",
-            }}
             initial={{ opacity: 0, x: -100, y: -50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
+            whileHover={{ scale: 0.95, cursor: "pointer" }}
             transition={{
               type: "spring",
               stiffness: 100,
               bounce: 1,
               damping: 10,
             }}
+            layout
+            style={{ height: tabOpen.id === d.id && tabOpen.state && "500px" }}
+            key={d.id}
+            className="grid grid-cols-5 rounded bg-lightComponents dark:bg-darkComponents"
             onClick={() => handleClickAnimation(d.id, d.content)}
-            className="p-2 rounded w-[90vw] sm:w-[50vw]  h-[30vh] shadow-sm bg-lightComponents dark:bg-darkComponents flex flex-col items-center justify-center hover:cursor-pointer"
           >
-            <div className="flex flex-col gap-3 items-center justify-center">
+            <div className="col-span-2 flex flex-row justify-center items-center">
+              <h2 className="font-bold text-xl sm:text-3xl text-center text-darkContrastText">
+                {d.title}
+              </h2>
               <div>
-                <h2 className="text-bold text-lg text-darkHeading dark:text-darkContrastText">
-                  {d.title}
-                </h2>
+                <FiChevronDown fill="red" />
               </div>
-              {tabOpen.id === d.id && tabOpen.state && (
-                <div className="p-5">
-                  <p className="text-sm text-darkContrastText dark:text-darkContrastText">
-                    {tabOpen.content}
-                  </p>
-                </div>
-              )}
-              <div>
-                <FiChevronDown className="w-[30px] h-[30px] fill-darkContrastText dark:fill-darkContrastText" />
-              </div>
+            </div>
+            <div className="col-span-3 flex flex-row items-center justify-center">
+              <p className="text-sm sm:text-xl p-2 text-darkContrastText">
+                {tabOpen.id === d.id && tabOpen.state
+                  ? d.content
+                  : getPreviewContent(d.content)}
+              </p>
             </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

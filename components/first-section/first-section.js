@@ -8,7 +8,7 @@ const data = [
       "https://res.cloudinary.com/webniac/image/upload/v1663664464/WEBNIAC/Asset_3_kmd0km.svg",
     alt: "ideile devin realitate",
     content:
-      "Iti transformam ideile si viziunea in realitate! Cream aplicatii web, website-uri, magazine online personalizate, de la zero.",
+      "Iti transformam ideile si viziunea in realitate! Cream aplicatii web, website-uri, magazine online, personalizate.",
   },
   {
     imgSrc:
@@ -32,22 +32,22 @@ const data = [
   },
   {
     imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663671737/WEBNIAC/Asset_1_sdry4s.svg",
-    alt: "promovare",
-    content: "Promovare",
+      "https://res.cloudinary.com/webniac/image/upload/v1663746090/WEBNIAC/Asset_1_qnrgsq.svg",
+    alt: "mentenanta",
+    content: "Mentenanta",
   },
 ];
 
 const FirstSection = () => {
   return (
-    <div className="w-full flex flex-col gap-16 mt-10">
+    <div className="w-full flex flex-col gap-6 mt-10">
       {data.map((d, i) => (
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ type: "spring", stiffness: 100, bounce: 20 }}
           key={i}
-          className="flex flex-row gap-2 items-center p-2"
+          className="flex flex-row gap-2 items-center p-2 rounded bg-lightComponents dark:bg-darkComponents"
         >
           <Image
             src={d.imgSrc}
@@ -57,7 +57,7 @@ const FirstSection = () => {
             style={{ width: "35%", height: "auto" }}
           />
           <div className="flex flex-row justify-center">
-            <h2 className="text-sm sm:text-2xl md:text-2xl text-start p-6">
+            <h2 className="text-sm sm:text-2xl md:text-2xl text-start p-6 text-darkContrastText">
               {d.content}
             </h2>
           </div>
