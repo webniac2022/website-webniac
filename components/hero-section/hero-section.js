@@ -25,7 +25,7 @@ const HeroSection = () => {
       </motion.div>
       <motion.div
         animate={{
-          rotate: 360,
+          rotateZ: 360,
           transition: { duration: 16.5, repeat: Infinity, repeatDelay: 1 },
         }}
         className="col-span-4 flex items-center justify-center"
