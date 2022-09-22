@@ -72,7 +72,7 @@ const FourthSection = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="flex flex-row justify-center"
       >
-        <h2 className="text-5xl font-bold text-lightContrastText dark:text-darkHeading">
+        <h2 className="text-6xl sm:text-8xl font-bold text-lightContrastText dark:text-darkHeading">
           Servicii
         </h2>
       </motion.div>

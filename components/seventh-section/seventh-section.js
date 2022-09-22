@@ -13,7 +13,7 @@ const SeventhSection = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="mt-16 flex flex-row justify-center"
       >
-        <h1 className="text-center font-bold text-5xl text-lightContrastText dark:text-darkHeading">
+        <h1 className="text-center font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-darkHeading">
           Contact
         </h1>
       </motion.div>

@@ -28,7 +28,7 @@ const HeroSection = () => {
         transition={{ duration: 1, type: "spring", stiffness: 100 }}
         className="min-h-[50vh] col-span-10 flex flex-col justify-end items-end p-1 gap-2"
       >
-        <h1 className="text-darkContrastText dark:text-darkHeading text-5xl sm:text-7xl text-right font-bold">
+        <h1 className="text-darkContrastText dark:text-darkHeading text-6xl sm:text-9xl text-right font-bold">
           <AnimatedText text="WEBNIAC" />
         </h1>
         <h2 className="text-darkContrastText dark:text-darkHeading text-sm sm:text-xl text-right font-bold">
