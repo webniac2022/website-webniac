@@ -85,7 +85,6 @@ const FourthSection = () => {
             whileHover={{
               scale: 0.95,
               cursor: "pointer",
-              opacity: 0.7,
             }}
             transition={{
               type: "spring",
@@ -104,7 +103,7 @@ const FourthSection = () => {
                 {d.title}
               </h2>
               <div>
-                <FiChevronDown fill="white" className="w-[30px] h-[30px]" />
+                <FiChevronDown fill="white" className="w-[20px] h-[20px]" />
               </div>
             </div>
             <div className="col-span-3 flex flex-row items-center justify-center">

@@ -1,7 +1,8 @@
 import React from "react";
-import { motion, Image } from "../../lib/external-components";
+import { motion } from "../../lib/external-components";
 import AnimatedText from "../animated-text/animated-text";
 import Link from "next/link";
+import Image from "next/future/image";
 
 const HeroSection = () => {
   return (
@@ -10,7 +11,7 @@ const HeroSection = () => {
         initial={{ x: 0, y: 0 }}
         animate={{
           x: [50, 55, 20000],
-          transition: { duration: 1.5 },
+          transition: { duration: 2.5 },
         }}
         className="col-span-2 flex items-center justify-center"
       >
@@ -50,7 +51,7 @@ const HeroSection = () => {
           Optimizare SEO
         </h2>
         <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          Promovare
+          Mentenanta
         </h2>
         <div className="flex flex-row">
           <Link href="/#contact">

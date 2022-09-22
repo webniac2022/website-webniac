@@ -52,8 +52,8 @@ const FirstSection = () => {
           <Image
             src={d.imgSrc}
             alt={d.alt}
-            width={1920}
-            height={1080}
+            width={500}
+            height={500}
             style={{ width: "35%", height: "auto" }}
           />
           <div className="flex flex-row justify-center">
