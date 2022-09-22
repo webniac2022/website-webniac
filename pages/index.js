@@ -10,7 +10,8 @@ import FourthSection from "../components/fourth-section/fourth-section";
 import FifthSection from "../components/fifth-section/fifth-section";
 import SixthSection from "../components/sixth-section/sixth-section";
 import SeventhSection from "../components/seventh-section/seventh-section";
-import Intro from "../components/intro/intro";
+import Principii from "../components/principii/principii";
+import BeforeIntro from "../components/before-intro/before-intro";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -28,8 +29,9 @@ export default function Home() {
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
       {showDrawer && <Drawer />}
       <HeroSection />
-      <Intro />
+      <BeforeIntro />
       <FirstSection />
+      <Principii />
       <SecondSection />
       <ThirdSection />
       <FourthSection />

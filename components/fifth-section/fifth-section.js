@@ -29,7 +29,7 @@ const FifthSection = () => {
   const [emblaRef] = useEmblaCarousel({ align: "start", slidesToScroll: 1 });
 
   return (
-    <div className="w-full flex flex-col gap-16 mt-16 mb-16">
+    <div className="w-full flex flex-col gap-16 mb-16">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}

@@ -42,7 +42,7 @@ const data = [
 
 const SecondSection = () => {
   return (
-    <div className="w-full flex flex-col items-center mt-28" id="despre">
+    <div className="w-full flex flex-col items-center mt-16" id="despre">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}

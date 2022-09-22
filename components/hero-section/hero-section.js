@@ -11,22 +11,39 @@ const HeroSection = () => {
         initial={{ x: 0, y: 0 }}
         animate={{
           x: [50, 55, 20000],
-          transition: { duration: 2.5 },
+          transition: { duration: 2.5, repeat: Infinity, repeatDelay: 1 },
         }}
-        className="col-span-2 flex items-center justify-center"
+        className="col-span-1 flex items-center justify-center"
       >
         <Image
           src="https://res.cloudinary.com/webniac/image/upload/v1662580106/WEBNIAC/Asset_1_q0tsx3.svg"
           alt="rocket science"
-          width={120}
-          height={120}
+          width={150}
+          height={150}
+          style={{ width: "100%", height: "auto" }}
         />
       </motion.div>
+      <motion.div
+        animate={{
+          rotate: 360,
+          transition: { duration: 16.5, repeat: Infinity, repeatDelay: 1 },
+        }}
+        className="col-span-4 flex items-center justify-center"
+      >
+        <Image
+          src="https://res.cloudinary.com/webniac/image/upload/v1663852539/WEBNIAC/Asset_2_lohllq.svg"
+          alt="globe"
+          width={150}
+          height={150}
+          style={{ width: "90%", height: "auto" }}
+        />
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: 5, x: 50 }}
         whileInView={{ opacity: 1, y: 0, x: 0 }}
         transition={{ duration: 1, type: "spring", stiffness: 100 }}
-        className="min-h-[50vh] col-span-10 flex flex-col justify-end items-end p-1 gap-2"
+        className="min-h-[50vh] col-span-7 flex flex-col justify-end items-end p-1 gap-2"
       >
         <h1 className="text-darkContrastText dark:text-darkHeading text-6xl sm:text-9xl text-right font-bold">
           <AnimatedText text="WEBNIAC" />

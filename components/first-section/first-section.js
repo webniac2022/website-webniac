@@ -47,13 +47,13 @@ const FirstSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ type: "spring", stiffness: 100 }}
           key={i}
-          className="flex flex-row gap-2 items-center p-2 rounded bg-lightComponents dark:bg-darkComponents"
+          className="flex flex-row gap-2 items-center p-2"
         >
           <Image
             src={d.imgSrc}
             alt={d.alt}
-            width={500}
-            height={500}
+            width={1920}
+            height={1080}
             style={{ width: "35%", height: "auto" }}
           />
           <div className="flex flex-row justify-center">
