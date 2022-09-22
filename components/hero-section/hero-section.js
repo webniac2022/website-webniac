@@ -21,23 +21,19 @@ const HeroSection = () => {
           width={150}
           height={150}
           style={{ width: "100%", height: "auto" }}
+          priority
         />
       </motion.div>
-      <motion.div
-        animate={{
-          rotateZ: 360,
-          transition: { duration: 16.5, repeat: Infinity, repeatDelay: 1 },
-        }}
-        className="col-span-4 flex items-center justify-center"
-      >
+      <div className="col-span-4 flex items-center justify-center">
         <Image
           src="https://res.cloudinary.com/webniac/image/upload/v1663852539/WEBNIAC/Asset_2_lohllq.svg"
           alt="globe"
           width={150}
           height={150}
           style={{ width: "90%", height: "auto" }}
+          priority
         />
-      </motion.div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 5, x: 50 }}

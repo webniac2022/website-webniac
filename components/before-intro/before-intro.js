@@ -10,6 +10,7 @@ const BeforeIntro = () => {
         width={1615}
         height={891}
         style={{ opacity: 0.8 }}
+        priority
       />
     </div>
   );
