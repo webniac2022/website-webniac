@@ -82,9 +82,9 @@ const FirstSection = () => {
             <Image
               src={d.imgSrc}
               alt={d.alt}
-              width={1920}
-              height={1080}
-              style={{ width: "90%", height: "auto" }}
+              width={500}
+              height={500}
+              style={{ width: "100%", height: "auto" }}
             />
           </div>
           <div className="col-span-2 flex flex-row items-center">

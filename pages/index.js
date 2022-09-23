@@ -10,7 +10,8 @@ import FourthSection from "../components/fourth-section/fourth-section";
 import FifthSection from "../components/fifth-section/fifth-section";
 import SixthSection from "../components/sixth-section/sixth-section";
 import SeventhSection from "../components/seventh-section/seventh-section";
-import Principii from "../components/principii/principii";
+// import Principii from "../components/principii/principii";
+import Principii from "../components/principii/principii-2";
 import BeforeIntro from "../components/before-intro/before-intro";
 
 export default function Home() {

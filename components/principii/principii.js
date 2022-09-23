@@ -10,6 +10,8 @@ const data = [
   { content: "sdahsdhsdahahads" },
 ];
 
+// Functionalitate, Accesibilitate, Performanta, Scalabilitate,
+
 const Intro = () => {
   return (
     <div className="w-full mt-16 mb-16 flex flex-col gap-5">
@@ -23,7 +25,7 @@ const Intro = () => {
           Principii
         </h2>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
@@ -57,7 +59,7 @@ const Intro = () => {
             functioneze conform specificatiilor tehnice initiale.
           </p>
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
