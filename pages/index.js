@@ -12,6 +12,7 @@ import SixthSection from "../components/sixth-section/sixth-section";
 import SeventhSection from "../components/seventh-section/seventh-section";
 import Principii from "../components/principii/principii";
 import BeforeIntro from "../components/before-intro/before-intro";
+import Footer from "../components/footer/footer";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -38,6 +39,7 @@ export default function Home() {
       <FifthSection />
       <SixthSection />
       <SeventhSection />
+      <Footer />
     </div>
   );
 }
