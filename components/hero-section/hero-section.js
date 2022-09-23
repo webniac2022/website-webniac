@@ -70,7 +70,15 @@ const HeroSection = () => {
           <Link href="/#contact">
             <motion.button
               whileHover={{ scale: 0.95, opacity: 0.65 }}
-              className="bg-lightComponents dark:bg-darkComponents p-2 rounded text-white"
+              className="p-2text-white"
+              style={{
+                background: "rgba( 255, 255, 255, 0.1 )",
+                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                backdropFilter: "blur( 9.5px )",
+                WebkitBackdropFilter: "blur( 9.5px )",
+                borderRadius: "10px",
+                padding: 10,
+              }}
             >
               Solicita oferta
             </motion.button>

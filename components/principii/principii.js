@@ -1,67 +1,99 @@
-import React from "react";
-import { motion } from "../../lib/external-components";
+import React, { useRef } from "react";
+import { motion, useTransform, useScroll } from "../../lib/external-components";
 import Image from "next/future/image";
 
-const data = [
-  { content: "sadhahdas" },
-  { content: "adjasdjasdjasd" },
-  { content: "asddssjjsdajasd" },
-  { content: "dsasadbasdbb" },
-  { content: "sdahsdhsdahahads" },
-];
+const useParallax = (value, distance) => {
+  return useTransform(value, [0, 1], [-distance, distance]);
+};
 
-// Functionalitate, Accesibilitate, Performanta, Scalabilitate,
+const Principii = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y1 = useParallax(scrollYProgress, 50);
+  const y2 = useParallax(scrollYProgress, 70);
+  const y3 = useParallax(scrollYProgress, 90);
+  const y4 = useParallax(scrollYProgress, 110);
 
-const Intro = () => {
   return (
-    <div className="w-full mt-16 mb-16 flex flex-col gap-5">
+    <div className="w-full mt-16 mb-16">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
-        className="flex flex-row justify-center mt-10 mb-10"
+        className="flex flex-row justify-center mb-16"
       >
-        <h2 className="text-center font-bold w-full text-6xl sm:text-8xl text-lightContrastText dark:text-darkHeading">
+        <h2 className="font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-darkHeading">
           Principii
         </h2>
       </motion.div>
-      {/* <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ type: "spring", stiffness: 100 }}
-        className="grid grid-cols-2 grid-rows-2"
-      >
-        <div className="p-2">
-          <h2 className="font-bold text-lg sm:text-2xl">Functionalitate</h2>
-          <p>
-            Suntem axati pe functionalitate si depunem toate eforturile ca
-            proiectele noastre sa fie testate inainte de a fi lansate.
-          </p>
+      <div ref={ref} className=" flex flex-wrap gap-5 justify-center">
+        <div className="">
+          <motion.div
+            style={{
+              y: y1,
+              background: "rgba( 255, 255, 255, 0.1 )",
+              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+              backdropFilter: "blur( 9.5px )",
+              WebkitBackdropFilter: "blur( 9.5px )",
+              borderRadius: "50%",
+              padding: 10,
+            }}
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+          >
+            <h3 className="text-lg font-bold">Functionalitate</h3>
+          </motion.div>
         </div>
-        <div className="p-2">
-          <h2 className="font-bold text-lg sm:text-2xl">Accesibilitate</h2>
-          <p>
-            Suntem axati pe accesibilitate. Toate produsele trebuie sa
-            functioneze conform specificatiilor tehnice initiale.
-          </p>
+        <div className="">
+          <motion.div
+            style={{
+              y: y2,
+              background: "rgba( 255, 255, 255, 0.1 )",
+              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+              backdropFilter: "blur( 9.5px )",
+              WebkitBackdropFilter: "blur( 9.5px )",
+              borderRadius: "50%",
+              padding: 10,
+            }}
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+          >
+            <h3 className="text-lg font-bold">Accesibilitate</h3>
+          </motion.div>
         </div>
-        <div className="p-2">
-          <h2 className="font-bold text-lg sm:text-2xl">Performanta</h2>
-          <p>
-            Suntem axati pe performanta. Toate produsele trebuie sa functioneze
-            conform specificatiilor tehnice initiale.
-          </p>
+        <div className="">
+          <motion.div
+            style={{
+              y: y3,
+              background: "rgba( 255, 255, 255, 0.1 )",
+              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+              backdropFilter: "blur( 9.5px )",
+              WebkitBackdropFilter: "blur( 9.5px )",
+              borderRadius: "50%",
+              padding: 10,
+            }}
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+          >
+            <h3 className="text-lg font-bold">Performanta</h3>
+          </motion.div>
         </div>
-        <div className="p-2">
-          <h2 className="font-bold text-lg sm:text-2xl">Scalabilitate</h2>
-          <p>
-            Suntem axati pe scalabilitate. Toate produsele trebuie sa
-            functioneze conform specificatiilor tehnice initiale.
-          </p>
+        <div className="">
+          <motion.div
+            style={{
+              y: y4,
+              background: "rgba( 255, 255, 255, 0.1 )",
+              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+              backdropFilter: "blur( 9.5px )",
+              WebkitBackdropFilter: "blur( 9.5px )",
+              borderRadius: "50%",
+              padding: 10,
+            }}
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+          >
+            <h3 className="text-lg font-bold">Scalabilitate</h3>
+          </motion.div>
         </div>
-      </motion.div> */}
+      </div>
     </div>
   );
 };
 
-export default Intro;
+export default Principii;

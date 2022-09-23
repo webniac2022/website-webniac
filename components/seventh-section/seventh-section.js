@@ -32,33 +32,57 @@ const SeventhSection = () => {
       >
         <form className="flex-grow gap-6 flex flex-col items-center">
           <div className="flex flex-col gap-2 w-[80%]">
-            <label className="text-xl" htmlFor="nume">
+            <label className="text-white text-xl" htmlFor="nume">
               Nume
             </label>
             <input
-              className="p-3 rounded text-white bg-lightComponents dark:bg-darkComponents"
+              style={{
+                background: "rgba( 255, 255, 255, 0.1 )",
+                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                backdropFilter: "blur( 9.5px )",
+                WebkitBackdropFilter: "blur( 9.5px )",
+                borderRadius: "10px",
+                padding: 10,
+              }}
+              className="p-3 rounded text-white"
               id="nume"
               type="text"
               placeholder="Nume"
             />
           </div>
           <div className="flex flex-col gap-2 w-[80%]">
-            <label className="text-xl" htmlFor="email">
+            <label className="text-white text-xl" htmlFor="email">
               Email
             </label>
             <input
-              className="p-3 rounded text-white bg-lightComponents dark:bg-darkComponents"
+              style={{
+                background: "rgba( 255, 255, 255, 0.1 )",
+                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                backdropFilter: "blur( 9.5px )",
+                WebkitBackdropFilter: "blur( 9.5px )",
+                borderRadius: "10px",
+                padding: 10,
+              }}
+              className="p-3 rounded text-white"
               id="email"
               type="email"
               placeholder="Email"
             />
           </div>
           <div className="flex flex-col gap-2 w-[80%]">
-            <label className="text-xl" htmlFor="mesaj">
+            <label className="text-xl text-white" htmlFor="mesaj">
               Mesaj
             </label>
             <textarea
-              className="p-3 rounded text-white bg-lightComponents dark:bg-darkComponents"
+              style={{
+                background: "rgba( 255, 255, 255, 0.1 )",
+                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                backdropFilter: "blur( 9.5px )",
+                WebkitBackdropFilter: "blur( 9.5px )",
+                borderRadius: "10px",
+                padding: 10,
+              }}
+              className="p-3 rounded text-white"
               id="mesaj"
               aria-multiline={true}
               rows={4}
@@ -67,9 +91,17 @@ const SeventhSection = () => {
           </div>
           <div className="flex flex-col p-3">
             <button
+              style={{
+                background: "rgba( 255, 255, 255, 0.1 )",
+                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                backdropFilter: "blur( 9.5px )",
+                WebkitBackdropFilter: "blur( 9.5px )",
+                borderRadius: "10px",
+                padding: 10,
+              }}
               type="submit"
               value="Submit"
-              className="bg-lightComponents dark:bg-darkComponents text-darkContrastText dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer hover:scale-[.95]"
+              className=" font-bold text-darkContrastText dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer hover:scale-[.95]"
             >
               Trimite
             </button>
