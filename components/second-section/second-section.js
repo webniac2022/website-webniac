@@ -64,7 +64,15 @@ const SecondSection = () => {
               bounce: 1,
               damping: 10,
             }}
-            className="bg-lightComponents dark:bg-darkComponents rounded shadow-md flex flex-col gap-2 p-3"
+            style={{
+              background: "rgba( 255, 255, 255, 0.1 )",
+              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+              backdropFilter: "blur( 9.5px )",
+              WebkitBackdropFilter: "blur( 9.5px )",
+              borderRadius: "10px",
+              padding: 10,
+            }}
+            className="flex flex-col gap-2 p-3"
             key={i}
           >
             <h3 className="text-lg text-center text-darkContrastText dark:text-darkContrastText">

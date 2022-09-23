@@ -93,9 +93,17 @@ const FourthSection = () => {
               damping: 10,
             }}
             layout
-            style={{ height: tabOpen.id === d.id && tabOpen.state && "500px" }}
+            style={{
+              height: tabOpen.id === d.id && tabOpen.state && "500px",
+              background: "rgba( 255, 255, 255, 0.1 )",
+              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+              backdropFilter: "blur( 9.5px )",
+              WebkitBackdropFilter: "blur( 9.5px )",
+              borderRadius: "10px",
+              padding: 10,
+            }}
             key={d.id}
-            className="grid grid-cols-5 rounded bg-lightComponents dark:bg-darkComponents"
+            className="grid grid-cols-5"
             onClick={() => handleClickAnimation(d.id, d.content)}
           >
             <div className="col-span-2 flex flex-row justify-center items-center">
