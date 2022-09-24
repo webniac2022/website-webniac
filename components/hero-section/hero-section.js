@@ -44,28 +44,22 @@ const HeroSection = () => {
         <h1 className="text-darkContrastText dark:text-darkHeading text-6xl sm:text-9xl text-right font-bold">
           <AnimatedText text="WEBNIAC" />
         </h1>
-        <h2 className="text-darkContrastText dark:text-darkHeading text-sm sm:text-xl text-right font-bold">
-          Cream produse digitale inedite, <br /> performante, accesibile si
-          scalabile. <br />
+        <h2
+          className="text-darkContrastText dark:text-darkHeading text-sm sm:text-xl text-right font-bold"
+          style={{
+            background: "-webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Cream produse digitale inedite, performante, accesibile si scalabile.
         </h2>
-        <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          Aplicatii web
-        </h2>
-        <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          Website-uri
-        </h2>
-        <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          Magazine online
-        </h2>
-        <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          UI/UX design
-        </h2>
-        <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          Optimizare SEO
-        </h2>
-        <h2 className="text-lightComponents dark:text-darkComponents text-right font-bold">
-          Mentenanta
-        </h2>
+        <h2 className="text-white text-right font-bold">Aplicatii web</h2>
+        <h2 className="text-white text-right font-bold">Website-uri</h2>
+        <h2 className="text-white text-right font-bold">Magazine online</h2>
+        <h2 className="text-white text-right font-bold">UI/UX design</h2>
+        <h2 className="text-white text-right font-bold">Optimizare SEO</h2>
+        <h2 className="text-white text-right font-bold">Mentenanta</h2>
         <div className="flex flex-row">
           <Link href="/#contact">
             <motion.button

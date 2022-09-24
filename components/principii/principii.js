@@ -31,14 +31,8 @@ const Principii = () => {
           <motion.div
             style={{
               y: y1,
-              background: "rgba( 255, 255, 255, 0.1 )",
-              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-              backdropFilter: "blur( 9.5px )",
-              WebkitBackdropFilter: "blur( 9.5px )",
-              borderRadius: "50%",
-              padding: 10,
             }}
-            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center bg-gradient-to-r from-[#ff00cc] to-[#333399] rounded-[50%]"
           >
             <h3 className="text-white text-lg font-bold">Functionalitate</h3>
           </motion.div>
@@ -47,14 +41,8 @@ const Principii = () => {
           <motion.div
             style={{
               y: y2,
-              background: "rgba( 255, 255, 255, 0.1 )",
-              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-              backdropFilter: "blur( 9.5px )",
-              WebkitBackdropFilter: "blur( 9.5px )",
-              borderRadius: "50%",
-              padding: 10,
             }}
-            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center bg-gradient-to-r from-[#bdc3c7] to-[#fffc00] rounded-[50%]"
           >
             <h3 className="text-white text-lg font-bold">Accesibilitate</h3>
           </motion.div>
@@ -63,14 +51,8 @@ const Principii = () => {
           <motion.div
             style={{
               y: y3,
-              background: "rgba( 255, 255, 255, 0.1 )",
-              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-              backdropFilter: "blur( 9.5px )",
-              WebkitBackdropFilter: "blur( 9.5px )",
-              borderRadius: "50%",
-              padding: 10,
             }}
-            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center bg-gradient-to-r from-[#00c9ff] to-[#92fe9d] rounded-[50%]"
           >
             <h3 className="text-white text-lg font-bold">Performanta</h3>
           </motion.div>
@@ -79,14 +61,8 @@ const Principii = () => {
           <motion.div
             style={{
               y: y4,
-              background: "rgba( 255, 255, 255, 0.1 )",
-              boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-              backdropFilter: "blur( 9.5px )",
-              WebkitBackdropFilter: "blur( 9.5px )",
-              borderRadius: "50%",
-              padding: 10,
             }}
-            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
+            className="w-[150px] h-[150px] grow flex flex-row items-center justify-center bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-[50%]"
           >
             <h3 className="text-white text-lg font-bold">Scalabilitate</h3>
           </motion.div>

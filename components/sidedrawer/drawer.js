@@ -22,7 +22,7 @@ const Drawer = () => {
       <div className="flex flex-row justify-end">
         <AiOutlineClose
           onClick={toggleDrawer}
-          className="mt-[5vh] mr-[10vw] fill-lightComponents dark:fill-darkComponents hover:cursor-pointer"
+          className="mt-[5vh] mr-[10vw] fill-white hover:cursor-pointer"
           size={30}
         />
       </div>

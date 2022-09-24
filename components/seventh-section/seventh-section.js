@@ -87,7 +87,11 @@ const SeventhSection = () => {
             />
           </div>
           <div className="flex flex-col p-3">
-            <button
+            <motion.button
+              whileHover={{
+                scale: 0.95,
+                opacity: 0.65,
+              }}
               style={{
                 background: "rgba( 255, 255, 255, 0.1 )",
                 boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
@@ -98,10 +102,10 @@ const SeventhSection = () => {
               }}
               type="submit"
               value="Submit"
-              className=" font-bold text-darkContrastText dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer hover:scale-[.95]"
+              className="border-2 border-white font-bold text-darkContrastText dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer"
             >
               Trimite
-            </button>
+            </motion.button>
           </div>
         </form>
       </motion.div>
