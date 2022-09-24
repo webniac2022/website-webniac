@@ -47,7 +47,6 @@ const SeventhSection = () => {
               className="p-3 rounded text-white"
               id="nume"
               type="text"
-              placeholder="Nume"
             />
           </div>
           <div className="flex flex-col gap-2 w-[80%]">
@@ -66,7 +65,6 @@ const SeventhSection = () => {
               className="p-3 rounded text-white"
               id="email"
               type="email"
-              placeholder="Email"
             />
           </div>
           <div className="flex flex-col gap-2 w-[80%]">
@@ -86,7 +84,6 @@ const SeventhSection = () => {
               id="mesaj"
               aria-multiline={true}
               rows={4}
-              placeholder="Mesaj"
             />
           </div>
           <div className="flex flex-col p-3">

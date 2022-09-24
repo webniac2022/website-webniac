@@ -62,7 +62,7 @@ const data = [
 
 const FirstSection = () => {
   return (
-    <div className="w-full flex flex-col gap-10 mt-10 p-2">
+    <div className="w-full flex flex-col gap-10 mt-10 p-2" id="despre">
       {data.map((d, i) => (
         <motion.div
           initial={{ opacity: 0, x: -50 }}

@@ -9,13 +9,13 @@ const useParallax = (value, distance) => {
 const Principii = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y1 = useParallax(scrollYProgress, 50);
-  const y2 = useParallax(scrollYProgress, 70);
-  const y3 = useParallax(scrollYProgress, 90);
-  const y4 = useParallax(scrollYProgress, 110);
+  const y1 = useParallax(scrollYProgress, 30);
+  const y2 = useParallax(scrollYProgress, 40);
+  const y3 = useParallax(scrollYProgress, 50);
+  const y4 = useParallax(scrollYProgress, 60);
 
   return (
-    <div className="w-full mt-16 mb-16">
+    <div className="w-full mt-16 mb-5 sm:mb-0">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -40,7 +40,7 @@ const Principii = () => {
             }}
             className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
           >
-            <h3 className="text-lg font-bold">Functionalitate</h3>
+            <h3 className="text-white text-lg font-bold">Functionalitate</h3>
           </motion.div>
         </div>
         <div className="">
@@ -56,7 +56,7 @@ const Principii = () => {
             }}
             className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
           >
-            <h3 className="text-lg font-bold">Accesibilitate</h3>
+            <h3 className="text-white text-lg font-bold">Accesibilitate</h3>
           </motion.div>
         </div>
         <div className="">
@@ -72,7 +72,7 @@ const Principii = () => {
             }}
             className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
           >
-            <h3 className="text-lg font-bold">Performanta</h3>
+            <h3 className="text-white text-lg font-bold">Performanta</h3>
           </motion.div>
         </div>
         <div className="">
@@ -88,7 +88,7 @@ const Principii = () => {
             }}
             className="w-[150px] h-[150px] grow flex flex-row items-center justify-center"
           >
-            <h3 className="text-lg font-bold">Scalabilitate</h3>
+            <h3 className="text-white text-lg font-bold">Scalabilitate</h3>
           </motion.div>
         </div>
       </div>

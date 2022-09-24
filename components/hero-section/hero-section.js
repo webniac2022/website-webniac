@@ -6,7 +6,7 @@ import Image from "next/future/image";
 
 const HeroSection = () => {
   return (
-    <div className="w-full grid grid-cols-12 mt-5 overflow-hidden" id="/">
+    <div className="w-full grid grid-cols-12 overflow-hidden" id="/">
       <motion.div
         initial={{ x: 0, y: 0 }}
         animate={{
@@ -70,7 +70,7 @@ const HeroSection = () => {
           <Link href="/#contact">
             <motion.button
               whileHover={{ scale: 0.95, opacity: 0.65 }}
-              className="p-2text-white"
+              className="p-2 text-white border-2 border-white"
               style={{
                 background: "rgba( 255, 255, 255, 0.1 )",
                 boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",

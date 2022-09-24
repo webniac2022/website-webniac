@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "../../lib/external-components";
-import { FiChevronDown } from "react-icons/fi";
+import { MdArrowDropDown } from "react-icons/md";
 import Skeleton from "./skeleton";
 
 const data = [
@@ -107,11 +107,11 @@ const FourthSection = () => {
             onClick={() => handleClickAnimation(d.id, d.content)}
           >
             <div className="col-span-2 flex flex-row justify-center items-center">
-              <h2 className="font-bold text-xl sm:text-3xl text-center text-darkContrastText">
-                {d.title}
-              </h2>
-              <div>
-                <FiChevronDown fill="white" className="w-[20px] h-[20px]" />
+              <div className="flex flex-col gap-1 justify-center items-center">
+                <h2 className="font-bold text-xl sm:text-3xl text-center text-darkContrastText">
+                  {d.title}
+                </h2>
+                <MdArrowDropDown className="fill-white w-[35px] h-[35px]" />
               </div>
             </div>
             <div className="col-span-3 flex flex-row items-center justify-center">
