@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/future/image";
 
-const BeforeIntro = () => {
+const HeroImage = () => {
   return (
     <div className="w-full">
       <Image
@@ -16,4 +16,4 @@ const BeforeIntro = () => {
   );
 };
 
-export default BeforeIntro;
+export default HeroImage;

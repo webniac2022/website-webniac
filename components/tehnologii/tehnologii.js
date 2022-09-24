@@ -25,7 +25,7 @@ const data = [
   "https://res.cloudinary.com/webniac/image/upload/v1663067208/WEBNIAC/netlify_hqenvj.svg",
 ];
 
-const ThirdSection = () => {
+const Tehnologii = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ stopOnInteraction: false, delay: 700 }),
   ]);
@@ -60,4 +60,4 @@ const ThirdSection = () => {
   );
 };
 
-export default ThirdSection;
+export default Tehnologii;

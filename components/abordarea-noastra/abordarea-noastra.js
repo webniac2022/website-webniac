@@ -40,7 +40,7 @@ const data = [
   },
 ];
 
-const SecondSection = () => {
+const AbordareaNoastra = () => {
   return (
     <div className="w-full flex flex-col items-center mt-16">
       <motion.div
@@ -94,4 +94,4 @@ const SecondSection = () => {
   );
 };
 
-export default SecondSection;
+export default AbordareaNoastra;

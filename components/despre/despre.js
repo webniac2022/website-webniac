@@ -60,7 +60,7 @@ const data = [
   },
 ];
 
-const FirstSection = () => {
+const Despre = () => {
   return (
     <div className="w-full flex flex-col gap-10 mt-10 p-2" id="despre">
       {data.map((d, i) => (
@@ -98,4 +98,4 @@ const FirstSection = () => {
   );
 };
 
-export default FirstSection;
+export default Despre;

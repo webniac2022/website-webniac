@@ -43,7 +43,7 @@ const data = [
   },
 ];
 
-const FourthSection = () => {
+const Servicii = () => {
   const [tabOpen, setTabOpen] = useState({ id: "", state: false, content: "" });
   const [isMounted, setIsMounted] = useState(false);
 
@@ -128,4 +128,4 @@ const FourthSection = () => {
   );
 };
 
-export default FourthSection;
+export default Servicii;

@@ -3,17 +3,16 @@ import { useEffect } from "react";
 import { useAppContext } from "../context/context";
 import Drawer from "../components/sidedrawer/drawer";
 import HeroSection from "../components/hero-section/hero-section";
-import FirstSection from "../components/first-section/first-section";
-import SecondSection from "../components/second-section/second-section";
-import ThirdSection from "../components/third-section/third-section";
-import FourthSection from "../components/fourth-section/fourth-section";
-import FifthSection from "../components/fifth-section/fifth-section";
-import SixthSection from "../components/sixth-section/sixth-section";
-import SeventhSection from "../components/seventh-section/seventh-section";
+import AbordareaNoastra from "../components/abordarea-noastra/abordarea-noastra";
+import Tehnologii from "../components/tehnologii/tehnologii";
+import Portofoliu from "../components/portofoliu/portofoliu";
+import Contact from "../components/contact/contact";
 import Principii from "../components/principii/principii";
-import BeforeIntro from "../components/before-intro/before-intro";
 import Footer from "../components/footer/footer";
 import Cookies from "../components/cookies-policy/cookies";
+import HeroImage from "../components/hero-image/hero-image";
+import Despre from "../components/despre/despre";
+import Servicii from "../components/servicii/servicii";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -32,15 +31,14 @@ export default function Home() {
       {showDrawer && <Drawer />}
       {showCookies && <Cookies />}
       <HeroSection />
-      <BeforeIntro />
-      <FirstSection />
+      <HeroImage />
+      <Despre />
       <Principii />
-      <SecondSection />
-      <ThirdSection />
-      <FourthSection />
-      <FifthSection />
-      <SixthSection />
-      <SeventhSection />
+      <AbordareaNoastra />
+      <Tehnologii />
+      <Servicii />
+      <Portofoliu />
+      <Contact />
       <Footer />
     </div>
   );

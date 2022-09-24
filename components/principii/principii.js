@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useTransform, useScroll } from "../../lib/external-components";
-import Image from "next/future/image";
 
 const useParallax = (value, distance) => {
   return useTransform(value, [0, 1], [-distance, distance]);

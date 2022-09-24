@@ -4,7 +4,7 @@ import { motion } from "../../lib/external-components";
 const SeventhSection = () => {
   return (
     <div
-      className="w-full mt-16 mb-16 flex flex-col gap-16 items-center"
+      className="w-full mt-10 mb-16 flex flex-col gap-16 items-center"
       id="contact"
     >
       <motion.div
