@@ -4,7 +4,15 @@ import AnimatedText from "../animated-text/animated-text";
 import Link from "next/link";
 import Image from "next/future/image";
 
-const HeroSection = () => {
+const HeroSection = ({
+  data: {
+    title,
+    subtitle,
+    globe,
+    rocket,
+    firstServicii: { first, second, third, fourth, fifth, sixth },
+  },
+}) => {
   return (
     <div className="w-full grid grid-cols-12 overflow-hidden" id="/">
       <motion.div
@@ -16,8 +24,8 @@ const HeroSection = () => {
         className="col-span-1 flex items-center justify-center"
       >
         <Image
-          src="https://res.cloudinary.com/webniac/image/upload/v1662580106/WEBNIAC/Asset_1_q0tsx3.svg"
-          alt="rocket science"
+          src={rocket.sourceUrl}
+          alt={rocket.altText}
           width={150}
           height={150}
           style={{ width: "100%", height: "auto" }}
@@ -26,8 +34,8 @@ const HeroSection = () => {
       </motion.div>
       <div className="col-span-4 flex items-center justify-center">
         <Image
-          src="https://res.cloudinary.com/webniac/image/upload/v1663852539/WEBNIAC/Asset_2_lohllq.svg"
-          alt="globe"
+          src={globe.sourceUrl}
+          alt={globe.altText}
           width={150}
           height={150}
           style={{ width: "90%", height: "auto" }}
@@ -42,7 +50,7 @@ const HeroSection = () => {
         className="min-h-[50vh] col-span-7 flex flex-col justify-end items-end p-1 gap-2"
       >
         <h1 className="text-darkContrastText dark:text-darkHeading text-6xl sm:text-9xl text-right font-bold">
-          <AnimatedText text="WEBNIAC" />
+          <AnimatedText text={title} />
         </h1>
         <h2
           className="text-darkContrastText dark:text-darkHeading text-sm sm:text-xl text-right font-bold"
@@ -52,14 +60,14 @@ const HeroSection = () => {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Cream produse digitale inedite, performante, accesibile si scalabile.
+          {subtitle}
         </h2>
-        <h2 className="text-white text-right font-bold">Aplicatii web</h2>
-        <h2 className="text-white text-right font-bold">Website-uri</h2>
-        <h2 className="text-white text-right font-bold">Magazine online</h2>
-        <h2 className="text-white text-right font-bold">UI/UX design</h2>
-        <h2 className="text-white text-right font-bold">Optimizare SEO</h2>
-        <h2 className="text-white text-right font-bold">Mentenanta</h2>
+        <h2 className="text-white text-right font-bold">{first}</h2>
+        <h2 className="text-white text-right font-bold">{second}</h2>
+        <h2 className="text-white text-right font-bold">{third}</h2>
+        <h2 className="text-white text-right font-bold">{fourth}</h2>
+        <h2 className="text-white text-right font-bold">{fifth}</h2>
+        <h2 className="text-white text-right font-bold">{sixth}</h2>
         <div className="flex flex-row">
           <Link href="/#contact">
             <motion.button

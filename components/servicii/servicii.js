@@ -3,49 +3,20 @@ import { motion } from "../../lib/external-components";
 import { MdArrowDropDown } from "react-icons/md";
 import Skeleton from "./skeleton";
 
-const data = [
-  {
-    title: "UI/UX Design",
-    id: "ui",
-    content:
-      "UI/UX I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-
-  {
-    title: "Aplicatii web",
-    id: "apps",
-    content:
-      "Aplicatii web I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-  {
-    title: "Website-uri",
-    id: "website",
-    content:
-      "Websiteuri I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-  {
-    title: "Magazine online",
-    id: "ecommerce",
-    content:
-      "Ecommerce I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-  {
-    title: "Optimizare SEO",
-    id: "seo",
-    content:
-      "SEO I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-  {
-    title: "Mentenanta",
-    id: "Mentenanta",
-    content:
-      "Mentenanta I'm baby chartreuse master cleanse hashtag roof party retro pop-up. Meh small batch master cleanse, ugh aesthetic yes plz hoodie organic thundercats wolf dreamcatcher Brooklyn whatever. You probably haven't heard of them yes plz hella normcore adaptogen enamel pin 90's poutine bodega boys fashion axe williamsburg. Yes plz roof party pok pok ethical. Sus scenester microdosing readymade, unicorn iPhone art party shoreditch you probably haven't heard of them chartreuse. Tumblr bruh leggings chicharrones paleo iceland disrupt ramps lo-fi big mood chambray bitters.",
-  },
-];
-
-const Servicii = () => {
+const Servicii = ({
+  data: { aplicatii, design, ecommerce, mentenanta, seo, website },
+}) => {
   const [tabOpen, setTabOpen] = useState({ id: "", state: false, content: "" });
   const [isMounted, setIsMounted] = useState(false);
+
+  const formattedData = [
+    aplicatii,
+    design,
+    ecommerce,
+    mentenanta,
+    seo,
+    website,
+  ];
 
   useEffect(() => {
     setIsMounted(true);
@@ -62,7 +33,7 @@ const Servicii = () => {
     }
   };
 
-  if (!isMounted) return <Skeleton data={data} />;
+  if (!isMounted) return <Skeleton data={formattedData} />;
   return (
     <div className="w-full flex mt-16 flex-col gap-16 mb-16" id="servicii">
       {/* Title */}
@@ -78,7 +49,7 @@ const Servicii = () => {
       </motion.div>
       {/* Content servicii */}
       <div className="w-full flex flex-col gap-6">
-        {data.map((d, i) => (
+        {formattedData.map((d, i) => (
           <motion.div
             initial={{ opacity: 0, x: -100, y: -50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}

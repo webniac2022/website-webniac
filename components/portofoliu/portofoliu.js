@@ -1,32 +1,15 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React from "react";
 import { motion, useEmblaCarousel } from "../../lib/external-components";
 import Image from "next/future/image";
 import Link from "next/link";
-const data = [
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-sagui-andrea-618833_uej8z5.jpg",
-    link: "https://stc-systems.vercel.app",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-joyston-judah-933054_ketegd.jpg",
-    link: "https://stc-systems.vercel.app",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-daniel-frank-287229_f8zd7i.jpg",
-    link: "https://stc-systems.vercel.app",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663046110/WEBNIAC/pexels-tyler-lastovich-772803_wiqigx.jpg",
-    link: "https://stc-systems.vercel.app",
-  },
-];
 
-const Portofoliu = () => {
+const Portofoliu = ({
+  data: {
+    imagini: { first, second, third },
+  },
+}) => {
   const [emblaRef] = useEmblaCarousel({ align: "start", slidesToScroll: 1 });
+  const formattedData = [first, second, third];
 
   return (
     <div className="w-full flex flex-col gap-16">
@@ -43,10 +26,16 @@ const Portofoliu = () => {
       {/* carousel */}
       <div className="overflow-hidden hover:cursor-grab" ref={emblaRef}>
         <div className="flex flex-row gap-2">
-          {data.map((d, i) => (
+          {formattedData.map((d, i) => (
             <div key={i} className="flex-shrink-0">
               <Link href={d.link}>
-                <Image src={d.imgSrc} alt={d.link} width={300} height={300} />
+                <Image
+                  src={d.img.sourceUrl}
+                  alt={d.img.altText}
+                  width={300}
+                  height={300}
+                  style={{ borderRadius: 5, height: "auto" }}
+                />
               </Link>
             </div>
           ))}

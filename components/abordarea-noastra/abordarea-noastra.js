@@ -1,46 +1,10 @@
 import React from "react";
 import { Image, motion } from "../../lib/external-components";
 
-const data = [
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663674911/WEBNIAC/Asset_1_gcizec.svg",
-    title: "1. Gandim",
-    alt: "gandim",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663675037/WEBNIAC/Asset_1_ntpetf.svg",
-    title: "2. Planificam",
-    alt: "planificam",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663675162/WEBNIAC/Asset_1_exsv3d.svg",
-    title: "3. Proiectam",
-    alt: "proiectam",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663675329/WEBNIAC/Asset_1_im8amt.svg",
-    title: "4. Cream",
-    alt: "cream",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663675464/WEBNIAC/Asset_1_z68ols.svg",
-    title: "5. Testam",
-    alt: "testam",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/webniac/image/upload/v1663675577/WEBNIAC/Asset_1_dblvjf.svg",
-    title: "6. Lansam",
-    alt: "lansam",
-  },
-];
-
-const AbordareaNoastra = () => {
+const AbordareaNoastra = ({
+  data: { first, second, third, fourth, fifth, sixth },
+}) => {
+  const abordarea = [first, second, third, fourth, fifth, sixth];
   return (
     <div className="w-full flex flex-col items-center mt-16">
       <motion.div
@@ -54,7 +18,7 @@ const AbordareaNoastra = () => {
         </h1>
       </motion.div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-2 w-full">
-        {data.map((im, i) => (
+        {abordarea.map((el, i) => (
           <motion.div
             initial={{ opacity: 0, x: -100, y: -50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -76,12 +40,12 @@ const AbordareaNoastra = () => {
             key={i}
           >
             <h3 className="text-lg text-center text-darkContrastText dark:text-darkContrastText">
-              {im.title}
+              {el.title}
             </h3>
             <div className="block">
               <Image
-                src={im.imgSrc}
-                alt={im.alt}
+                src={el.img.sourceUrl}
+                alt={el.img.altText}
                 layout="responsive"
                 width={1920}
                 height={1080}
