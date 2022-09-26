@@ -8,15 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // darkBg: "#0a0c01",
-        darkBg: "#131313",
-        darkComponents: "#5f27bd",
-        darkHeading: "#D8FFF7",
-        darkContrastText: "#ffffff",
-        lightBg: "#3cd4fa",
-        lightComponents: "#0a0c01",
-        lightHeading: "#5f27bd",
-        lightContrastText: "#0a0c01",
+        lightBg: "#131313",
+        lightComponents: "#5f27bd",
+        lightHeading: "#D8FFF7",
+        lightContrastText: "#ffffff",
+        darkBg: "#3cd4fa",
+        darkComponents: "#0a0c01",
+        darkHeading: "#5f27bd",
+        darkContrastText: "#0a0c01",
       },
       backgroundImage: {
         buttonStyle: "linear-gradient(to right, #0a0c01, #5F27BD)",

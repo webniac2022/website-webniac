@@ -31,7 +31,7 @@ const Drawer = () => {
           <li key={i}>
             <Link href={`#${t.path}`} className="">
               <h2
-                className="hover:cursor-pointer text-xl"
+                className="hover:cursor-pointer text-xl text-white"
                 onClick={toggleDrawer}
               >
                 {t.name}

@@ -34,7 +34,11 @@ const Portofoliu = ({
                   alt={d.img.altText}
                   width={300}
                   height={300}
-                  style={{ borderRadius: 5, height: "auto" }}
+                  style={{
+                    borderRadius: 5,
+                    height: "auto",
+                    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                  }}
                 />
               </Link>
             </div>

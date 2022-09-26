@@ -102,7 +102,7 @@ const SeventhSection = () => {
               }}
               type="submit"
               value="Submit"
-              className="border-2 border-white font-bold text-darkContrastText dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer"
+              className="border-2 border-white font-bold text-white w-28 p-1 rounded text-center hover:cursor-pointer"
             >
               Trimite
             </motion.button>

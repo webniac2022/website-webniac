@@ -26,6 +26,7 @@ const Tehnologii = ({
       sixtheen,
       seventheen,
       eighteen,
+      ninetheen,
     },
   },
 }) => {
@@ -51,6 +52,7 @@ const Tehnologii = ({
     sixtheen,
     seventheen,
     eighteen,
+    ninetheen,
   ];
 
   return (

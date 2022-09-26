@@ -49,7 +49,7 @@ const HeroSection = ({
         transition={{ duration: 1, type: "spring", stiffness: 100 }}
         className="min-h-[50vh] col-span-7 flex flex-col justify-end items-end p-1 gap-2"
       >
-        <h1 className="text-darkContrastText dark:text-darkHeading text-6xl sm:text-9xl text-right font-bold">
+        <h1 className="text-darkHeading dark:text-darkHeading text-6xl sm:text-9xl text-right font-bold">
           <AnimatedText text={title} />
         </h1>
         <h2

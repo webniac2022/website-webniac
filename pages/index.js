@@ -303,6 +303,10 @@ export async function getStaticProps() {
                   altText
                   sourceUrl
                 }
+                ninetheen {
+                  altText
+                  sourceUrl
+                }
               }
             }
             portofoliu {

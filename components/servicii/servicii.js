@@ -79,14 +79,14 @@ const Servicii = ({
           >
             <div className="col-span-2 flex flex-row justify-center items-center">
               <div className="flex flex-col gap-1 justify-center items-center">
-                <h2 className="font-bold text-xl sm:text-3xl text-center text-darkContrastText">
+                <h2 className="font-bold text-xl sm:text-3xl text-center text-white">
                   {d.title}
                 </h2>
                 <MdArrowDropDown className="fill-white w-[35px] h-[35px]" />
               </div>
             </div>
             <div className="col-span-3 flex flex-row items-center justify-center">
-              <p className="text-sm sm:text-xl p-2 text-darkContrastText">
+              <p className="text-sm sm:text-xl p-2 text-white">
                 {tabOpen.id === d.id && tabOpen.state
                   ? d.content
                   : getPreviewContent(d.content)}

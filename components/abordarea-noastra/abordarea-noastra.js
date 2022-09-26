@@ -39,9 +39,7 @@ const AbordareaNoastra = ({
             className="flex flex-col gap-2 p-3"
             key={i}
           >
-            <h3 className="text-lg text-center text-darkContrastText dark:text-darkContrastText">
-              {el.title}
-            </h3>
+            <h3 className="text-lg text-center text-white">{el.title}</h3>
             <div className="block">
               <Image
                 src={el.img.sourceUrl}
