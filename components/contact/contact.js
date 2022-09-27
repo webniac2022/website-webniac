@@ -4,7 +4,7 @@ import { motion } from "../../lib/external-components";
 const SeventhSection = () => {
   return (
     <div
-      className="w-full mt-10 mb-16 flex flex-col gap-16 items-center"
+      className="w-full mb-16 flex flex-col gap-16 items-center"
       id="contact"
     >
       <motion.div
@@ -13,7 +13,7 @@ const SeventhSection = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="mt-16 flex flex-row justify-center"
       >
-        <h1 className="text-center font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-darkHeading">
+        <h1 className="text-center font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-lightHeading">
           Contact
         </h1>
       </motion.div>

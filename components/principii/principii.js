@@ -21,7 +21,7 @@ const Principii = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="flex flex-row justify-center mb-16"
       >
-        <h2 className="font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-darkHeading">
+        <h2 className="font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-lightHeading">
           Principii
         </h2>
       </motion.div>

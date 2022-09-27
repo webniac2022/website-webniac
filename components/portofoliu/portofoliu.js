@@ -12,14 +12,14 @@ const Portofoliu = ({
   const formattedData = [first, second, third];
 
   return (
-    <div className="w-full flex flex-col gap-16">
+    <div className="w-full flex flex-col gap-5">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
-        className="flex flex-row justify-center"
+        className="flex flex-row justify-center mb-10"
       >
-        <h2 className="text-6xl sm:text-8xl font-bold text-center text-lightContrastText dark:text-darkHeading">
+        <h2 className="text-6xl sm:text-8xl font-bold text-center text-lightContrastText dark:text-lightHeading">
           Portofoliu
         </h2>
       </motion.div>
