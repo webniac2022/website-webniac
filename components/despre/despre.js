@@ -1,7 +1,5 @@
-import React, { useState } from "react";
 import Image from "next/future/image";
 import { motion } from "../../lib/external-components";
-import { data } from "autoprefixer";
 
 const variants = {
   hidden: { opacity: 0, x: -50 },

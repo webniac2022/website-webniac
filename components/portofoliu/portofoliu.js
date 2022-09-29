@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, useEmblaCarousel } from "../../lib/external-components";
 import Image from "next/future/image";
 import Link from "next/link";

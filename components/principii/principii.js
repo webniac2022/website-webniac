@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useTransform, useScroll } from "../../lib/external-components";
 
 const useParallax = (value, distance) => {

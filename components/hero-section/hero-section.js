@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "../../lib/external-components";
 import AnimatedText from "../animated-text/animated-text";
 import Link from "next/link";

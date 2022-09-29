@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "../../lib/external-components";
 
 const Skeleton = ({ data }) => {

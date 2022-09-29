@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Image } from "../../lib/external-components";
 import { useAppContext } from "../../context/context";
 import { BsFillMoonStarsFill, BsFillSunFill, BsGlobe } from "react-icons/bs";

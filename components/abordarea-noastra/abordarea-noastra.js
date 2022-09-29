@@ -1,4 +1,3 @@
-import React from "react";
 import { Image, motion } from "../../lib/external-components";
 
 const AbordareaNoastra = ({

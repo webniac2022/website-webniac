@@ -1,10 +1,8 @@
-import React from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { useAppContext } from "../../context/context";
-import { CgClose } from "react-icons/cg";
 
-const SideDrawer = ({ tabs }) => {
-  const { toggleDrawer, showDrawer } = useAppContext();
+const SideDrawer = () => {
+  const { toggleDrawer } = useAppContext();
   return (
     <div className="md:hidden flex justify-end items-center">
       <HiMenuAlt4

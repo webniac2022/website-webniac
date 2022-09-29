@@ -1,4 +1,3 @@
-import React from "react";
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import { MdEmail, MdPhone } from "react-icons/md";

@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppContext } from "../../context/context";
 import Link from "next/link";
 import { motion } from "../../lib/external-components";

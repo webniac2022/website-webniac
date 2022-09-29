@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "../../lib/external-components";
 import { MdArrowDropDown } from "react-icons/md";
 import Skeleton from "./skeleton";

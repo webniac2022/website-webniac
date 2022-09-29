@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../header/header";
 import Head from "next/head";
 import Fab from "../fab/fab";

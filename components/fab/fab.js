@@ -1,8 +1,7 @@
-import React from "react";
 import { IoMdArrowDropup } from "react-icons/io";
-import { useRouter, useScroll, motion } from "../../lib/external-components";
+import { useRouter, motion } from "../../lib/external-components";
 import { useAppContext } from "../../context/context";
-// show Fab only when header in view
+
 const Fab = () => {
   const { showFab } = useAppContext();
 

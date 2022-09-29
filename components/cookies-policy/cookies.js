@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppContext } from "../../context/context";
 import { motion } from "../../lib/external-components";
 import { AiOutlineClose } from "react-icons/ai";
