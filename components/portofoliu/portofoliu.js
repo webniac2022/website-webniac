@@ -27,7 +27,7 @@ const Portofoliu = ({
       <div className="overflow-hidden hover:cursor-grab" ref={emblaRef}>
         <div className="flex flex-row gap-2">
           {formattedData.map((d, i) => (
-            <div key={i} className="flex-shrink-0 min-h-[25vh]">
+            <div key={i} className="flex-shrink-0">
               <Link href={d.link} passHref>
                 <a target="_blank">
                   <Image
@@ -39,6 +39,8 @@ const Portofoliu = ({
                       borderRadius: 5,
                       height: "auto",
                       boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                      width: 300,
+                      height: 150,
                     }}
                   />
                 </a>
