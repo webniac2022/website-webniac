@@ -34,7 +34,7 @@ const Portofoliu = ({
                     src={d.img.sourceUrl}
                     alt={d.img.altText}
                     width={300}
-                    height={300}
+                    height={150}
                     style={{
                       borderRadius: 5,
                       height: "auto",

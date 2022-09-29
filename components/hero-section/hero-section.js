@@ -21,18 +21,18 @@ const HeroSection = ({
           x: [50, 55, 20000],
           transition: { duration: 2.5, repeat: Infinity, repeatDelay: 1 },
         }}
-        className="col-span-2 flex items-center justify-center"
+        className="col-span-1 flex items-center justify-center"
       >
         <Image
           src={rocket.sourceUrl}
           alt={rocket.altText}
-          width={250}
-          height={250}
+          width={150}
+          height={150}
           style={{ width: "100%", height: "auto" }}
           priority
         />
       </motion.div>
-      <div className="col-span-4 flex items-center justify-center">
+      <div className="col-span-5 flex items-center justify-center">
         <Image
           src={globe.sourceUrl}
           alt={globe.altText}
