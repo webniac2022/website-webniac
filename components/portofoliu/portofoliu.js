@@ -25,7 +25,7 @@ const Portofoliu = ({
       </motion.div>
       {/* carousel */}
       <div className="overflow-hidden hover:cursor-grab" ref={emblaRef}>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-5">
           {formattedData.map((d, i) => (
             <div key={i} className="flex-shrink-0">
               <Link href={d.link} passHref>
@@ -38,7 +38,7 @@ const Portofoliu = ({
                     style={{
                       borderRadius: 5,
                       height: "auto",
-                      boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                      boxShadow: "0 8px 12px 0 rgba(255, 255, 255, 0.88)",
                       width: 300,
                       height: 150,
                     }}
