@@ -86,7 +86,7 @@ const Servicii = ({
               </div>
             </div>
             <div className="col-span-3 flex flex-row items-center justify-center">
-              <p className="text-sm sm:text-xl p-2 text-white">
+              <p className="text-xs sm:text-xl p-2 text-white">
                 {tabOpen.id === d.id && tabOpen.state
                   ? d.content
                   : getPreviewContent(d.content)}

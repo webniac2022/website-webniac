@@ -30,12 +30,13 @@ const Drawer = () => {
         {tabs.map((t, i) => (
           <li key={i}>
             <Link href={`#${t.path}`} className="">
-              <h2
+              <motion.h2
                 className="hover:cursor-pointer text-xl text-white"
                 onClick={toggleDrawer}
+                whileHover={{ opacity: 0.6 }}
               >
                 {t.name}
-              </h2>
+              </motion.h2>
             </Link>
           </li>
         ))}

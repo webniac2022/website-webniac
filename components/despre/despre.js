@@ -54,7 +54,7 @@ const Despre = ({
             />
           </div>
           <div className="col-span-4 flex flex-row justify-center items-center">
-            <h6 className="text-white text-xs sm:text-xl md:text-4xl">
+            <h6 className="text-white text-sm sm:text-xl md:text-4xl">
               {d.content}
             </h6>
           </div>

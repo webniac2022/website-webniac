@@ -27,19 +27,21 @@ const Portofoliu = ({
       <div className="overflow-hidden hover:cursor-grab" ref={emblaRef}>
         <div className="flex flex-row gap-2">
           {formattedData.map((d, i) => (
-            <div key={i} className="flex-shrink-0">
-              <Link href={d.link}>
-                <Image
-                  src={d.img.sourceUrl}
-                  alt={d.img.altText}
-                  width={300}
-                  height={300}
-                  style={{
-                    borderRadius: 5,
-                    height: "auto",
-                    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                  }}
-                />
+            <div key={i} className="flex-shrink-0 min-h-[25vh]">
+              <Link href={d.link} passHref>
+                <a target="_blank">
+                  <Image
+                    src={d.img.sourceUrl}
+                    alt={d.img.altText}
+                    width={300}
+                    height={300}
+                    style={{
+                      borderRadius: 5,
+                      height: "auto",
+                      boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                    }}
+                  />
+                </a>
               </Link>
             </div>
           ))}

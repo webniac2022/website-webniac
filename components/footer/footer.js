@@ -21,9 +21,21 @@ const Footer = () => {
         </div>
         <div className="col-span-4 sm:col-span-5 flex flex-row justify-around">
           <div className="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center justify-center">
-            <FaFacebookSquare className="fill-white w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]" />
-            <AiFillInstagram className="fill-white w-[24px] h-[24px] sm:w-[30px] sm:h-[30px]" />
-            <AiFillTwitterCircle className="fill-white w-[24px] h-[24px] sm:w-[30px] sm:h-[30px]" />
+            <Link href="https://www.facebook.com" passHref>
+              <a target="_blank">
+                <FaFacebookSquare className="fill-white w-[20px] h-[20px] sm:w-[30px] sm:h-[30px] hover:cursor-pointer" />
+              </a>
+            </Link>
+            <Link href="https://www.instagram.com" passHref>
+              <a target="_blank">
+                <AiFillInstagram className="fill-white w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] hover:cursor-pointer" />
+              </a>
+            </Link>
+            <Link href="https://www.twitter.com" passHref>
+              <a target="_blank">
+                <AiFillTwitterCircle className="fill-white w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] hover:cursor-pointer" />
+              </a>
+            </Link>
           </div>
           <div className="flex flex-col gap-1 justify-center">
             <div>
@@ -37,7 +49,7 @@ const Footer = () => {
             <div className="flex flex-row gap-2 items-center">
               <MdEmail className="fill-white" />
               <h6 className="text-white text-sm md:text-lg">
-                office@stcsystems.ro
+                office@webniac.ro
               </h6>
             </div>
             <div className="flex flex-row gap-2 items-center">

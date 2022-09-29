@@ -342,7 +342,7 @@ export async function getStaticProps() {
   const homepageResp = await client.query({ query: GET_HOMEPAGE });
   const homepageData = homepageResp?.data?.posts?.nodes[0]?.homepage;
 
-  return { props: { data: homepageData } };
+  return { props: { data: homepageData }, revalidate: 10 };
 }
 
 export default Home;
