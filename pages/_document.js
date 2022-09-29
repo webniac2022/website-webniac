@@ -5,8 +5,11 @@ export default function Document() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="/fonts/VarelaRound-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
         />
       </Head>
       <body>

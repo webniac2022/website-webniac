@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/fonts.css";
 import { AppWrapper } from "../context/context";
 import Layout from "../components/layout/layout";
 import { ThemeProvider } from "next-themes";
