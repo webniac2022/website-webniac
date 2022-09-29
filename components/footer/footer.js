@@ -9,7 +9,7 @@ import { useAppContext } from "../../context/context";
 const Footer = () => {
   const { toggleCookies } = useAppContext();
   return (
-    <div className="w-full mt-16 p-2">
+    <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">
         <div className="col-span-2 sm:col-span-1">
           <Image

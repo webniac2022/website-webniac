@@ -3,10 +3,7 @@ import { motion } from "../../lib/external-components";
 
 const SeventhSection = () => {
   return (
-    <div
-      className="w-full mb-16 flex flex-col gap-16 items-center"
-      id="contact"
-    >
+    <div className="w-full mb-5 flex flex-col gap-16 items-center" id="contact">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
