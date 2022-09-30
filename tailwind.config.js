@@ -12,7 +12,7 @@ module.exports = {
         lightComponents: "#5f27bd",
         lightHeading: "#D8FFF7",
         lightContrastText: "#ffffff",
-        darkBg: "rgba(156, 198, 246, 0.88)",
+        darkBg: "rgba(0, 255, 73, 0.8)",
         darkComponents: "#0a0c01",
         darkHeading: "#5f27bd",
         darkContrastText: "#0a0c01",

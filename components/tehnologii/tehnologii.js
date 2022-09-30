@@ -1,9 +1,9 @@
 import {
-  Image,
   Autoplay,
   useEmblaCarousel,
   motion,
 } from "../../lib/external-components";
+import Image from "next/image";
 
 const Tehnologii = ({
   data: {
