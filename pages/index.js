@@ -343,10 +343,8 @@ export async function getStaticProps() {
     }
   `;
   const homepageResp = await client.query({ query: GET_HOMEPAGE });
-  console.log(homepageResp);
   const homepageData = homepageResp?.data?.posts?.nodes[0]?.homepage?.homepage;
-
-  return { props: { data: homepageData }, revalidate: 10 };
+  return { props: { data: homepageData } };
 }
 
 export default Home;
