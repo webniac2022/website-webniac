@@ -17,10 +17,29 @@ const Layout = ({ children }) => {
         style={{ scaleX: scaleX }}
       ></motion.div>
       <Head>
-        <title>WEBNIAC - Custom web development</title>
+        <title>
+          WEBNIAC - Custom web development | Solutii digitale inedite,
+          performante, accesibile si scalabile
+        </title>
         <meta
           name="description"
-          content="Dezvoltare web custom - Aplicatii web, website-uri, optimizare SEO, promovare, design unic, performanta imbatabila datorita tehnologiilor utilizate"
+          content="Dezvoltare web custom - Aplicatii web, website-uri, optimizare SEO, design unic, performanta imbatabila datorita tehnologiilor utilizate"
+        />
+        <meta
+          name="description"
+          content="Dezvoltam solutii digitale inedite, performante, accesibile si scalabile"
+        />
+        <meta
+          name="description"
+          content="Digitalizam procesele din cadruk companiei tale prin dezvoltarea de aplicatii web."
+        />
+        <meta
+          name="description"
+          content="Construim website-uri unice, inedite, extrem de performante si scalabile"
+        />
+        <meta
+          name="description"
+          content="Utilizam abordarea headless - separarea layer-ului responsabil cu datele de layer-ul aferent frontend-ului"
         />
       </Head>
       <Header />
