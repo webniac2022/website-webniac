@@ -21,6 +21,19 @@ const Layout = ({ children }) => {
           WEBNIAC - Custom web development | Solutii digitale inedite,
           performante, accesibile si scalabile
         </title>
+        <meta property="og:title" content="WEBNIAC - Custom web development" />
+        <meta
+          name="description"
+          content="WEBNIAC - Solutii digitale inedite, performante, accesibile si scalabile"
+        />
+        <meta
+          property="og:description"
+          content="WEBNIAC - Solutii digitale inedite, performante, accesibile si scalabile"
+        />
+        <meta
+          content="https://res.cloudinary.com/webniac/image/upload/v1662567294/WEBNIAC/webniac_logo_ordcsr.svg"
+          property="og:image"
+        />
         <meta
           name="description"
           content="Dezvoltare web custom - Aplicatii web, website-uri, optimizare SEO, design unic, performanta imbatabila datorita tehnologiilor utilizate"
@@ -31,7 +44,7 @@ const Layout = ({ children }) => {
         />
         <meta
           name="description"
-          content="Digitalizam procesele din cadruk companiei tale prin dezvoltarea de aplicatii web."
+          content="Digitalizam procesele din cadrul companiei tale prin dezvoltarea de aplicatii web."
         />
         <meta
           name="description"
@@ -40,6 +53,10 @@ const Layout = ({ children }) => {
         <meta
           name="description"
           content="Utilizam abordarea headless - separarea layer-ului responsabil cu datele de layer-ul aferent frontend-ului"
+        />
+        <meta
+          name="description"
+          content="Custom web development | Aplicatii web | Website-uri | Magazine online | UI/UX Design | SEO | Mentenanta"
         />
       </Head>
       <Header />
