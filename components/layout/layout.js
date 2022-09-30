@@ -52,6 +52,10 @@ const Layout = ({ children }) => {
         />
         <meta
           name="description"
+          content="Construim magazine online performante si scalabile direct proportional cu afacerea ta!"
+        />
+        <meta
+          name="description"
           content="Utilizam abordarea headless - separarea layer-ului responsabil cu datele de layer-ul aferent frontend-ului"
         />
         <meta
