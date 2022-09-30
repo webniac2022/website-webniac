@@ -66,268 +66,271 @@ export async function getStaticProps() {
       posts {
         nodes {
           homepage {
-            abordarea {
-              fifth {
-                title
-                img {
-                  altText
-                  sourceUrl
-                }
-              }
-              first {
-                title
-                img {
-                  altText
-                  sourceUrl
-                }
-              }
-              fourth {
-                title
-                img {
-                  altText
-                  sourceUrl
-                }
-              }
-              second {
-                title
-                img {
-                  altText
-                  sourceUrl
-                }
-              }
-              sixth {
-                title
-                img {
-                  altText
-                  sourceUrl
-                }
-              }
-              third {
-                title
-                img {
-                  altText
-                  sourceUrl
-                }
-              }
-            }
-            desprelist {
-              eight {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              fifth {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              first {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              fourth {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              ninth {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              second {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              seventh {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              sixth {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-              third {
-                content
-                firstimg {
-                  altText
-                  sourceUrl
-                }
-              }
-            }
-            firstServicii {
-              fifth
-              first
-              fourth
-              second
-              sixth
-              third
-            }
-            globe {
-              altText
-              sourceUrl
-            }
-            heroimage {
-              altText
-              sourceUrl
-            }
-            rocket {
-              altText
-              sourceUrl
-            }
-            servicii {
-              aplicatii {
-                content
-                title
-                id
-              }
-              design {
-                content
-                title
-                id
-              }
-              ecommerce {
-                content
-                title
-                id
-              }
-              mentenanta {
-                content
-                title
-                id
-              }
-              seo {
-                content
-                title
-                id
-              }
-              website {
-                content
-                title
-                id
-              }
-            }
-            subtitle
-            title
-            tehnologii {
-              all {
-                eight {
-                  altText
-                  sourceUrl
-                }
-                eighteen {
-                  altText
-                  sourceUrl
-                }
-                eleven {
-                  altText
-                  sourceUrl
-                }
+            homepage {
+              abordarea {
                 fifth {
-                  altText
-                  sourceUrl
-                }
-                fiftheen {
-                  altText
-                  sourceUrl
+                  title
+                  img {
+                    altText
+                    sourceUrl
+                  }
                 }
                 first {
-                  altText
-                  sourceUrl
+                  img {
+                    altText
+                    sourceUrl
+                  }
+                  title
                 }
                 fourth {
-                  altText
-                  sourceUrl
-                }
-                fourtheen {
-                  altText
-                  sourceUrl
-                }
-                nine {
-                  altText
-                  sourceUrl
+                  img {
+                    altText
+                    sourceUrl
+                  }
+                  title
                 }
                 second {
-                  altText
-                  sourceUrl
-                }
-                seven {
-                  altText
-                  sourceUrl
-                }
-                seventheen {
-                  altText
-                  sourceUrl
+                  img {
+                    altText
+                    sourceUrl
+                  }
+                  title
                 }
                 sixth {
-                  altText
-                  sourceUrl
-                }
-                sixtheen {
-                  altText
-                  sourceUrl
-                }
-                ten {
-                  altText
-                  sourceUrl
+                  img {
+                    altText
+                    sourceUrl
+                  }
+                  title
                 }
                 third {
-                  altText
-                  sourceUrl
-                }
-                thirteen {
-                  altText
-                  sourceUrl
-                }
-                twelve {
-                  altText
-                  sourceUrl
-                }
-                ninetheen {
-                  altText
-                  sourceUrl
+                  img {
+                    altText
+                    sourceUrl
+                  }
+                  title
                 }
               }
-            }
-            portofoliu {
-              imagini {
+              cookies
+              desprelist {
+                eight {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
+                fifth {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
                 first {
-                  link
-                  img {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
+                fourth {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
+                ninth {
+                  content
+                  firstimg {
                     altText
                     sourceUrl
                   }
                 }
                 second {
-                  link
-                  img {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
+                seventh {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
+                sixth {
+                  content
+                  firstimg {
                     altText
                     sourceUrl
                   }
                 }
                 third {
-                  link
-                  img {
+                  content
+                  firstimg {
+                    altText
+                    sourceUrl
+                  }
+                }
+              }
+              firstServicii {
+                fifth
+                first
+                fourth
+                second
+                sixth
+                third
+              }
+              globe {
+                altText
+                sourceUrl
+              }
+              heroimage {
+                altText
+                sourceUrl
+              }
+              portofoliu {
+                imagini {
+                  first {
+                    link
+                    img {
+                      altText
+                      sourceUrl
+                    }
+                  }
+                  second {
+                    link
+                    img {
+                      altText
+                      sourceUrl
+                    }
+                  }
+                  third {
+                    img {
+                      altText
+                      sourceUrl
+                    }
+                    link
+                  }
+                }
+              }
+              rocket {
+                altText
+                sourceUrl
+              }
+              servicii {
+                aplicatii {
+                  content
+                  id
+                  title
+                }
+                design {
+                  content
+                  id
+                  title
+                }
+                ecommerce {
+                  content
+                  id
+                  title
+                }
+                mentenanta {
+                  content
+                  id
+                  title
+                }
+                seo {
+                  content
+                  id
+                  title
+                }
+                website {
+                  content
+                  id
+                  title
+                }
+              }
+              subtitle
+              title
+              tehnologii {
+                all {
+                  eight {
+                    altText
+                    sourceUrl
+                  }
+                  eighteen {
+                    altText
+                    sourceUrl
+                  }
+                  eleven {
+                    altText
+                    sourceUrl
+                  }
+                  fifth {
+                    altText
+                    sourceUrl
+                  }
+                  fiftheen {
+                    altText
+                    sourceUrl
+                  }
+                  first {
+                    altText
+                    sourceUrl
+                  }
+                  fourth {
+                    altText
+                    sourceUrl
+                  }
+                  fourtheen {
+                    altText
+                    sourceUrl
+                  }
+                  nine {
+                    altText
+                    sourceUrl
+                  }
+                  ninetheen {
+                    altText
+                    sourceUrl
+                  }
+                  second {
+                    altText
+                    sourceUrl
+                  }
+                  seven {
+                    altText
+                    sourceUrl
+                  }
+                  seventheen {
+                    altText
+                    sourceUrl
+                  }
+                  sixth {
+                    altText
+                    sourceUrl
+                  }
+                  sixtheen {
+                    altText
+                    sourceUrl
+                  }
+                  ten {
+                    altText
+                    sourceUrl
+                  }
+                  third {
+                    altText
+                    sourceUrl
+                  }
+                  thirteen {
+                    altText
+                    sourceUrl
+                  }
+                  twelve {
                     altText
                     sourceUrl
                   }
@@ -340,7 +343,8 @@ export async function getStaticProps() {
     }
   `;
   const homepageResp = await client.query({ query: GET_HOMEPAGE });
-  const homepageData = homepageResp?.data?.posts?.nodes[0]?.homepage;
+  console.log(homepageResp);
+  const homepageData = homepageResp?.data?.posts?.nodes[0]?.homepage?.homepage;
 
   return { props: { data: homepageData }, revalidate: 10 };
 }
