@@ -62,6 +62,10 @@ const Layout = ({ children }) => {
           name="description"
           content="Custom web development | Aplicatii web | Website-uri | Magazine online | UI/UX Design | SEO | Mentenanta"
         />
+        <meta
+          name="google-site-verification"
+          content="I9nwWNGlz8zjPf-A72me8syiJbGN-uvifbSzqiGx_dw"
+        />
       </Head>
       <Header />
       <div className="min-h-screen flex flex-col bg-lightBg dark:bg-darkBg">
