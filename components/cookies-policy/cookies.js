@@ -26,10 +26,14 @@ const Cookies = ({ data }) => {
       </div>
       <div className="w-full flex flex-col gap-10 mt-10">
         <div className="flex flex-row justify-center">
-          <h2 className="text-white font-bold text-3xl">Politica de cookies</h2>
+          <h2 className="text-white dark:text-darkComponents font-bold text-3xl">
+            Politica de cookies
+          </h2>
         </div>
         <div className="flex flex-row justify-start p-5">
-          <p className="text-white text-sm sm:text-xl">{data}</p>
+          <p className="text-white dark:text-darkComponents text-sm sm:text-xl">
+            {data}
+          </p>
         </div>
       </div>
     </motion.div>

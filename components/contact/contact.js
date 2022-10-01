@@ -54,16 +54,17 @@ const SeventhSection = () => {
               >
                 Nume
               </label>
-              <input
+              <motion.input
+                whileFocus={{ scale: 0.95, border: "2px solid white" }}
                 style={{
                   background: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  boxShadow: "0 8px 32px 0 rgba(10, 6, 6, 1)",
                   backdropFilter: "blur(9.5px)",
                   WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
-                className="p-3 rounded text-white dark:text-darkContrastText"
+                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none"
                 id="nume"
                 name="nume"
                 type="text"
@@ -76,16 +77,17 @@ const SeventhSection = () => {
               >
                 Email
               </label>
-              <input
+              <motion.input
+                whileFocus={{ scale: 0.95, border: "2px solid white" }}
                 style={{
                   background: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  boxShadow: "0 8px 32px 0 rgba(10, 6, 6, 1)",
                   backdropFilter: "blur(9.5px)",
                   WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
-                className="p-3 rounded text-white dark:text-darkContrastText"
+                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none"
                 id="email"
                 name="email"
                 type="email"
@@ -98,16 +100,17 @@ const SeventhSection = () => {
               >
                 Mesaj
               </label>
-              <textarea
+              <motion.textarea
+                whileFocus={{ scale: 0.95, border: "2px solid white" }}
                 style={{
                   background: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  boxShadow: "0 8px 32px 0 rgba(10, 6, 6, 1)",
                   backdropFilter: "blur(9.5px)",
                   WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
-                className="p-3 rounded text-white dark:text-darkContrastText"
+                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none"
                 id="mesaj"
                 name="mesaj"
                 aria-multiline={true}
