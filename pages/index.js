@@ -1,7 +1,6 @@
 import { useScroll } from "../lib/external-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/context";
-import Drawer from "../components/sidedrawer/drawer";
 import HeroSection from "../components/hero-section/hero-section";
 import AbordareaNoastra from "../components/abordarea-noastra/abordarea-noastra";
 import Tehnologii from "../components/tehnologii/tehnologii";
@@ -9,18 +8,14 @@ import Portofoliu from "../components/portofoliu/portofoliu";
 import Contact from "../components/contact/contact";
 import Principii from "../components/principii/principii";
 import Footer from "../components/footer/footer";
-import Cookies from "../components/cookies-policy/cookies";
 import HeroImage from "../components/hero-image/hero-image";
 import Despre from "../components/despre/despre";
 import Servicii from "../components/servicii/servicii";
 import client from "../lib/apollo";
 import { gql } from "@apollo/client";
-import GDPR from "../components/gdpr/gdpr";
 
 function Home({
   data: {
-    cookies,
-    gdpr,
     title,
     subtitle,
     desprelist,
@@ -35,7 +30,7 @@ function Home({
   },
 }) {
   const { scrollY } = useScroll();
-  const { setShowFab, showGDPR, showCookies } = useAppContext();
+  const { setShowFab } = useAppContext();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -47,8 +42,6 @@ function Home({
 
   return (
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
-      {showCookies && <Cookies data={cookies} />}
-      {showGDPR && <GDPR data={gdpr} />}
       <HeroSection data={{ title, subtitle, globe, rocket, firstServicii }} />
       <HeroImage data={heroimage} />
       <Despre data={desprelist} />
@@ -70,8 +63,6 @@ export async function getStaticProps() {
         nodes {
           homepage {
             homepage {
-              cookies
-              gdpr
               abordarea {
                 fifth {
                   title
@@ -116,7 +107,6 @@ export async function getStaticProps() {
                   title
                 }
               }
-              cookies
               desprelist {
                 eight {
                   content

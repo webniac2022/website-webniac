@@ -56,7 +56,7 @@ const SeventhSection = () => {
               </label>
               <motion.input
                 whileFocus={{ scale: 0.95, border: "2px solid white" }}
-                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none bg-lightBg shadow-md shadow-white dark:bg-darkBg dark:shadow-black"
+                className="p-3 rounded text-dark focus:outline-none bg-secondGradient"
                 id="nume"
                 name="nume"
                 type="text"
@@ -71,7 +71,7 @@ const SeventhSection = () => {
               </label>
               <motion.input
                 whileFocus={{ scale: 0.95, border: "2px solid white" }}
-                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none bg-lightBg shadow-md shadow-white dark:bg-darkBg dark:shadow-black"
+                className="p-3 rounded text-dark focus:outline-none bg-secondGradient"
                 id="email"
                 name="email"
                 type="email"
@@ -86,7 +86,7 @@ const SeventhSection = () => {
               </label>
               <motion.textarea
                 whileFocus={{ scale: 0.95, border: "2px solid white" }}
-                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none bg-lightBg shadow-md shadow-white dark:bg-darkBg dark:shadow-black"
+                className="p-3 rounded text-dark focus:outline-none bg-secondGradient"
                 id="mesaj"
                 name="mesaj"
                 aria-multiline={true}

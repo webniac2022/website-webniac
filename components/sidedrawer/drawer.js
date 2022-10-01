@@ -5,7 +5,6 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Drawer = () => {
   const router = useRouter();
-  console.log(router.pathname);
   const { tabs, toggleDrawer } = useAppContext();
   return (
     <motion.div

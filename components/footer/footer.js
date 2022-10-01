@@ -3,10 +3,8 @@ import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import { MdEmail, MdPhone } from "react-icons/md";
 import Image from "next/future/image";
 import Link from "next/link";
-import { useAppContext } from "../../context/context";
 
 const Footer = () => {
-  const { toggleCookies, toggleGDPR } = useAppContext();
   return (
     <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">
@@ -50,20 +48,18 @@ const Footer = () => {
               </h6>
             </div>
             <div>
-              <button
-                className="text-white dark:text-darkContrastText text-sm md:text-lg"
-                onClick={toggleCookies}
-              >
-                COOKIES
-              </button>
+              <Link href="/cookies" aria-label="Cookie policy" passHref>
+                <button className="text-white dark:text-darkContrastText text-sm md:text-lg">
+                  COOKIES
+                </button>
+              </Link>
             </div>
             <div>
-              <button
-                className="text-white dark:text-darkContrastText text-sm md:text-lg"
-                onClick={toggleGDPR}
-              >
-                GDPR
-              </button>
+              <Link href="/gdpr" passHref aria-label="GDPR Policy">
+                <button className="text-white dark:text-darkContrastText text-sm md:text-lg">
+                  GDPR
+                </button>
+              </Link>
             </div>
           </div>
         </div>

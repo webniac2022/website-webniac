@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { motion } from "../../lib/external-components";
+import { motion, useRouter } from "../../lib/external-components";
 
 const Navbar = ({ tabs }) => {
+  const router = useRouter();
   return (
     <nav className="hidden md:flex gap-4">
       {tabs.map((t, i) => (
@@ -17,7 +18,7 @@ const Navbar = ({ tabs }) => {
           }}
           key={i}
         >
-          <Link href={`${i !== 0 ? "#" : ""}${t.path}`}>
+          <Link href={router.pathname !== "/" ? `/#${t.path}` : `#${t.path}`}>
             <h6 className="font-bold text-lg z-10 text-white dark:text-darkContrastText hover:cursor-pointer">
               {t.name}
             </h6>
