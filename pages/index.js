@@ -45,7 +45,6 @@ function Home({
 
   return (
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
-      {showDrawer && <Drawer />}
       {showCookies && <Cookies data={cookies} />}
       <HeroSection data={{ title, subtitle, globe, rocket, firstServicii }} />
       <HeroImage data={heroimage} />

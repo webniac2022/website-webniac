@@ -1,9 +1,11 @@
 import { useAppContext } from "../../context/context";
 import Link from "next/link";
-import { motion } from "../../lib/external-components";
+import { motion, useRouter } from "../../lib/external-components";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Drawer = () => {
+  const router = useRouter();
+  console.log(router.pathname);
   const { tabs, toggleDrawer } = useAppContext();
   return (
     <motion.div
@@ -28,7 +30,10 @@ const Drawer = () => {
       <ul className="flex flex-col items-center justify-center mt-[20vh] gap-5">
         {tabs.map((t, i) => (
           <li key={i}>
-            <Link href={`#${t.path}`} className="">
+            <Link
+              href={router.pathname !== "/" ? `/#${t.path}` : `#${t.path}`}
+              className=""
+            >
               <motion.h2
                 className="hover:cursor-pointer text-xl font-bold text-white dark:text-darkContrastText"
                 onClick={toggleDrawer}

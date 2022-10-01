@@ -2,8 +2,11 @@ import Header from "../header/header";
 import Head from "next/head";
 import Fab from "../fab/fab";
 import { useScroll, motion, useSpring } from "../../lib/external-components";
+import ModalDrawer from "../sidedrawer/modal-drawer";
+import { useAppContext } from "../../context/context";
 
 const Layout = ({ children }) => {
+  const { showDrawer } = useAppContext();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -69,7 +72,10 @@ const Layout = ({ children }) => {
       </Head>
       <Header />
       <div className="min-h-screen flex flex-col bg-lightBg dark:bg-darkBg">
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          {showDrawer && <ModalDrawer />}
+          {children}
+        </main>
       </div>
       <Fab aria-label="Go to top" />
     </>
