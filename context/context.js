@@ -6,6 +6,8 @@ export function AppWrapper({ children }) {
   const [showFab, setShowFab] = useState(false);
   const [showDrawer, setShowDrawer] = useState(false);
   const [showCookies, setShowCookies] = useState(false);
+  const [showGDPR, setShowGDPR] = useState(false);
+
   const [tabs, setTabs] = useState([
     { name: "Acasa", path: "", id: "acasa" },
     { name: "Despre", path: "despre", id: "despre" },
@@ -15,6 +17,7 @@ export function AppWrapper({ children }) {
 
   const toggleDrawer = () => setShowDrawer(!showDrawer);
   const toggleCookies = () => setShowCookies(!showCookies);
+  const toggleGDPR = () => setShowGDPR(!showGDPR);
 
   const values = {
     tabs,
@@ -24,6 +27,8 @@ export function AppWrapper({ children }) {
     toggleDrawer,
     showCookies,
     toggleCookies,
+    showGDPR,
+    toggleGDPR,
   };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 }

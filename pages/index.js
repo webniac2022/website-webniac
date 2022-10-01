@@ -15,10 +15,12 @@ import Despre from "../components/despre/despre";
 import Servicii from "../components/servicii/servicii";
 import client from "../lib/apollo";
 import { gql } from "@apollo/client";
+import GDPR from "../components/gdpr/gdpr";
 
 function Home({
   data: {
     cookies,
+    gdpr,
     title,
     subtitle,
     desprelist,
@@ -33,7 +35,7 @@ function Home({
   },
 }) {
   const { scrollY } = useScroll();
-  const { setShowFab, showDrawer, showCookies } = useAppContext();
+  const { setShowFab, showGDPR, showCookies } = useAppContext();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -46,6 +48,7 @@ function Home({
   return (
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
       {showCookies && <Cookies data={cookies} />}
+      {showGDPR && <GDPR data={gdpr} />}
       <HeroSection data={{ title, subtitle, globe, rocket, firstServicii }} />
       <HeroImage data={heroimage} />
       <Despre data={desprelist} />
@@ -68,6 +71,7 @@ export async function getStaticProps() {
           homepage {
             homepage {
               cookies
+              gdpr
               abordarea {
                 fifth {
                   title

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useAppContext } from "../../context/context";
 
 const Footer = () => {
-  const { toggleCookies } = useAppContext();
+  const { toggleCookies, toggleGDPR } = useAppContext();
   return (
     <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">
@@ -37,14 +37,6 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col gap-1 justify-center">
-            <div>
-              <button
-                className="text-white dark:text-darkContrastText text-sm md:text-lg"
-                onClick={toggleCookies}
-              >
-                Cookies
-              </button>
-            </div>
             <div className="flex flex-row gap-2 items-center">
               <MdEmail className="fill-white dark:fill-darkContrastText" />
               <h6 className="text-white dark:text-darkContrastText text-sm md:text-lg">
@@ -56,6 +48,22 @@ const Footer = () => {
               <h6 className="text-white dark:text-darkContrastText text-sm md:text-lg">
                 0742.409.403
               </h6>
+            </div>
+            <div>
+              <button
+                className="text-white dark:text-darkContrastText text-sm md:text-lg"
+                onClick={toggleCookies}
+              >
+                COOKIES
+              </button>
+            </div>
+            <div>
+              <button
+                className="text-white dark:text-darkContrastText text-sm md:text-lg"
+                onClick={toggleGDPR}
+              >
+                GDPR
+              </button>
             </div>
           </div>
         </div>
