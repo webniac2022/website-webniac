@@ -56,15 +56,7 @@ const SeventhSection = () => {
               </label>
               <motion.input
                 whileFocus={{ scale: 0.95, border: "2px solid white" }}
-                style={{
-                  background: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 8px 32px 0 rgba(10, 6, 6, 1)",
-                  backdropFilter: "blur(9.5px)",
-                  WebkitBackdropFilter: "blur(9.5px)",
-                  borderRadius: "10px",
-                  padding: 10,
-                }}
-                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none"
+                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none bg-lightBg shadow-md shadow-white dark:bg-darkBg dark:shadow-black"
                 id="nume"
                 name="nume"
                 type="text"
@@ -79,15 +71,7 @@ const SeventhSection = () => {
               </label>
               <motion.input
                 whileFocus={{ scale: 0.95, border: "2px solid white" }}
-                style={{
-                  background: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 8px 32px 0 rgba(10, 6, 6, 1)",
-                  backdropFilter: "blur(9.5px)",
-                  WebkitBackdropFilter: "blur(9.5px)",
-                  borderRadius: "10px",
-                  padding: 10,
-                }}
-                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none"
+                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none bg-lightBg shadow-md shadow-white dark:bg-darkBg dark:shadow-black"
                 id="email"
                 name="email"
                 type="email"
@@ -102,15 +86,7 @@ const SeventhSection = () => {
               </label>
               <motion.textarea
                 whileFocus={{ scale: 0.95, border: "2px solid white" }}
-                style={{
-                  background: "rgba(255, 255, 255, 0.1)",
-                  boxShadow: "0 8px 32px 0 rgba(10, 6, 6, 1)",
-                  backdropFilter: "blur(9.5px)",
-                  WebkitBackdropFilter: "blur(9.5px)",
-                  borderRadius: "10px",
-                  padding: 10,
-                }}
-                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none"
+                className="p-3 rounded text-white dark:text-darkContrastText focus:outline-none bg-lightBg shadow-md shadow-white dark:bg-darkBg dark:shadow-black"
                 id="mesaj"
                 name="mesaj"
                 aria-multiline={true}
@@ -133,7 +109,7 @@ const SeventhSection = () => {
                 }}
                 type="submit"
                 disabled={state.submitting}
-                className="border-2 border-white dark:border-darkContrastText font-bold text-white dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer"
+                className="border-2 border-white dark:border-darkContrastText font-bold text-white dark:text-darkContrastText w-28 p-1 rounded-sm text-center hover:cursor-pointer"
               >
                 Trimite
               </motion.button>
