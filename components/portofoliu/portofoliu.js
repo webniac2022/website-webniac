@@ -27,8 +27,8 @@ const Portofoliu = ({
         <div className="flex flex-row gap-5">
           {formattedData.map((d, i) => (
             <div key={i} className="flex-shrink-0">
-              <Link href={d.link} passHref>
-                <a target="_blank">
+              <Link href={d.link} passHref aria-label={d.altText}>
+                <a target="_blank" aria-label={d.altText}>
                   <Image
                     src={d.img.sourceUrl}
                     alt={d.img.altText}

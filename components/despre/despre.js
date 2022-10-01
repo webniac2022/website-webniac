@@ -43,9 +43,9 @@ const Despre = ({
             />
           </div>
           <div className="col-span-4 flex flex-row justify-center items-center">
-            <h6 className="text-white dark:text-darkContrastText font-semibold text-sm sm:text-xl md:text-4xl">
+            <p className="text-white dark:text-darkContrastText font-semibold text-sm sm:text-xl md:text-4xl">
               {d.content}
-            </h6>
+            </p>
           </div>
         </motion.div>
       ))}
