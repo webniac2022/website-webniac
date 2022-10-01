@@ -8,7 +8,7 @@ const SideDrawer = () => {
       <HiMenuAlt4
         onClick={toggleDrawer}
         size={35}
-        className="fill-white hover:cursor-pointer"
+        className="fill-white dark:fill-darkContrastText hover:cursor-pointer"
       />
     </div>
   );

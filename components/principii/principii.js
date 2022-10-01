@@ -1,17 +1,26 @@
 import { useRef } from "react";
-import { motion, useTransform, useScroll } from "../../lib/external-components";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useSpring,
+} from "../../lib/external-components";
 
 const useParallax = (value, distance) => {
-  return useTransform(value, [0, 1], [-distance, distance]);
+  return useSpring(useTransform(value, [0, 1], [-distance, distance]), {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 };
 
 const Principii = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y1 = useParallax(scrollYProgress, 30);
-  const y2 = useParallax(scrollYProgress, 40);
-  const y3 = useParallax(scrollYProgress, 50);
-  const y4 = useParallax(scrollYProgress, 60);
+  const y1 = useParallax(scrollYProgress, 20);
+  const y2 = useParallax(scrollYProgress, 30);
+  const y3 = useParallax(scrollYProgress, 40);
+  const y4 = useParallax(scrollYProgress, 50);
 
   return (
     <div className="w-full mt-16 mb-5 sm:mb-0">
@@ -21,7 +30,7 @@ const Principii = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="flex flex-row justify-center mb-16"
       >
-        <h2 className="font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-lightHeading">
+        <h2 className="font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-darkContrastText">
           Principii
         </h2>
       </motion.div>

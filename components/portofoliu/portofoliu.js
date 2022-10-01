@@ -18,7 +18,7 @@ const Portofoliu = ({
         transition={{ type: "spring", stiffness: 100 }}
         className="flex flex-row justify-center mb-10"
       >
-        <h2 className="text-6xl sm:text-8xl font-bold text-center text-lightContrastText dark:text-lightHeading">
+        <h2 className="text-6xl sm:text-8xl font-bold text-center text-lightContrastText dark:text-darkContrastText">
           Portofoliu
         </h2>
       </motion.div>

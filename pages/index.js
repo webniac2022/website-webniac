@@ -18,6 +18,7 @@ import { gql } from "@apollo/client";
 
 function Home({
   data: {
+    cookies,
     title,
     subtitle,
     desprelist,
@@ -45,7 +46,7 @@ function Home({
   return (
     <div className="p-1 flex flex-col min-h-full overflow-x-hidden items-center">
       {showDrawer && <Drawer />}
-      {showCookies && <Cookies />}
+      {showCookies && <Cookies data={cookies} />}
       <HeroSection data={{ title, subtitle, globe, rocket, firstServicii }} />
       <HeroImage data={heroimage} />
       <Despre data={desprelist} />
@@ -67,6 +68,7 @@ export async function getStaticProps() {
         nodes {
           homepage {
             homepage {
+              cookies
               abordarea {
                 fifth {
                   title

@@ -48,7 +48,7 @@ const HeroSection = ({
         transition={{ duration: 1, type: "spring", stiffness: 100 }}
         className="min-h-[50vh] col-span-6 flex flex-col justify-end items-end p-1 gap-2"
       >
-        <h1 className="text-darkHeading dark:text-lightHeading text-6xl sm:text-9xl text-right font-bold">
+        <h1 className="text-darkHeading dark:text-darkContrastText text-6xl sm:text-9xl text-right font-bold">
           <AnimatedText text={title} />
         </h1>
         <h2
@@ -61,17 +61,29 @@ const HeroSection = ({
         >
           {subtitle}
         </h2>
-        <h2 className="text-white text-right font-bold">{first}</h2>
-        <h2 className="text-white text-right font-bold">{second}</h2>
-        <h2 className="text-white text-right font-bold">{third}</h2>
-        <h2 className="text-white text-right font-bold">{fourth}</h2>
-        <h2 className="text-white text-right font-bold">{fifth}</h2>
-        <h2 className="text-white text-right font-bold">{sixth}</h2>
+        <h2 className="text-white dark:text-darkContrastText text-right font-bold">
+          {first}
+        </h2>
+        <h2 className="text-white dark:text-darkContrastText text-right font-bold">
+          {second}
+        </h2>
+        <h2 className="text-white dark:text-darkContrastText text-right font-bold">
+          {third}
+        </h2>
+        <h2 className="text-white dark:text-darkContrastText text-right font-bold">
+          {fourth}
+        </h2>
+        <h2 className="text-white dark:text-darkContrastText text-right font-bold">
+          {fifth}
+        </h2>
+        <h2 className="text-white dark:text-darkContrastText text-right font-bold">
+          {sixth}
+        </h2>
         <div className="flex flex-row">
           <Link href="/#contact">
             <motion.button
               whileHover={{ scale: 0.95, opacity: 0.65 }}
-              className="p-2 text-white border-2 border-white"
+              className="p-2 text-white font-bold dark:text-darkContrastText border-2 border-white dark:border-darkContrastText"
               style={{
                 background: "rgba( 255, 255, 255, 0.1 )",
                 boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",

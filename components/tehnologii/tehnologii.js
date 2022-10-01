@@ -63,7 +63,7 @@ const Tehnologii = ({
         transition={{ type: "spring", stiffness: 100 }}
         className="flex justify-center"
       >
-        <h2 className="font-bold text-6xl sm:text-8xl text-center text-lightContrastText dark:text-lightHeading">
+        <h2 className="font-bold text-6xl sm:text-8xl text-center text-lightContrastText dark:text-darkContrastText">
           Tehnologii
         </h2>
       </motion.div>

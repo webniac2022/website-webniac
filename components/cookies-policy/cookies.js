@@ -2,7 +2,7 @@ import { useAppContext } from "../../context/context";
 import { motion } from "../../lib/external-components";
 import { AiOutlineClose } from "react-icons/ai";
 
-const Cookies = () => {
+const Cookies = ({ data }) => {
   const { toggleCookies } = useAppContext();
   return (
     <motion.div
@@ -24,7 +24,14 @@ const Cookies = () => {
           size={30}
         />
       </div>
-      <h2>Cookies policy</h2>
+      <div className="w-full flex flex-col gap-10 mt-10">
+        <div className="flex flex-row justify-center">
+          <h2 className="text-white font-bold text-3xl">Politica de cookies</h2>
+        </div>
+        <div className="flex flex-row justify-start p-5">
+          <p className="text-white text-sm sm:text-xl">{data}</p>
+        </div>
+      </div>
     </motion.div>
   );
 };

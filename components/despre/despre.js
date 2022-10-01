@@ -1,15 +1,6 @@
 import Image from "next/future/image";
 import { motion } from "../../lib/external-components";
 
-const variants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { type: "spring", stiffness: 100 },
-  },
-};
-
 const Despre = ({
   data: { first, second, third, fourth, fifth, sixth, seventh, eight, ninth },
 }) => {
@@ -52,7 +43,7 @@ const Despre = ({
             />
           </div>
           <div className="col-span-4 flex flex-row justify-center items-center">
-            <h6 className="text-white text-sm sm:text-xl md:text-4xl">
+            <h6 className="text-white dark:text-darkContrastText font-semibold text-sm sm:text-xl md:text-4xl">
               {d.content}
             </h6>
           </div>

@@ -21,7 +21,7 @@ const Drawer = () => {
       <div className="flex flex-row justify-end">
         <AiOutlineClose
           onClick={toggleDrawer}
-          className="mt-[5vh] mr-[10vw] fill-white hover:cursor-pointer"
+          className="mt-[5vh] mr-[10vw] fill-white dark:fill-darkContrastText hover:cursor-pointer"
           size={30}
         />
       </div>
@@ -30,7 +30,7 @@ const Drawer = () => {
           <li key={i}>
             <Link href={`#${t.path}`} className="">
               <motion.h2
-                className="hover:cursor-pointer text-xl text-white"
+                className="hover:cursor-pointer text-xl font-bold text-white dark:text-darkContrastText"
                 onClick={toggleDrawer}
                 whileHover={{ opacity: 0.6 }}
               >

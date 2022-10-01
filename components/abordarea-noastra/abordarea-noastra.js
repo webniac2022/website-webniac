@@ -12,7 +12,7 @@ const AbordareaNoastra = ({
         transition={{ type: "spring", stiffness: 100 }}
         className="flex justify-center mb-10"
       >
-        <h1 className="text-lightContrastText dark:text-lightHeading text-center text-5xl sm:text-8xl p-2 font-bold">
+        <h1 className="text-lightContrastText dark:text-darkContrastText text-center text-5xl sm:text-8xl p-2 font-bold">
           Abordarea noastra
         </h1>
       </motion.div>
@@ -38,7 +38,9 @@ const AbordareaNoastra = ({
             className="flex flex-col gap-2 p-3"
             key={i}
           >
-            <h3 className="text-lg text-center text-white">{el.title}</h3>
+            <h3 className="text-lg text-center text-white dark:text-darkContrastText">
+              {el.title}
+            </h3>
             <div className="block">
               <Image
                 src={el.img.sourceUrl}

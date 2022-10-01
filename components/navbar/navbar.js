@@ -18,7 +18,7 @@ const Navbar = ({ tabs }) => {
           key={i}
         >
           <Link href={`${i !== 0 ? "#" : ""}${t.path}`}>
-            <h6 className="font-bold text-lg z-10 text-white hover:cursor-pointer">
+            <h6 className="font-bold text-lg z-10 text-white dark:text-darkContrastText hover:cursor-pointer">
               {t.name}
             </h6>
           </Link>

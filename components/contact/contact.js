@@ -13,7 +13,7 @@ const SeventhSection = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="mt-16 flex flex-row justify-center"
       >
-        <h1 className="text-center font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-lightHeading">
+        <h1 className="text-center font-bold text-6xl sm:text-8xl text-lightContrastText dark:text-darkContrastText">
           Contact
         </h1>
       </motion.div>
@@ -48,7 +48,10 @@ const SeventhSection = () => {
             className="flex-grow gap-6 flex flex-col items-center"
           >
             <div className="flex flex-col gap-2 w-[80%]">
-              <label className="text-white text-xl" htmlFor="nume">
+              <label
+                className="text-white dark:text-darkContrastText text-xl"
+                htmlFor="nume"
+              >
                 Nume
               </label>
               <input
@@ -60,14 +63,17 @@ const SeventhSection = () => {
                   borderRadius: "10px",
                   padding: 10,
                 }}
-                className="p-3 rounded text-white"
+                className="p-3 rounded text-white dark:text-darkContrastText"
                 id="nume"
                 name="nume"
                 type="text"
               />
             </div>
             <div className="flex flex-col gap-2 w-[80%]">
-              <label className="text-white text-xl" htmlFor="email">
+              <label
+                className="text-white dark:text-darkContrastText text-xl"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
@@ -79,14 +85,17 @@ const SeventhSection = () => {
                   borderRadius: "10px",
                   padding: 10,
                 }}
-                className="p-3 rounded text-white"
+                className="p-3 rounded text-white dark:text-darkContrastText"
                 id="email"
                 name="email"
                 type="email"
               />
             </div>
             <div className="flex flex-col gap-2 w-[80%]">
-              <label className="text-xl text-white" htmlFor="mesaj">
+              <label
+                className="text-xl text-white dark:text-darkContrastText"
+                htmlFor="mesaj"
+              >
                 Mesaj
               </label>
               <textarea
@@ -98,7 +107,7 @@ const SeventhSection = () => {
                   borderRadius: "10px",
                   padding: 10,
                 }}
-                className="p-3 rounded text-white"
+                className="p-3 rounded text-white dark:text-darkContrastText"
                 id="mesaj"
                 name="mesaj"
                 aria-multiline={true}
@@ -121,7 +130,7 @@ const SeventhSection = () => {
                 }}
                 type="submit"
                 disabled={state.submitting}
-                className="border-2 border-white font-bold text-white w-28 p-1 rounded text-center hover:cursor-pointer"
+                className="border-2 border-white dark:border-darkContrastText font-bold text-white dark:text-darkContrastText w-28 p-1 rounded text-center hover:cursor-pointer"
               >
                 Trimite
               </motion.button>

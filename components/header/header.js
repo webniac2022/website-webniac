@@ -33,13 +33,13 @@ const Header = () => {
       <div className="col-span-3 sm:col-span-2 flex flex-row justify-center items-center">
         {theme === "dark" ? (
           <BsFillMoonStarsFill
-            className="fill-white hover:cursor-pointer animate-pulse"
+            className="fill-white dark:fill-darkContrastText hover:cursor-pointer animate-pulse"
             size={20}
             onClick={() => setTheme("light")}
           />
         ) : (
           <BsFillSunFill
-            className="fill-white hover:cursor-pointer animate-pulse"
+            className="fill-white dark:fill-darkContrastText hover:cursor-pointer animate-pulse"
             size={20}
             onClick={() => setTheme("dark")}
           />
@@ -51,7 +51,10 @@ const Header = () => {
         <SideDrawer tabs={tabs} />
       </div>
       <div className="flex justify-center items-center col-span-1 sm:col-span-1 pr-2">
-        <BsGlobe size={20} className="fill-white hover:cursor-pointer" />
+        <BsGlobe
+          size={20}
+          className="fill-white dark:fill-darkContrastText hover:cursor-pointer"
+        />
       </div>
     </motion.div>
   );

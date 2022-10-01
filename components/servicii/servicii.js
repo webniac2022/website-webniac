@@ -43,7 +43,7 @@ const Servicii = ({
         transition={{ type: "spring", stiffness: 100 }}
         className="flex flex-row justify-center"
       >
-        <h2 className="text-6xl sm:text-8xl font-bold text-lightContrastText dark:text-lightHeading">
+        <h2 className="text-6xl sm:text-8xl font-bold text-lightContrastText dark:text-darkContrastText">
           Servicii
         </h2>
       </motion.div>
@@ -65,7 +65,7 @@ const Servicii = ({
             }}
             layout
             style={{
-              height: tabOpen.id === d.id && tabOpen.state && "500px",
+              height: "auto",
               background: "rgba( 255, 255, 255, 0.1 )",
               boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
               backdropFilter: "blur( 9.5px )",
@@ -79,14 +79,20 @@ const Servicii = ({
           >
             <div className="col-span-2 flex flex-row justify-center items-center">
               <div className="flex flex-col gap-1 justify-center items-center">
-                <h2 className="font-bold text-xl sm:text-3xl text-center text-white">
+                <h2 className="font-bold text-xl sm:text-3xl text-center text-white dark:text-darkContrastText">
                   {d.title}
                 </h2>
-                <MdArrowDropDown className="fill-white w-[35px] h-[35px]" />
+                <MdArrowDropDown className="fill-white dark:fill-darkContrastText w-[35px] h-[35px]" />
               </div>
             </div>
             <div className="col-span-3 flex flex-row items-center justify-center">
-              <p className="text-xs sm:text-xl p-2 text-white">
+              <p
+                className={
+                  tabOpen.id === d.id && tabOpen.state
+                    ? `text-lg md:text-2xl p-2 text-white dark:text-darkContrastText`
+                    : `text-xs md:text-xl p-2 text-white dark:text-darkContrastText`
+                }
+              >
                 {tabOpen.id === d.id && tabOpen.state
                   ? d.content
                   : getPreviewContent(d.content)}
