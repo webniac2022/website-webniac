@@ -56,10 +56,10 @@ const SeventhSection = () => {
               </label>
               <input
                 style={{
-                  background: "rgba( 255, 255, 255, 0.1 )",
-                  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                  backdropFilter: "blur( 9.5px )",
-                  WebkitBackdropFilter: "blur( 9.5px )",
+                  background: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  backdropFilter: "blur(9.5px)",
+                  WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
@@ -78,10 +78,10 @@ const SeventhSection = () => {
               </label>
               <input
                 style={{
-                  background: "rgba( 255, 255, 255, 0.1 )",
-                  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                  backdropFilter: "blur( 9.5px )",
-                  WebkitBackdropFilter: "blur( 9.5px )",
+                  background: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  backdropFilter: "blur(9.5px)",
+                  WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
@@ -100,10 +100,10 @@ const SeventhSection = () => {
               </label>
               <textarea
                 style={{
-                  background: "rgba( 255, 255, 255, 0.1 )",
-                  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                  backdropFilter: "blur( 9.5px )",
-                  WebkitBackdropFilter: "blur( 9.5px )",
+                  background: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  backdropFilter: "blur(9.5px)",
+                  WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
@@ -121,10 +121,10 @@ const SeventhSection = () => {
                   opacity: 0.65,
                 }}
                 style={{
-                  background: "rgba( 255, 255, 255, 0.1 )",
-                  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                  backdropFilter: "blur( 9.5px )",
-                  WebkitBackdropFilter: "blur( 9.5px )",
+                  background: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+                  backdropFilter: "blur(9.5px)",
+                  WebkitBackdropFilter: "blur(9.5px)",
                   borderRadius: "10px",
                   padding: 10,
                 }}
