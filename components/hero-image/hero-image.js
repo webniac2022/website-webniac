@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import { Image } from "../../lib/external-components";
 
 const HeroImage = ({ data }) => {
   return (

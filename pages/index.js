@@ -12,6 +12,7 @@ import HeroImage from "../components/hero-image/hero-image";
 import Despre from "../components/despre/despre";
 import Servicii from "../components/servicii/servicii";
 import client from "../lib/apollo";
+import Fab from "../components/fab/fab";
 import { gql } from "@apollo/client";
 
 function Home({
@@ -52,6 +53,7 @@ function Home({
       <Portofoliu data={portofoliu} />
       <Contact />
       <Footer />
+      <Fab aria-label="Go to top" />
     </div>
   );
 }

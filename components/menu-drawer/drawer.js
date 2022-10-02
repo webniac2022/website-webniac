@@ -1,7 +1,10 @@
 import { useAppContext } from "../../context/context";
 import Link from "next/link";
-import { motion, useRouter } from "../../lib/external-components";
-import { AiOutlineClose } from "react-icons/ai";
+import {
+  motion,
+  useRouter,
+  AiOutlineClose,
+} from "../../lib/external-components";
 
 const Drawer = () => {
   const router = useRouter();

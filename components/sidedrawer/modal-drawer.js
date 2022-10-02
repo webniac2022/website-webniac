@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
-import Drawer from "./drawer";
+import { createPortal } from "../../lib/external-components";
 
-const ModalDrawer = () => {
+const ModalDrawer = ({ component }) => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
@@ -10,7 +9,7 @@ const ModalDrawer = () => {
   }, []);
 
   if (isBrowser) {
-    return createPortal(<Drawer />, document.getElementById("modal-root"));
+    return createPortal(component, document.getElementById("modal-root"));
   } else return null;
 };
 

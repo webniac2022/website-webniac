@@ -1,12 +1,14 @@
 import Header from "../header/header";
 import Head from "next/head";
-import Fab from "../fab/fab";
 import { useScroll, motion, useSpring } from "../../lib/external-components";
 import ModalDrawer from "../sidedrawer/modal-drawer";
+import Drawer from "../menu-drawer/drawer";
+import CookieDrawer from "../cookie-drawer/cookie-drawer";
 import { useAppContext } from "../../context/context";
+import CookieConsent from "../cookie-consent/cookie-consent";
 
 const Layout = ({ children }) => {
-  const { showDrawer } = useAppContext();
+  const { showDrawer, showCookie, cookieState } = useAppContext();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -73,11 +75,12 @@ const Layout = ({ children }) => {
       <Header />
       <div className="min-h-screen flex flex-col bg-lightBg dark:bg-darkBg">
         <main className="flex-grow">
-          {showDrawer && <ModalDrawer />}
+          {showDrawer && <ModalDrawer component={<Drawer />} />}
+          {showCookie && <ModalDrawer component={<CookieDrawer />} />}
+          {cookieState.showCookieConsent && <CookieConsent />}
           {children}
         </main>
       </div>
-      <Fab aria-label="Go to top" />
     </>
   );
 };
