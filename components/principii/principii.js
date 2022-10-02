@@ -6,7 +6,7 @@ import {
   useSpring,
 } from "../../lib/external-components";
 
-const useParallax = (value, distance) => {
+export const useParallax = (value, distance) => {
   return useSpring(useTransform(value, [0, 1], [-distance, distance]), {
     stiffness: 100,
     damping: 30,

@@ -1,7 +1,9 @@
-import { motion } from "../../lib/external-components";
+import { motion, useScroll } from "../../lib/external-components";
 import AnimatedText from "../animated-text/animated-text";
 import Link from "next/link";
 import Image from "next/future/image";
+import { useParallax } from "../principii/principii";
+import { useRef } from "react";
 
 const HeroSection = ({
   data: {
@@ -12,6 +14,10 @@ const HeroSection = ({
     firstServicii: { first, second, third, fourth, fifth, sixth },
   },
 }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y1 = useParallax(scrollYProgress, 20);
+
   return (
     <div className="w-full grid grid-cols-12 overflow-hidden" id="/">
       <motion.div
@@ -31,7 +37,11 @@ const HeroSection = ({
           priority
         />
       </motion.div>
-      <div className="col-span-5 flex items-center justify-center">
+      <motion.div
+        className="col-span-5 flex items-center justify-center"
+        ref={ref}
+        style={{ y: y1 }}
+      >
         <Image
           src={globe.sourceUrl}
           alt={globe.altText}
@@ -40,7 +50,7 @@ const HeroSection = ({
           style={{ width: "90%", height: "auto" }}
           priority
         />
-      </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 5, x: 50 }}

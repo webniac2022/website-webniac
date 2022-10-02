@@ -23,6 +23,7 @@ module.exports = {
         secondGradient: "linear-gradient(to right, #bdc3c7, #fffc00)",
         thirdGradient: "linear-gradient(to right, #00c9ff, #92fe9d)",
         fourthGradient: "linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)",
+        fifthGradient: "linear-gradient(to right, #232526, #414345);",
       },
     },
   },
