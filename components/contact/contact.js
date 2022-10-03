@@ -1,6 +1,7 @@
 import { motion } from "../../lib/external-components";
 import { useForm } from "@formspree/react";
 import { MdCelebration } from "react-icons/md";
+import { event } from "../../lib/ga";
 
 const SeventhSection = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
@@ -55,7 +56,13 @@ const SeventhSection = () => {
                 Nume
               </label>
               <motion.input
-                whileFocus={{ scale: 0.95, border: "2px solid white" }}
+                whileFocus={() => {
+                  event({
+                    action: "focus field Nume contactForm",
+                    params: { search_term: "contact_form_nume" },
+                  });
+                  return { scale: 0.95, border: "2px solid white" };
+                }}
                 className="p-3 rounded-lg text-dark focus:outline-none bg-fifthGradient dark:bg-secondGradient text-white dark:text-darkComponents"
                 id="nume"
                 name="nume"
