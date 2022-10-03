@@ -7,6 +7,7 @@ import SideDrawer from "../sidedrawer/sidedrawer";
 import { useTheme } from "next-themes";
 import SkeletonHeader from "./skeleton-header";
 import { motion } from "../../lib/external-components";
+import { event } from "../../lib/ga";
 
 const Header = () => {
   const { tabs } = useAppContext();
@@ -35,7 +36,13 @@ const Header = () => {
           <BsFillMoonStarsFill
             className="fill-white dark:fill-darkContrastText hover:cursor-pointer animate-pulse"
             size={20}
-            onClick={() => setTheme("light")}
+            onClick={() => {
+              event({
+                action: "change theme",
+                params: { search_term: "change_theme" },
+              });
+              setTheme("light");
+            }}
           />
         ) : (
           <BsFillSunFill
