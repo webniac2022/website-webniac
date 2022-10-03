@@ -1,32 +1,67 @@
 import Header from "../header/header";
 import Head from "next/head";
-import { useScroll, motion, useSpring } from "../../lib/external-components";
+import {
+  useScroll,
+  motion,
+  useSpring,
+  useRouter,
+} from "../../lib/external-components";
 import ModalDrawer from "../sidedrawer/modal-drawer";
 import Drawer from "../menu-drawer/drawer";
-import CookieDrawer from "../cookie-drawer/cookie-drawer";
 import { useAppContext } from "../../context/context";
+import Script from "next/script";
+import { getCookie } from "../../lib/cookies";
 import CookieConsent from "../cookie-consent/cookie-consent";
+import CookieSettings from "../aditional-settings-cookie-screen/cookie-settings-screen";
 
 const Layout = ({ children }) => {
-  const { showDrawer, showCookie, cookieState } = useAppContext();
+  const { showDrawer, cookieState } = useAppContext();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   const handleRouteChange = (url) => {
+  //     pageView(url);
+  //   };
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
+
   return (
     <>
+      {/* Ganalythics */}
+
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      ></Script>
+
+      <Script id="google-analythics-script" strategy="afterInteractive">{`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+      page_path: window.location.pathname,
+      });
+      `}</Script>
+
       <motion.div
         className="fixed top-0 left-0 right-0 h-[5px] bg-white z-30"
         style={{ scaleX: scaleX }}
       ></motion.div>
       <Head>
         <title>
-          WEBNIAC - Custom web development | Solutii digitale inedite,
+          WEBNIAC - Dezvoltare web custom | Solutii digitale inedite,
           performante, accesibile si scalabile
         </title>
-        <meta property="og:title" content="WEBNIAC - Custom web development" />
+        <meta property="og:title" content="WEBNIAC - Dezvoltare web custom" />
         <meta
           name="description"
           content="WEBNIAC - Solutii digitale inedite, performante, accesibile si scalabile"
@@ -76,8 +111,12 @@ const Layout = ({ children }) => {
       <div className="min-h-screen flex flex-col bg-lightBg dark:bg-darkBg">
         <main className="flex-grow">
           {showDrawer && <ModalDrawer component={<Drawer />} />}
-          {showCookie && <ModalDrawer component={<CookieDrawer />} />}
+          {cookieState.showAditionalSettingScreen && (
+            <ModalDrawer component={<CookieSettings />} />
+          )}
+
           {cookieState.showCookieConsent && <CookieConsent />}
+
           {children}
         </main>
       </div>

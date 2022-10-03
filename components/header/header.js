@@ -37,10 +37,6 @@ const Header = () => {
             className="fill-white dark:fill-darkContrastText hover:cursor-pointer animate-pulse"
             size={20}
             onClick={() => {
-              event({
-                action: "change theme",
-                params: { search_term: "change_theme" },
-              });
               setTheme("light");
             }}
           />
@@ -58,10 +54,10 @@ const Header = () => {
         <SideDrawer tabs={tabs} />
       </div>
       <div className="flex justify-center items-center col-span-1 sm:col-span-1 pr-2">
-        <BsGlobe
+        {/* <BsGlobe
           size={20}
           className="fill-white dark:fill-darkContrastText hover:cursor-pointer"
-        />
+        /> */}
       </div>
     </motion.div>
   );

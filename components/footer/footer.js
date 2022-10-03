@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useAppContext } from "../../context/context";
 
 const Footer = () => {
-  const { toggleCookieDrawer } = useAppContext();
+  const { setCookieState, cookieState } = useAppContext();
   return (
     <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">
@@ -51,7 +51,13 @@ const Footer = () => {
             </div>
             <div>
               <button
-                onClick={toggleCookieDrawer}
+                onClick={() =>
+                  setCookieState({
+                    ...cookieState,
+                    showAditionalSettingScreen:
+                      !cookieState.showAditionalSettingScreen,
+                  })
+                }
                 className="text-white dark:text-darkContrastText text-sm md:text-lg"
               >
                 Cookies

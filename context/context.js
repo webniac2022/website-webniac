@@ -1,17 +1,30 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [showFab, setShowFab] = useState(false);
   const [showDrawer, setShowDrawer] = useState(false);
-  const [showCookie, setShowCookie] = useState(false);
   const [cookieState, setCookieState] = useState({
-    showCookieConsent: true,
-    esentiale: { isAccepted: true },
+    esentiale: { isAccepted: false },
     analitice: { isAccepted: false },
     reclame: { isAccepted: false },
+    userDenied: false,
+    userAccepted: false,
+    showAditionalSettingScreen: false,
+    showCookieConsent: true,
   });
+
+  useEffect(() => {
+    console.log(cookieState);
+  }, [cookieState]);
+
+  const showCookieConsent = () => {
+    if (cookieState.userDenied || cookieState.userAccepted) {
+      return false;
+    }
+    return true;
+  };
 
   const [tabs, setTabs] = useState([
     { name: "Acasa", path: "", id: "acasa" },
@@ -21,7 +34,6 @@ export function AppWrapper({ children }) {
   ]);
 
   const toggleDrawer = () => setShowDrawer(!showDrawer);
-  const toggleCookieDrawer = () => setShowCookie(!showCookie);
 
   const values = {
     tabs,
@@ -29,9 +41,8 @@ export function AppWrapper({ children }) {
     setShowFab,
     showDrawer,
     toggleDrawer,
-    showCookie,
-    toggleCookieDrawer,
     cookieState,
+    showCookieConsent,
     setCookieState,
   };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

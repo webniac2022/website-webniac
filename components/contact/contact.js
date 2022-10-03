@@ -2,9 +2,11 @@ import { motion } from "../../lib/external-components";
 import { useForm } from "@formspree/react";
 import { MdCelebration } from "react-icons/md";
 import { event } from "../../lib/ga";
+import { useAppContext } from "../../context/context";
 
 const SeventhSection = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
+  const {} = useAppContext();
 
   return (
     <div className="w-full mb-5 flex flex-col gap-16 items-center" id="contact">
@@ -57,10 +59,6 @@ const SeventhSection = () => {
               </label>
               <motion.input
                 whileFocus={() => {
-                  event({
-                    action: "focus field Nume contactForm",
-                    params: { search_term: "contact_form_nume" },
-                  });
                   return { scale: 0.95, border: "2px solid white" };
                 }}
                 className="p-3 rounded-lg text-dark focus:outline-none bg-fifthGradient dark:bg-secondGradient text-white dark:text-darkComponents"

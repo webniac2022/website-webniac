@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/future/image";
 import { useParallax } from "../principii/principii";
 import { useRef } from "react";
-import { event } from "../../lib/ga";
+import { useAppContext } from "../../context/context";
 
 const HeroSection = ({
   data: {
@@ -15,6 +15,7 @@ const HeroSection = ({
     firstServicii: { first, second, third, fourth, fifth, sixth },
   },
 }) => {
+  const { cookieState } = useAppContext();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y1 = useParallax(scrollYProgress, 20);
@@ -93,12 +94,6 @@ const HeroSection = ({
         <div className="flex flex-row">
           <Link href="/#contact">
             <motion.button
-              onClick={() => {
-                event({
-                  action: "solicita oferta btn",
-                  params: { search_term: "solicita_oferta_main_page" },
-                });
-              }}
               whileHover={{ scale: 0.95, opacity: 0.65 }}
               className="p-2 text-white font-bold dark:text-darkContrastText border-2 border-white dark:border-darkContrastText"
               style={{
