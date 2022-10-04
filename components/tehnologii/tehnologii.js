@@ -2,8 +2,8 @@ import {
   Autoplay,
   useEmblaCarousel,
   motion,
+  Image,
 } from "../../lib/external-components";
-import Image from "next/image";
 
 const Tehnologii = ({
   data: {
@@ -70,14 +70,8 @@ const Tehnologii = ({
       <div ref={emblaRef} className="w-full overflow-hidden bg-white">
         <div className="flex flex-grow bg-white p-1">
           {formattedData.map((d, i) => (
-            <div key={i} className="relative w-[120px] h-[80px]">
-              <Image
-                src={d.sourceUrl}
-                alt={d.altText}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
+            <div key={i} className="relative w-[120px] h-[70px]">
+              <Image src={d.sourceUrl} alt={d.altText} fill sizes="33vw" />
             </div>
           ))}
         </div>

@@ -31,7 +31,7 @@ function Home({
   },
 }) {
   const { scrollY } = useScroll();
-  const { setShowFab } = useAppContext();
+  const { setShowFab, dispatch } = useAppContext();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {

@@ -1,14 +1,13 @@
-import { useAppContext } from "../../context/context";
 import { motion, AiOutlineClose } from "../../lib/external-components";
 import { RiAdvertisementFill } from "react-icons/ri";
 import { MdSettings } from "react-icons/md";
 import { IoMdAnalytics } from "react-icons/io";
 import SwitchButton from "../switch-button/switch-button";
 import { AiOutlineCheck } from "react-icons/ai";
-import { useState } from "react";
+import { useAppContext } from "../../context/context";
 
 const CookieSettings = () => {
-  const { cookieState, setCookieState } = useAppContext();
+  const { cookies, setCookie, removeCookie, dispatch, state } = useAppContext();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.2 }}
@@ -20,11 +19,7 @@ const CookieSettings = () => {
         <div className="flex flex-row justify-end">
           <AiOutlineClose
             onClick={() =>
-              setCookieState({
-                ...cookieState,
-                showAditionalSettingScreen:
-                  !cookieState.showAditionalSettingScreen,
-              })
+              dispatch({ type: "cookieSettingsScreen", payload: false })
             }
             className="mt-[5vh] mr-[5vw] fill-white dark:fill-darkContrastText hover:cursor-pointer"
             size={30}
@@ -41,42 +36,18 @@ const CookieSettings = () => {
             fisierelor de tip cookie, dupa cum urmeaza:
           </p>
         </div>
-        <div className="flex flex-row gap-2 items-center justify-between">
+        <div className="flex flex-row gap-2 items-center">
           <div className="flex flex-row items-center gap-2">
             <div>
               <motion.button
-                onClick={() =>
-                  setCookieState({
-                    ...cookieState,
-                    esentiale: { isAccepted: true },
-                    analitice: { isAccepted: true },
-                    reclame: { isAccepted: true },
-                    userDenied: false,
-                    userAccepted: true,
-                    showAditionalSettingScreen: true,
-                  })
-                }
+                onClick={() => dispatch({ type: "toate" })}
                 whileHover={{ scale: 0.95 }}
                 transition={{ type: "spring" }}
                 className="p-2 rounded-lg bg-yellow-300 text-black"
               >
-                Bifeaza tot
+                Selecteaza tot
               </motion.button>
             </div>
-          </div>
-
-          <div>
-            <motion.button
-              onClick={() => {
-                // Set cookies!
-              }}
-              whileHover={{ scale: 0.95 }}
-              transition={{ type: "spring" }}
-              className="p-2 bg-green-300 rounded-lg flex flex-row items-center gap-2 text-black"
-            >
-              <AiOutlineCheck className="fill-black dark:fill-black w-[20px] h-[20px]" />
-              Salveaza
-            </motion.button>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -90,27 +61,17 @@ const CookieSettings = () => {
             <div>
               <MdSettings className="w-[50px] h-[50px] fill-white dark:fill-black" />
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col">
               <p className="text-sm text-white dark:text-black">
                 Setam urmatorul first-party cookie: <br /> web_cook - reprezinta
                 consimtamantul utilizatorilor cu privire la Politica cookies
-                (este setat pe o perioada de 8 luni)
+                (este setat pe o perioada de 6 luni)
               </p>
             </div>
             <div>
               <SwitchButton
-                isOpen={cookieState.esentiale.isAccepted}
-                toggleSwitch={() =>
-                  setCookieState({
-                    ...cookieState,
-                    esentiale: {
-                      ...cookieState.esentiale,
-                      isAccepted: !cookieState.esentiale.isAccepted,
-                    },
-                    userAccepted: !cookieState.userAccepted,
-                    showCookieConsent: !cookieState.showCookieConsent,
-                  })
-                }
+                isOpen={state.esentiale.shouldSet}
+                toggleSwitch={() => dispatch({ type: "esentiale" })}
               />
             </div>
           </div>
@@ -123,7 +84,7 @@ const CookieSettings = () => {
             <div>
               <IoMdAnalytics className="w-[50px] h-[50px] fill-white dark:fill-black" />
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col">
               <p className="text-sm text-white dark:text-black">
                 Se seteaza urmatoarele cookie-uri:
                 <br />2 cookie-uri de tipul _ga setate de Google Analythics -
@@ -132,18 +93,8 @@ const CookieSettings = () => {
             </div>
             <div>
               <SwitchButton
-                isOpen={cookieState.analitice.isAccepted}
-                toggleSwitch={() =>
-                  setCookieState({
-                    ...cookieState,
-                    analitice: {
-                      ...cookieState.analitice,
-                      isAccepted: !cookieState.analitice.isAccepted,
-                    },
-                    userAccepted: !cookieState.userAccepted,
-                    showCookieConsent: !cookieState.showCookieConsent,
-                  })
-                }
+                isOpen={state.analitice.shouldSet}
+                toggleSwitch={() => dispatch({ type: "analitice" })}
               />
             </div>
           </div>
@@ -157,25 +108,15 @@ const CookieSettings = () => {
             <div>
               <RiAdvertisementFill className="w-[50px] h-[50px] fill-white dark:fill-black" />
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col">
               <p className="text-sm text-white dark:text-black">
                 Momentan, nu setam cookie-uri de acest gen.
               </p>
             </div>
             <div>
               <SwitchButton
-                isOpen={cookieState.reclame.isAccepted}
-                toggleSwitch={() =>
-                  setCookieState({
-                    ...cookieState,
-                    reclame: {
-                      ...cookieState.reclame,
-                      isAccepted: !cookieState.reclame.isAccepted,
-                    },
-                    userAccepted: !cookieState.userAccepted,
-                    showCookieConsent: !cookieState.showCookieConsent,
-                  })
-                }
+                isOpen={state.promovare.shouldSet}
+                toggleSwitch={() => dispatch({ type: "promovare" })}
               />
             </div>
           </div>

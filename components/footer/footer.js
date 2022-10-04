@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useAppContext } from "../../context/context";
 
 const Footer = () => {
-  const { setCookieState, cookieState } = useAppContext();
+  const { dispatch } = useAppContext();
   return (
     <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">
@@ -52,11 +52,7 @@ const Footer = () => {
             <div>
               <button
                 onClick={() =>
-                  setCookieState({
-                    ...cookieState,
-                    showAditionalSettingScreen:
-                      !cookieState.showAditionalSettingScreen,
-                  })
+                  dispatch({ type: "cookieSettingsScreen", payload: true })
                 }
                 className="text-white dark:text-darkContrastText text-sm md:text-lg"
               >

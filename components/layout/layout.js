@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Header from "../header/header";
 import Head from "next/head";
 import {
@@ -10,12 +11,11 @@ import ModalDrawer from "../sidedrawer/modal-drawer";
 import Drawer from "../menu-drawer/drawer";
 import { useAppContext } from "../../context/context";
 import Script from "next/script";
-import { getCookie } from "../../lib/cookies";
-import CookieConsent from "../cookie-consent/cookie-consent";
 import CookieSettings from "../aditional-settings-cookie-screen/cookie-settings-screen";
+import CookieConsent from "../cookie-consent/cookie-consent";
 
 const Layout = ({ children }) => {
-  const { showDrawer, cookieState } = useAppContext();
+  const { showDrawer, state, dispatch, cookies, setCookie } = useAppContext();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
     <>
       {/* Ganalythics */}
 
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       ></Script>
@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
       gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
       page_path: window.location.pathname,
       });
-      `}</Script>
+      `}</Script> */}
 
       <motion.div
         className="fixed top-0 left-0 right-0 h-[5px] bg-white z-30"
@@ -111,12 +111,10 @@ const Layout = ({ children }) => {
       <div className="min-h-screen flex flex-col bg-lightBg dark:bg-darkBg">
         <main className="flex-grow">
           {showDrawer && <ModalDrawer component={<Drawer />} />}
-          {cookieState.showAditionalSettingScreen && (
+          {state.showCookieSettingsScreen && (
             <ModalDrawer component={<CookieSettings />} />
           )}
-
-          {cookieState.showCookieConsent && <CookieConsent />}
-
+          {Object.keys(cookies).length > 0 ? null : <CookieConsent />}
           {children}
         </main>
       </div>

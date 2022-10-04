@@ -86,6 +86,7 @@ const Servicii = ({
                   <MdArrowDropDown className="fill-white dark:fill-darkContrastText w-[35px] h-[35px]" />
                 </div>
               </div>
+
               <div className="col-span-3 flex flex-row items-center justify-center">
                 <p
                   className={

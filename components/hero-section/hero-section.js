@@ -15,19 +15,20 @@ const HeroSection = ({
     firstServicii: { first, second, third, fourth, fifth, sixth },
   },
 }) => {
-  const { cookieState } = useAppContext();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y1 = useParallax(scrollYProgress, 20);
+  const y1 = useParallax(scrollYProgress, 35);
 
   return (
     <div className="w-full grid grid-cols-12 overflow-hidden" id="/">
       <motion.div
         initial={{ x: 0, y: 0 }}
         animate={{
-          x: [50, 55, 20000],
-          transition: { duration: 2.5, repeat: Infinity, repeatDelay: 1 },
+          x: [50, 55, 150, 155, 20000],
+          transition: { duration: 4, repeat: Infinity, repeatDelay: 1 },
         }}
+        ref={ref}
+        style={{ y: y1 }}
         className="col-span-1 flex items-center justify-center"
       >
         <Image
@@ -39,11 +40,7 @@ const HeroSection = ({
           priority
         />
       </motion.div>
-      <motion.div
-        className="col-span-5 flex items-center justify-center"
-        ref={ref}
-        style={{ y: y1 }}
-      >
+      <motion.div className="col-span-5 flex items-center justify-center">
         <Image
           src={globe.sourceUrl}
           alt={globe.altText}
