@@ -13,10 +13,12 @@ import { useAppContext } from "../../context/context";
 import Script from "next/script";
 import CookieSettings from "../aditional-settings-cookie-screen/cookie-settings-screen";
 import CookieConsent from "../cookie-consent/cookie-consent";
+import { getCookie } from "cookies-next";
 
 const Layout = ({ children }) => {
-  const { showDrawer, state, dispatch, cookies, setCookie } = useAppContext();
+  const { showDrawer, state, dispatch } = useAppContext();
   const { scrollYProgress } = useScroll();
+  const consent = getCookie("localConsent");
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -24,38 +26,44 @@ const Layout = ({ children }) => {
   });
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const handleRouteChange = (url) => {
-  //     pageView(url);
-  //   };
-  //   router.events.on("routeChangeComplete", handleRouteChange);
-  //   return () => {
-  //     router.events.off("routeChangeComplete", handleRouteChange);
-  //   };
-  // }, [router.events]);
-
   return (
     <>
-      {/* Ganalythics */}
-
-      {/* <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      ></Script>
-
-      <Script id="google-analythics-script" strategy="afterInteractive">{`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-      page_path: window.location.pathname,
-      });
-      `}</Script> */}
-
       <motion.div
         className="fixed top-0 left-0 right-0 h-[5px] bg-white z-30"
         style={{ scaleX: scaleX }}
       ></motion.div>
+      <Script
+        id="gtag"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_TAG_MANAGER}');`,
+        }}
+      />
+      {consent === true && (
+        <Script
+          id="consupd"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'analytics_storage': 'granted'
+            });
+          `,
+          }}
+        />
+      )}
       <Head>
         <title>
           WEBNIAC - Dezvoltare web custom | Solutii digitale inedite,
@@ -114,7 +122,8 @@ const Layout = ({ children }) => {
           {state.showCookieSettingsScreen && (
             <ModalDrawer component={<CookieSettings />} />
           )}
-          {Object.keys(cookies).length > 0 ? null : <CookieConsent />}
+          <CookieConsent />
+
           {children}
         </main>
       </div>

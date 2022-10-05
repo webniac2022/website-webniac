@@ -1,8 +1,8 @@
 import { motion } from "../../lib/external-components";
 
-const SwitchButton = ({ isOpen, toggleSwitch }) => {
+const SwitchButton = ({ isOpen, toggleSwitch, opacity }) => {
   return (
-    <div>
+    <div className={`opacity-${opacity}`}>
       <motion.div
         onClick={toggleSwitch}
         whileHover={{ cursor: "pointer" }}

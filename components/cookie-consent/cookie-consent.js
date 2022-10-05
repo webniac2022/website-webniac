@@ -1,57 +1,74 @@
+import React, { useEffect, useState } from "react";
+import { setCookie, hasCookie } from "cookies-next";
 import { motion } from "../../lib/external-components";
-import { MdSettings } from "react-icons/md";
-import { useAppContext } from "../../context/context";
 
-const CookieConsent = () => {
-  const { cookies, setCookie, dispatch, state } = useAppContext();
+function CookieConsent() {
+  const [consent, setConsent] = useState(true);
+  useEffect(() => {
+    setConsent(hasCookie("localConsent"));
+  }, []);
+
+  const acceptCookie = () => {
+    setConsent(true);
+    setCookie("localConsent", "true", { maxAge: 60 * 60 * 24 * 365 });
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    });
+  };
+  const closeP = () => {
+    setConsent(true);
+  };
+  const denyCookie = () => {
+    setConsent(true);
+    setCookie("localConsent", "false", { maxAge: 60 * 60 * 24 * 365 });
+  };
+  if (consent === true) {
+    return null;
+  }
   return (
-    <div className="z-[20] w-full gap-2 fixed bottom-0 left-0 bg-firstGradient flex flex-col p-2">
-      <div>
-        <h6 className="text-white text-sm">
-          Utilizam cookies pentru a va oferi o experienta de navigare inedita.
-        </h6>
+    <motion.div
+      className={`w-full z-20 p-2 fixed flex flex-col gap-1 bottom-0 bg-firstGradient ${
+        consent ? "hidden" : ""
+      }`}
+    >
+      <div className="flex flex-row">
+        <p className="text-sm text-white">
+          Folosim cookies pentru a va oferi o experienta de navigare optima.
+        </p>
       </div>
       <div className="flex flex-row justify-between">
-        <div className="flex flex-row gap-1">
+        <div className="flex flex-row">
           <motion.button
-            onClick={() => dispatch({ type: "refuza" })}
+            className="rounded-lg border-2 border-white p-1 text-sm text-white"
             whileHover={{ scale: 0.95 }}
-            className="text-xs text-white bg-black p-1 rounded-lg"
+            transition={{ type: "spring" }}
+            onClick={() => closeP()}
           >
-            Refuza
+            Inchide
           </motion.button>
+        </div>
+        <div className="flex flex-row gap-5">
           <motion.button
-            onClick={() => dispatch({ type: "esentiale", payload: true })}
+            className="rounded-lg border-2 border-green-400 p-1 text-sm text-white"
             whileHover={{ scale: 0.95 }}
-            className="text-xs text-white bg-black p-1 rounded-lg"
-          >
-            Esentiali
-          </motion.button>
-          <motion.button
-            onClick={() => {
-              dispatch({ type: "toate" });
-            }}
-            whileHover={{ scale: 0.95 }}
-            className="text-xs text-white bg-black p-1 rounded-lg border-2 border-green-300"
+            transition={{ type: "spring" }}
+            onClick={() => acceptCookie()}
           >
             Accepta tot
           </motion.button>
-        </div>
-        <div className="flex flex-row gap-2 items-center justify-center">
           <motion.button
-            onClick={() =>
-              dispatch({ type: "cookieSettingsScreen", payload: true })
-            }
+            className="rounded-lg border-2 border-red-500 p-1 text-sm text-white"
             whileHover={{ scale: 0.95 }}
-            className="p-1 rounded-lg border-2 border-white flex flex-row items-center justify-center gap-2 text-white text-xs bg-black"
+            transition={{ type: "spring" }}
+            onClick={() => denyCookie()}
           >
-            <MdSettings className="w-[15px] h-[15px] fill-white" />
-            Setari cookie
+            Refuza tot
           </motion.button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
-};
+}
 
 export default CookieConsent;

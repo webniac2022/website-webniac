@@ -3,11 +3,10 @@ import { RiAdvertisementFill } from "react-icons/ri";
 import { MdSettings } from "react-icons/md";
 import { IoMdAnalytics } from "react-icons/io";
 import SwitchButton from "../switch-button/switch-button";
-import { AiOutlineCheck } from "react-icons/ai";
 import { useAppContext } from "../../context/context";
 
 const CookieSettings = () => {
-  const { cookies, setCookie, removeCookie, dispatch, state } = useAppContext();
+  const { dispatch, state } = useAppContext();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.2 }}
@@ -40,7 +39,6 @@ const CookieSettings = () => {
           <div className="flex flex-row items-center gap-2">
             <div>
               <motion.button
-                onClick={() => dispatch({ type: "toate" })}
                 whileHover={{ scale: 0.95 }}
                 transition={{ type: "spring" }}
                 className="p-2 rounded-lg bg-yellow-300 text-black"
@@ -70,8 +68,9 @@ const CookieSettings = () => {
             </div>
             <div>
               <SwitchButton
-                isOpen={state.esentiale.shouldSet}
-                toggleSwitch={() => dispatch({ type: "esentiale" })}
+                isOpen={true}
+                toggleSwitch={() => null}
+                opacity={50}
               />
             </div>
           </div>
@@ -93,8 +92,9 @@ const CookieSettings = () => {
             </div>
             <div>
               <SwitchButton
-                isOpen={state.analitice.shouldSet}
-                toggleSwitch={() => dispatch({ type: "analitice" })}
+                isOpen={false}
+                toggleSwitch={() => null}
+                opacity={100}
               />
             </div>
           </div>
@@ -115,8 +115,9 @@ const CookieSettings = () => {
             </div>
             <div>
               <SwitchButton
-                isOpen={state.promovare.shouldSet}
-                toggleSwitch={() => dispatch({ type: "promovare" })}
+                isOpen={false}
+                toggleSwitch={() => null}
+                opacity={100}
               />
             </div>
           </div>
@@ -146,6 +147,14 @@ const CookieSettings = () => {
             preferintelor utilizatorilor, comportamente si multe altele. Fisiere
             de tip cookie sunt setate si pentru targetarea utilizatorilor cu
             materiale promotionale.
+          </p>
+        </div>
+        <div className="flex flex-row">
+          <p className="p-2 text-sm text-white dark:text-black">
+            Puteti oricand sa vizualizati si sa stereti cookie-urile setate din
+            Optiunile de Confidentialitate ale browser-ului dumneavoastra.
+            Stergerea tuturor fisierelor cookie poate avea ca rezultat probleme
+            de functionalitate ale website-ului.
           </p>
         </div>
       </div>
