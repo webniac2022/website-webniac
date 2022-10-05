@@ -3,10 +3,10 @@ import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import { MdEmail, MdPhone } from "react-icons/md";
 import Image from "next/future/image";
 import Link from "next/link";
-import { useAppContext } from "../../context/context";
+import { useCookieContext } from "../../context/cookie-context";
 
 const Footer = () => {
-  const { dispatch } = useAppContext();
+  const { dispatch } = useCookieContext();
   return (
     <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">

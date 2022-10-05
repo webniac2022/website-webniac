@@ -1,6 +1,7 @@
 import { motion } from "../../lib/external-components";
 
 const SwitchButton = ({ isOpen, toggleSwitch, opacity }) => {
+  console.log("isOpen", isOpen);
   return (
     <div className={`opacity-${opacity}`}>
       <motion.div

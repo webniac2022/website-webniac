@@ -14,6 +14,7 @@ import Servicii from "../components/servicii/servicii";
 import client from "../lib/apollo";
 import Fab from "../components/fab/fab";
 import { gql } from "@apollo/client";
+import { changePermissions } from "../lib/ga";
 
 function Home({
   data: {

@@ -4,9 +4,13 @@ import { MdSettings } from "react-icons/md";
 import { IoMdAnalytics } from "react-icons/io";
 import SwitchButton from "../switch-button/switch-button";
 import { useAppContext } from "../../context/context";
+import { useState } from "react";
+import { hasCookie, deleteCookie } from "cookies-next";
+import { useCookieContext } from "../../context/cookie-context";
 
 const CookieSettings = () => {
-  const { dispatch, state } = useAppContext();
+  const { dispatch, state, deleteAnaliticCookies } = useCookieContext();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.2 }}
@@ -61,16 +65,16 @@ const CookieSettings = () => {
             </div>
             <div className="flex flex-col">
               <p className="text-sm text-white dark:text-black">
-                Setam urmatorul first-party cookie: <br /> web_cook - reprezinta
-                consimtamantul utilizatorilor cu privire la Politica cookies
-                (este setat pe o perioada de 6 luni)
+                Setam urmatorul first-party cookie: <br /> local-consent cu o
+                valabilitiate de 12 luni in vederea gestionarii afisarii sau
+                neafisarii cookie banner-ului.
               </p>
             </div>
             <div>
               <SwitchButton
-                isOpen={true}
+                isOpen={false}
                 toggleSwitch={() => null}
-                opacity={50}
+                opacity={40}
               />
             </div>
           </div>
@@ -87,7 +91,9 @@ const CookieSettings = () => {
               <p className="text-sm text-white dark:text-black">
                 Se seteaza urmatoarele cookie-uri:
                 <br />2 cookie-uri de tipul _ga setate de Google Analythics -
-                sunt valabile 12 luni.
+                sunt valabile 12 luni, acestea se seteaza pentru a colecta date
+                cu privire la utilizarea website-ului si comportamente ale
+                utilizatorilor din timpul navigarii acestuia.
               </p>
             </div>
             <div>
