@@ -32,8 +32,6 @@ const Layout = ({ children }) => {
     setIsMounted(true);
   }, []);
 
-  console.log("cookie banner ", state.showCookieBanner);
-
   return (
     <>
       <motion.div

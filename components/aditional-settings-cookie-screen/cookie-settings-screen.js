@@ -3,13 +3,18 @@ import { RiAdvertisementFill } from "react-icons/ri";
 import { MdSettings } from "react-icons/md";
 import { IoMdAnalytics } from "react-icons/io";
 import SwitchButton from "../switch-button/switch-button";
-import { useAppContext } from "../../context/context";
-import { useState } from "react";
-import { hasCookie, deleteCookie } from "cookies-next";
 import { useCookieContext } from "../../context/cookie-context";
 
 const CookieSettings = () => {
-  const { dispatch, state, deleteAnaliticCookies } = useCookieContext();
+  const {
+    dispatch,
+    state,
+    acceptaTot,
+    acceptaEsentiale,
+    acceptaAnalitice,
+    refuzaDoarAnalitice,
+    stergeTot,
+  } = useCookieContext();
 
   return (
     <motion.div
@@ -43,6 +48,7 @@ const CookieSettings = () => {
           <div className="flex flex-row items-center gap-2">
             <div>
               <motion.button
+                onClick={() => acceptaTot()}
                 whileHover={{ scale: 0.95 }}
                 transition={{ type: "spring" }}
                 className="p-2 rounded-lg bg-yellow-300 text-black"
@@ -72,8 +78,10 @@ const CookieSettings = () => {
             </div>
             <div>
               <SwitchButton
-                isOpen={false}
-                toggleSwitch={() => null}
+                isOpen={state.esentiale}
+                toggleSwitch={() =>
+                  state.esentiale ? stergeTot() : acceptaEsentiale()
+                }
                 opacity={40}
               />
             </div>
@@ -98,8 +106,10 @@ const CookieSettings = () => {
             </div>
             <div>
               <SwitchButton
-                isOpen={false}
-                toggleSwitch={() => null}
+                isOpen={state.analitice}
+                toggleSwitch={() =>
+                  state.analitice ? refuzaDoarAnalitice() : acceptaAnalitice()
+                }
                 opacity={100}
               />
             </div>

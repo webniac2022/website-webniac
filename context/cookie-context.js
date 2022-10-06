@@ -30,6 +30,21 @@ const reducer = (state, action) => {
           showCookieSettingsScreen: !state.showCookieSettingsScreen,
         };
       }
+    case "esentiale":
+      return { ...state, esentiale: action.payload };
+    case "analitice":
+      return { ...state, analitice: action.payload };
+    case "promotionale":
+      return { ...state, promotionale: action.payload };
+    case "tot":
+      return { ...state, analitice: true, esentiale: true, promotionale: true };
+    case "stergeTot":
+      return {
+        ...state,
+        analitice: false,
+        esentiale: false,
+        promotionale: false,
+      };
   }
 };
 
@@ -59,9 +74,32 @@ export const CookieWrapper = ({ children }) => {
       setCookie("localConsent", false, { maxAge: (60 * 60) ^ (24 * 365) });
     }
     dispatch({ type: "cookieBanner", payload: false });
+    dispatch({ type: "esentiale", payload: true });
   };
 
-  const acceptaAnalitice = () => {};
+  const acceptaAnalitice = () => {
+    setCookie("localConsent", true, { maxAge: 60 * 60 * 24 * 365 });
+    if (window !== undefined) {
+      gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "granted",
+      });
+    }
+    dispatch({ type: "cookieBanner", payload: false });
+    dispatch({ type: "analitice", payload: true });
+  };
+
+  const refuzaDoarAnalitice = () => {
+    deleteCookie("_ga", {});
+    deleteCookie("_ga_5JDY1QTJQV", {});
+    if (window !== undefined) {
+      gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+      });
+    }
+    dispatch({ type: "analitice", payload: false });
+  };
 
   const acceptaTot = () => {
     setCookie("localConsent", true, { maxAge: 60 * 60 * 24 * 365 });
@@ -71,7 +109,18 @@ export const CookieWrapper = ({ children }) => {
         analytics_storage: "granted",
       });
     }
+    // next cookies here
     dispatch({ type: "cookieBanner", payload: false });
+    dispatch({ type: "tot" });
+  };
+
+  const stergeTot = () => {
+    const allCookies = getCookies();
+    if (Object.keys(allCookies).length === 0) return;
+    Object.keys(allCookies).map((o, i) => {
+      deleteCookie(o, {});
+    });
+    dispatch({ type: "stergeTot" });
   };
 
   const value = {
@@ -79,6 +128,9 @@ export const CookieWrapper = ({ children }) => {
     dispatch,
     acceptaTot,
     acceptaEsentiale,
+    acceptaAnalitice,
+    stergeTot,
+    refuzaDoarAnalitice,
   };
   return (
     <CookieContext.Provider value={value}>{children}</CookieContext.Provider>

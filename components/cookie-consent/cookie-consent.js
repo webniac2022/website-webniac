@@ -11,7 +11,7 @@ function CookieConsent() {
 
   return (
     <div
-      className={`w-full z-20 p-2 fixed flex flex-col gap-2 bottom-0 bg-fourthGradient`}
+      className={`w-full z-20 p-1 fixed flex flex-col gap-2 bottom-0 bg-fourthGradient`}
     >
       <div className="flex flex-row">
         <p className="text-sm text-white">
@@ -19,6 +19,17 @@ function CookieConsent() {
         </p>
       </div>
       <div className="flex flex-row gap-2">
+        <motion.button
+          onClick={() =>
+            dispatch({ type: "cookieSettingsScreen", payload: true })
+          }
+          whileHover={{ scale: 0.95 }}
+          transition={{ type: "spring" }}
+          className="text-xs text-white flex flex-row items-center gap-2 border-2 border-white rounded-lg p-1"
+        >
+          <MdSettings />
+          Setari cookies
+        </motion.button>
         <motion.button
           onClick={() => acceptaEsentiale()}
           className="rounded-lg border-2 border-white p-1 text-xs text-white"
@@ -35,22 +46,9 @@ function CookieConsent() {
         >
           Accepta tot
         </motion.button>
-
-        <div className="flex flex-row gap-2"></div>
       </div>
-      <div className="flex flex-row justify-start">
-        <motion.button
-          onClick={() =>
-            dispatch({ type: "cookieSettingsScreen", payload: true })
-          }
-          whileHover={{ scale: 0.95 }}
-          transition={{ type: "spring" }}
-          className="text-xs text-white flex flex-row items-center gap-2 border-2 border-white rounded-lg p-1"
-        >
-          <MdSettings />
-          Setari cookies
-        </motion.button>
-      </div>
+      <div className="flex flex-row gap-2"></div>
+      <div className="flex flex-row justify-start"></div>
     </div>
   );
 }
