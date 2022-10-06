@@ -7,8 +7,7 @@ import { useAppContext } from "../../context/context";
 import { useCookieContext } from "../../context/cookie-context";
 
 function CookieConsent() {
-  const { dispatch, state, acceptaTot, refuzaTot, acceptaEsentiale } =
-    useCookieContext();
+  const { dispatch, state, acceptaTot, acceptaEsentiale } = useCookieContext();
 
   return (
     <div
@@ -21,21 +20,12 @@ function CookieConsent() {
       </div>
       <div className="flex flex-row gap-2">
         <motion.button
-          onClick={() => refuzaTot()}
-          className="rounded-lg border-2 border-red-500 p-1 text-xs text-white"
-          whileHover={{ scale: 0.95 }}
-          transition={{ type: "spring" }}
-        >
-          Refuza tot
-        </motion.button>
-
-        <motion.button
           onClick={() => acceptaEsentiale()}
           className="rounded-lg border-2 border-white p-1 text-xs text-white"
           whileHover={{ scale: 0.95 }}
           transition={{ type: "spring" }}
         >
-          Accepta Esentiale
+          Esentiale
         </motion.button>
         <motion.button
           onClick={() => acceptaTot()}

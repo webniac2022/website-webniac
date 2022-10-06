@@ -32,6 +32,8 @@ const Layout = ({ children }) => {
     setIsMounted(true);
   }, []);
 
+  console.log("cookie banner ", state.showCookieBanner);
+
   return (
     <>
       <motion.div
@@ -97,9 +99,7 @@ const Layout = ({ children }) => {
           {state.showCookieSettingsScreen && (
             <ModalDrawer component={<CookieSettings />} />
           )}
-
-          {!hasCookie("localConsent") && isMounted && <CookieConsent />}
-
+          {isMounted && state.showCookieBanner && <CookieConsent />}
           {children}
         </main>
       </div>

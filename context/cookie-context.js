@@ -39,8 +39,8 @@ export const CookieWrapper = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     showCookieBanner: !hasCookie("localConsent"),
     showCookieSettingsScreen: false,
-    accepted: false,
-    analitice: false,
+    esentiale: hasCookie("localConsent"),
+    analitice: hasCookie("_ga"),
     promotionale: false,
   });
 
@@ -48,7 +48,7 @@ export const CookieWrapper = ({ children }) => {
     console.log(state);
   }, [state]);
 
-  const refuzaTot = () => {
+  const acceptaEsentiale = () => {
     const allCookies = getCookies();
     if (Object.keys(allCookies).length === 0) {
       setCookie("localConsent", false, { maxAge: 60 * 60 * 24 * 365 });
@@ -58,11 +58,10 @@ export const CookieWrapper = ({ children }) => {
       });
       setCookie("localConsent", false, { maxAge: (60 * 60) ^ (24 * 365) });
     }
+    dispatch({ type: "cookieBanner", payload: false });
   };
 
-  const acceptaEsentiale = () => {
-    refuzaTot();
-  };
+  const acceptaAnalitice = () => {};
 
   const acceptaTot = () => {
     setCookie("localConsent", true, { maxAge: 60 * 60 * 24 * 365 });
@@ -72,6 +71,7 @@ export const CookieWrapper = ({ children }) => {
         analytics_storage: "granted",
       });
     }
+    dispatch({ type: "cookieBanner", payload: false });
   };
 
   const value = {
@@ -79,7 +79,6 @@ export const CookieWrapper = ({ children }) => {
     dispatch,
     acceptaTot,
     acceptaEsentiale,
-    refuzaTot,
   };
   return (
     <CookieContext.Provider value={value}>{children}</CookieContext.Provider>
