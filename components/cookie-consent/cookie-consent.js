@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { setCookie, hasCookie } from "cookies-next";
 import { motion } from "../../lib/external-components";
-import useCookies from "../../hooks/useCookies";
 import { MdSettings } from "react-icons/md";
 import { useAppContext } from "../../context/context";
 import { useCookieContext } from "../../context/cookie-context";
