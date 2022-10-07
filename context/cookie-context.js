@@ -59,10 +59,6 @@ export const CookieWrapper = ({ children }) => {
     promotionale: false,
   });
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
-
   const acceptaEsentiale = () => {
     const allCookies = getCookies();
     if (Object.keys(allCookies).length === 0) {

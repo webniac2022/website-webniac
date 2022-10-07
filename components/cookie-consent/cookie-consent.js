@@ -11,10 +11,10 @@ function CookieConsent() {
 
   return (
     <div
-      className={`w-full z-20 p-1 fixed flex flex-col gap-2 bottom-0 bg-fourthGradient`}
+      className={`w-[90vw] left-[50%] [transform:translateX(-50%)] rounded-xl z-20 p-2 fixed flex flex-col bottom-5 gap-1 bg-fourthGradient`}
     >
       <div className="flex flex-row">
-        <p className="text-sm text-white">
+        <p className="text-xs text-white">
           Folosim cookies pentru a va oferi o experienta de navigare optima.
         </p>
       </div>
