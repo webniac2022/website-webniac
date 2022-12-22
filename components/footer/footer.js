@@ -73,7 +73,7 @@ const Footer = () => {
         <h6 className="text-white dark:text-darkContrastText text-sm text-center">
           &copy; WEBNIAC - Custom web development, All rights reserved
         </h6>
-        <h6 className="text-white dark:text-darkContrastText text-sm">
+        <h6 className="text-white dark:text-darkContrastText text-lg">
           {new Date().getFullYear()}
         </h6>
       </div>
