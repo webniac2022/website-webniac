@@ -6,7 +6,6 @@ import { useAppContext } from "../../context/context";
 
 const SeventhSection = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
-  const {} = useAppContext();
 
   return (
     <div className="w-full mb-5 flex flex-col gap-16 items-center" id="contact">
