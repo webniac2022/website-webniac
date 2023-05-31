@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import SkeletonHeader from "./skeleton-header";
 import { motion } from "../../lib/external-components";
 import { event } from "../../lib/ga";
+import Logo from "./logo";
 
 const Header = () => {
   const { tabs } = useAppContext();
@@ -22,14 +23,8 @@ const Header = () => {
 
   return (
     <motion.div className="grid grid-cols-12 gap-2 justify-center items-center bg-lightBg dark:bg-darkBg">
-      <div className="col-span-3 sm:col-span-2 block">
-        <Image
-          src="https://res.cloudinary.com/webniac/image/upload/v1662567294/WEBNIAC/webniac_logo_ordcsr.svg"
-          alt="Webniac logo - Custom software development"
-          layout="responsive"
-          width={100}
-          height={80}
-        />
+      <div className="col-span-3 sm:col-span-2 flex flex-row items-center justify-center p-2">
+        <Logo />
       </div>
       <div className="col-span-3 sm:col-span-2 flex flex-row justify-center items-center">
         {theme === "dark" ? (

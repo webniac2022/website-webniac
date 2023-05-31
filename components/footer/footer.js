@@ -4,6 +4,7 @@ import { MdEmail, MdPhone } from "react-icons/md";
 import Image from "next/future/image";
 import Link from "next/link";
 import { useCookieContext } from "../../context/cookie-context";
+import Logo from "../header/logo";
 
 const Footer = () => {
   const { dispatch } = useCookieContext();
@@ -11,12 +12,7 @@ const Footer = () => {
     <div className="w-full mt-10 p-2">
       <div className="grid grid-cols-6">
         <div className="col-span-2 sm:col-span-1">
-          <Image
-            src="https://res.cloudinary.com/webniac/image/upload/v1662567294/WEBNIAC/webniac_logo_ordcsr.svg"
-            alt="logo WEBNIAC"
-            width={500}
-            height={500}
-          />
+          <Logo />
         </div>
         <div className="col-span-4 sm:col-span-5 flex flex-row justify-around">
           <div className="flex flex-col sm:flex-row gap-1 sm:gap-5 items-center justify-center">

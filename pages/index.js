@@ -14,7 +14,6 @@ import Servicii from "../components/servicii/servicii";
 import client from "../lib/apollo";
 import Fab from "../components/fab/fab";
 import { gql } from "@apollo/client";
-import { changePermissions } from "../lib/ga";
 
 function Home({
   data: {
@@ -32,7 +31,7 @@ function Home({
   },
 }) {
   const { scrollY } = useScroll();
-  const { setShowFab, dispatch } = useAppContext();
+  const { setShowFab } = useAppContext();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
