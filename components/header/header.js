@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import { Image } from "../../lib/external-components";
 import { useAppContext } from "../../context/context";
-import { BsFillMoonStarsFill, BsFillSunFill, BsGlobe } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import Navbar from "../navbar/navbar";
 import SideDrawer from "../sidedrawer/sidedrawer";
 import { useTheme } from "next-themes";
 import SkeletonHeader from "./skeleton-header";
 import { motion } from "../../lib/external-components";
-import { event } from "../../lib/ga";
 import Logo from "./logo";
 
 const Header = () => {
@@ -48,12 +46,7 @@ const Header = () => {
         <Navbar tabs={tabs} />
         <SideDrawer tabs={tabs} />
       </div>
-      <div className="flex justify-center items-center col-span-1 sm:col-span-1 pr-2">
-        {/* <BsGlobe
-          size={20}
-          className="fill-white dark:fill-darkContrastText hover:cursor-pointer"
-        /> */}
-      </div>
+      <div className="flex justify-center items-center col-span-1 sm:col-span-1 pr-2"></div>
     </motion.div>
   );
 };

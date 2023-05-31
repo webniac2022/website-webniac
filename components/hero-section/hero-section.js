@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/future/image";
 import { useParallax } from "../principii/principii";
 import { useRef } from "react";
-import { useAppContext } from "../../context/context";
 
 const HeroSection = ({
   data: {

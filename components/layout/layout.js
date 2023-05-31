@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
           content="WEBNIAC - Solutii digitale inedite, performante, accesibile si scalabile"
         />
         <meta
-          content="https://res.cloudinary.com/webniac/image/upload/v1662567294/WEBNIAC/webniac_logo_ordcsr.svg"
+          content="https://res.cloudinary.com/webniac/image/upload/v1685517674/WEBNIAC/Asset_2_zendqu.svg"
           property="og:image"
         />
         <meta
