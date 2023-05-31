@@ -1,8 +1,6 @@
 import { motion } from "../../lib/external-components";
 import { useForm } from "@formspree/react";
 import { MdCelebration } from "react-icons/md";
-import { event } from "../../lib/ga";
-import { useAppContext } from "../../context/context";
 
 const SeventhSection = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
